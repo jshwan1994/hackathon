@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense, lazy } from "react";
+import Image from "next/image";
 import { ValveData } from "@/types/valve";
 
 // 이미지 뷰어를 동적으로 로드 (클라이언트 사이드 전용)
@@ -36,92 +37,24 @@ export default function DrawingViewer({ selectedValve }: DrawingViewerProps) {
           {/* 밸브 마커 제거 - 도면만 표시 */}
         </div>
       ) : (
-        // 기본 배경 (밸브 선택 전)
-        <div className="schematic-bg cursor-grab active:cursor-grabbing flex items-center justify-center w-full h-full">
-          <div className="relative w-full h-full opacity-40 transition-opacity duration-500 hover:opacity-100">
-            <svg
-              className="w-full h-full absolute inset-0 pointer-events-none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <pattern
-                  id="grid"
-                  width="100"
-                  height="100"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <path
-                    d="M 100 0 L 0 0 0 100"
-                    fill="none"
-                    stroke="#282e39"
-                    strokeWidth="1"
-                  />
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#grid)" />
-
-              {/* 배관 라인 예시 */}
-              <path
-                d="M 100 300 L 400 300 L 400 600 L 800 600"
-                fill="none"
-                stroke="#3b4354"
-                strokeWidth="4"
+        // 기본 배경 (밸브 선택 전) - 3D 밸브 이미지 표시
+        <div className="schematic-bg flex items-center justify-center w-full h-full">
+          <div className="flex flex-col items-center justify-center mt-32">
+            {/* 3D 밸브 이미지 - 부드러운 floating 애니메이션 */}
+            <div className="relative w-[900px] h-[900px] mb-6 animate-float">
+              <Image
+                src="/valve-3d.png"
+                alt="3D Valve"
+                fill
+                className="object-contain"
+                priority
               />
-              <path
-                d="M 200 100 L 200 500"
-                fill="none"
-                stroke="#3b4354"
-                strokeWidth="4"
-              />
-              <path
-                d="M 600 200 L 900 200"
-                fill="none"
-                stroke="#3b4354"
-                strokeWidth="4"
-              />
-
-              {/* 밸브 아이콘 예시 */}
-              <g>
-                <circle
-                  cx="400"
-                  cy="450"
-                  r="15"
-                  fill="#1c1f27"
-                  stroke="#525b6c"
-                  strokeWidth="2"
-                />
-                <path
-                  d="M 390 440 L 410 460 M 390 460 L 410 440"
-                  stroke="#525b6c"
-                  strokeWidth="2"
-                />
-              </g>
-              <g>
-                <circle
-                  cx="700"
-                  cy="600"
-                  r="15"
-                  fill="#1c1f27"
-                  stroke="#525b6c"
-                  strokeWidth="2"
-                />
-                <path
-                  d="M 690 590 L 710 610 M 690 610 L 710 590"
-                  stroke="#525b6c"
-                  strokeWidth="2"
-                />
-              </g>
-            </svg>
+            </div>
 
             {/* 안내 메시지 */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="text-center">
-                <span className="material-symbols-outlined text-white/20 !text-[80px] mb-4 block">
-                  search
-                </span>
-                <p className="text-white/40 text-lg">상단 검색창에서 밸브를 검색하세요</p>
-                <p className="text-white/30 text-sm mt-2">예: V-102, HV-6003, VF-5027</p>
-              </div>
+            <div className="text-center">
+              <h2 className="text-2xl font-bold text-white mb-2">PID 밸브 검색기</h2>
+              <p className="text-[#9da6b9] text-lg">P&ID 도면에서 밸브 위치를 빠르게 찾아보세요</p>
             </div>
           </div>
         </div>
