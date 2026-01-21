@@ -38,24 +38,22 @@ export default function DrawingViewer({ selectedValve }: DrawingViewerProps) {
         </div>
       ) : (
         // 기본 배경 (밸브 선택 전) - 3D 밸브 이미지 표시
-        <div className="schematic-bg flex items-center justify-center w-full h-full">
-          <div className="flex flex-col items-center justify-center mt-32">
-            {/* 3D 밸브 이미지 - 부드러운 floating 애니메이션 */}
-            <div className="relative w-[900px] h-[900px] mb-6 animate-float">
-              <Image
-                src="/valve-3d.png"
-                alt="3D Valve"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
+        <div className="schematic-bg flex flex-col items-center justify-center w-full h-full">
+          {/* 3D 밸브 이미지 - 부드러운 floating 애니메이션 */}
+          <div className="relative w-[900px] h-[900px] animate-float">
+            <Image
+              src="/valve-3d.png"
+              alt="3D Valve"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
 
-            {/* 안내 메시지 */}
-            <div className="text-center">
-              <h2 className="text-2xl font-bold text-white mb-2">PID 밸브 검색기</h2>
-              <p className="text-[#9da6b9] text-lg">P&ID 도면에서 밸브 위치를 빠르게 찾아보세요</p>
-            </div>
+          {/* 안내 메시지 - 밸브 아래에 위치 */}
+          <div className="text-center -mt-40">
+            <h2 className="text-2xl font-bold text-white mb-2">PID 밸브 검색기</h2>
+            <p className="text-[#9da6b9] text-lg">P&ID 도면에서 밸브 위치를 빠르게 찾아보세요</p>
           </div>
         </div>
       )}
