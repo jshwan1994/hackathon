@@ -1,0 +1,25 @@
+# Development files
+scripts/
+*.pyc
+__pycache__/
+
+# Documentation
+USAGE.md
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Test files
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Build cache
+.next/
+out/
