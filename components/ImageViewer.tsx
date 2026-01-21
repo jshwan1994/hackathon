@@ -112,12 +112,10 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: 
               >
                 {/* 펄스 애니메이션 */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-primary/30 rounded-full animate-ping"></div>
+                  <div className="w-8 h-8 bg-red-500/40 rounded-full animate-ping"></div>
                 </div>
                 {/* 마커 본체 */}
-                <div className="relative w-8 h-8 bg-primary rounded-full border-2 border-white shadow-lg shadow-primary/50 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white !text-[16px]">location_on</span>
-                </div>
+                <div className="relative w-4 h-4 bg-red-500 rounded-full border-2 border-white shadow-lg shadow-red-500/50"></div>
               </div>
             )}
           </div>

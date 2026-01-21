@@ -1,0 +1,112 @@
+[
+  {
+    "tag": "V-001",
+    "type": "VG",
+    "drawing": "009-1M-PI-111-001_DH_HE_Condensate_System.pdf",
+    "location": "DH H/E Condensate System (1/3)",
+    "description": "Gate Valve - Main Line",
+    "position": {
+      "x_percent": 15.0,
+      "y_percent": 25.0
+    }
+  },
+  {
+    "tag": "V-002",
+    "type": "VC",
+    "drawing": "009-1M-PI-111-001_DH_HE_Condensate_System.pdf",
+    "location": "DH H/E Condensate System (1/3)",
+    "description": "Check Valve - Return Line",
+    "position": {
+      "x_percent": 25.0,
+      "y_percent": 30.0
+    }
+  },
+  {
+    "tag": "V-003",
+    "type": "VL",
+    "drawing": "009-1M-PI-111-001_DH_HE_Condensate_System.pdf",
+    "location": "DH H/E Condensate System (1/3)",
+    "description": "Globe Valve - Control Line",
+    "position": {
+      "x_percent": 35.0,
+      "y_percent": 40.0
+    }
+  },
+  {
+    "tag": "V-004",
+    "type": "VB",
+    "drawing": "009-1M-PI-111-001_DH_HE_Condensate_System.pdf",
+    "location": "DH H/E Condensate System (1/3)",
+    "description": "Ball Valve - Drain Line",
+    "position": {
+      "x_percent": 45.0,
+      "y_percent": 50.0
+    }
+  },
+  {
+    "tag": "V-005",
+    "type": "VG",
+    "drawing": "009-1M-PI-111-001_DH_HE_Condensate_System.pdf",
+    "location": "DH H/E Condensate System (1/3)",
+    "description": "Gate Valve - Bypass Line",
+    "position": {
+      "x_percent": 55.0,
+      "y_percent": 35.0
+    }
+  },
+  {
+    "tag": "V-006",
+    "type": "VC",
+    "drawing": "009-1M-PI-111-001_DH_HE_Condensate_System.pdf",
+    "location": "DH H/E Condensate System (1/3)",
+    "description": "Check Valve - Pump Discharge",
+    "position": {
+      "x_percent": 60.0,
+      "y_percent": 45.0
+    }
+  },
+  {
+    "tag": "V-007",
+    "type": "VL",
+    "drawing": "009-1M-PI-111-001_DH_HE_Condensate_System.pdf",
+    "location": "DH H/E Condensate System (1/3)",
+    "description": "Globe Valve - Throttle Control",
+    "position": {
+      "x_percent": 70.0,
+      "y_percent": 55.0
+    }
+  },
+  {
+    "tag": "V-008",
+    "type": "VG",
+    "drawing": "009-1M-PI-111-001_DH_HE_Condensate_System.pdf",
+    "location": "DH H/E Condensate System (1/3)",
+    "description": "Gate Valve - Isolation",
+    "position": {
+      "x_percent": 75.0,
+      "y_percent": 60.0
+    }
+  },
+  {
+    "tag": "V-009",
+    "type": "VB",
+    "drawing": "009-1M-PI-111-001_DH_HE_Condensate_System.pdf",
+    "location": "DH H/E Condensate System (1/3)",
+    "description": "Ball Valve - Sample Point",
+    "position": {
+      "x_percent": 80.0,
+      "y_percent": 65.0
+    }
+  },
+  {
+    "tag": "V-010",
+    "type": "VC",
+    "drawing": "009-1M-PI-111-001_DH_HE_Condensate_System.pdf",
+    "location": "DH H/E Condensate System (1/3)",
+    "description": "Check Valve - Header Line",
+    "position": {
+      "x_percent": 85.0,
+      "y_percent": 70.0
+    }
+  }
+]
