@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PID 밸브 뷰어",
+  title: "PID 밸브 검색기",
   description: "배관계장도 밸브 검색 및 조회 시스템",
 };
 
