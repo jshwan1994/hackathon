@@ -13,7 +13,10 @@ interface ImageViewerProps {
 export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: ImageViewerProps) {
   const [loading, setLoading] = useState(true);
   const [scale, setScale] = useState(100);
+  const [devMode, setDevMode] = useState(false);
+  const [clickedCoords, setClickedCoords] = useState<{x: number, y: number} | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const imageContainerRef = useRef<HTMLDivElement>(null);
 
   const handleLoad = () => {
     setLoading(false);
@@ -30,6 +33,22 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: 
 
   const resetZoom = () => {
     setScale(100);
+  };
+
+  // 도면 클릭 시 좌표 계산
+  const handleImageClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!devMode || !imageContainerRef.current) return;
+
+    const rect = imageContainerRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+    const coords = { x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 };
+    setClickedCoords(coords);
+
+    // 클립보드에 복사
+    const coordText = `"x_percent": ${coords.x}, "y_percent": ${coords.y}`;
+    navigator.clipboard.writeText(coordText);
   };
 
   return (
@@ -54,7 +73,12 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: 
             transition: 'transform 0.3s ease'
           }}
         >
-          <div className="relative w-full h-full">
+          <div
+            ref={imageContainerRef}
+            className="relative w-full h-full"
+            onClick={handleImageClick}
+            style={{ cursor: devMode ? 'crosshair' : 'default' }}
+          >
             <Image
               src={imageUrl}
               alt="P&ID Drawing"
@@ -63,6 +87,19 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: 
               onLoad={handleLoad}
               priority
             />
+            {/* 개발자 모드: 클릭한 위치 표시 */}
+            {devMode && clickedCoords && (
+              <div
+                className="absolute z-20 pointer-events-none"
+                style={{
+                  left: `${clickedCoords.x}%`,
+                  top: `${clickedCoords.y}%`,
+                  transform: 'translate(-50%, -50%)'
+                }}
+              >
+                <div className="w-4 h-4 bg-red-500 rounded-full border-2 border-white"></div>
+              </div>
+            )}
             {/* 밸브 마커 */}
             {selectedValve && selectedValve.position && (
               <div
@@ -140,7 +177,39 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: 
             fullscreen
           </span>
         </button>
+
+        <div className="w-px h-6 bg-white/10"></div>
+
+        {/* 개발자 모드 토글 */}
+        <button
+          onClick={() => setDevMode(!devMode)}
+          className={`p-2 rounded transition-colors ${devMode ? 'bg-red-500/20 text-red-400' : 'hover:bg-white/10 text-white'}`}
+          title="좌표 찾기 모드"
+        >
+          <span className="material-symbols-outlined !text-[20px]">
+            my_location
+          </span>
+        </button>
       </div>
+
+      {/* 개발자 모드 좌표 표시 */}
+      {devMode && (
+        <div className="absolute top-4 left-4 bg-[#1c1f27]/95 backdrop-blur-xl border border-red-500/30 rounded-lg shadow-2xl px-4 py-3 z-50">
+          <div className="text-red-400 text-xs font-bold mb-2 flex items-center gap-2">
+            <span className="material-symbols-outlined !text-[16px]">my_location</span>
+            좌표 찾기 모드
+          </div>
+          {clickedCoords ? (
+            <div className="text-white font-mono text-sm">
+              <div>X: <span className="text-primary">{clickedCoords.x}%</span></div>
+              <div>Y: <span className="text-primary">{clickedCoords.y}%</span></div>
+              <div className="text-xs text-green-400 mt-2">클립보드에 복사됨!</div>
+            </div>
+          ) : (
+            <div className="text-[#9da6b9] text-sm">도면을 클릭하세요</div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
