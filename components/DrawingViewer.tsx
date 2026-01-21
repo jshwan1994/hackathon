@@ -30,7 +30,7 @@ export default function DrawingViewer({ selectedValve }: DrawingViewerProps) {
               </div>
             }
           >
-            <ImageViewer imageUrl={drawingUrl} />
+            <ImageViewer imageUrl={drawingUrl} selectedValve={selectedValve} />
           </Suspense>
 
           {/* 밸브 마커 제거 - 도면만 표시 */}

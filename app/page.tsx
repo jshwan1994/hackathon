@@ -11,6 +11,7 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<ValveData[]>([]);
   const [selectedValve, setSelectedValve] = useState<ValveData | null>(null);
+  const [showDetailPanel, setShowDetailPanel] = useState(false);
   const [loading, setLoading] = useState(true);
 
   // 밸브 데이터 로드
@@ -36,6 +37,9 @@ export default function Home() {
     if (searchQuery.trim()) {
       const results = searchValves(valves, searchQuery);
       setSearchResults(results);
+      // 검색어가 바뀌면 선택된 밸브 초기화
+      setSelectedValve(null);
+      setShowDetailPanel(false);
     } else {
       setSearchResults([]);
       setSelectedValve(null);
@@ -44,10 +48,11 @@ export default function Home() {
 
   const handleValveSelect = (valve: ValveData) => {
     setSelectedValve(valve);
+    setShowDetailPanel(true);
   };
 
   const handleClosePanel = () => {
-    setSelectedValve(null);
+    setShowDetailPanel(false);
   };
 
   const handleClearSearch = () => {
@@ -91,23 +96,39 @@ export default function Home() {
           {/* 검색 결과 드롭다운 */}
           {searchQuery && searchResults.length > 0 && (
             <div className="mt-2 bg-[#1c1f27]/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl max-h-[400px] overflow-y-auto custom-scrollbar">
-              {searchResults.slice(0, 20).map((valve, index) => (
+              {selectedValve ? (
                 <button
-                  key={`${valve.tag}-${index}`}
-                  onClick={() => handleValveSelect(valve)}
-                  className="w-full px-6 py-3 text-left hover:bg-white/10 transition-colors border-b border-white/5 last:border-b-0 flex items-center justify-between"
+                  key={selectedValve.tag}
+                  onClick={() => setShowDetailPanel(true)}
+                  className="w-full px-6 py-3 text-left hover:bg-white/10 transition-colors flex items-center justify-between"
                 >
                   <div>
-                    <div className="text-white font-medium">{valve.tag}</div>
-                    <div className="text-[#9da6b9] text-sm">{valve.location}</div>
+                    <div className="text-white font-medium">{selectedValve.tag}</div>
+                    <div className="text-[#9da6b9] text-sm">{selectedValve.location}</div>
                   </div>
                   <span className="material-symbols-outlined text-primary">chevron_right</span>
                 </button>
-              ))}
-              {searchResults.length > 20 && (
-                <div className="px-6 py-3 text-center text-[#9da6b9] text-sm">
-                  {searchResults.length - 20}개 결과 더 있음
-                </div>
+              ) : (
+                <>
+                  {searchResults.slice(0, 20).map((valve, index) => (
+                    <button
+                      key={`${valve.tag}-${index}`}
+                      onClick={() => handleValveSelect(valve)}
+                      className="w-full px-6 py-3 text-left hover:bg-white/10 transition-colors border-b border-white/5 last:border-b-0 flex items-center justify-between"
+                    >
+                      <div>
+                        <div className="text-white font-medium">{valve.tag}</div>
+                        <div className="text-[#9da6b9] text-sm">{valve.location}</div>
+                      </div>
+                      <span className="material-symbols-outlined text-primary">chevron_right</span>
+                    </button>
+                  ))}
+                  {searchResults.length > 20 && (
+                    <div className="px-6 py-3 text-center text-[#9da6b9] text-sm">
+                      {searchResults.length - 20}개 결과 더 있음
+                    </div>
+                  )}
+                </>
               )}
             </div>
           )}
@@ -122,7 +143,7 @@ export default function Home() {
       </div>
 
       {/* 밸브 상세 정보 패널 */}
-      {selectedValve && (
+      {selectedValve && showDetailPanel && (
         <ValveDetailPanel valve={selectedValve} onClose={handleClosePanel} />
       )}
 

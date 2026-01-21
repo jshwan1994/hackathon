@@ -5,18 +5,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 23.4,
-      "y_percent": 44.38
-    },
-    "pdf_position": {
-      "x": 278.7132263183594,
-      "y": 468.2999725341797
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 504.59,
-      "y": 398.33,
-      "z": 0.0
+      "x_percent": 59.0,
+      "y_percent": 33.0
     }
   },
   {
@@ -25,18 +15,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 26.39,
-      "y_percent": 71.05
-    },
-    "pdf_position": {
-      "x": 314.2932434082031,
-      "y": 243.7798843383789
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 666.34,
-      "y": 372.65,
-      "z": 0.0
+      "x_percent": 47.0,
+      "y_percent": 78.0
     }
   },
   {
@@ -45,18 +25,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 23.59,
-      "y_percent": 68.77
-    },
-    "pdf_position": {
-      "x": 280.9332275390625,
-      "y": 262.91983795166016
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 652.54,
-      "y": 396.69,
-      "z": 0.0
+      "x_percent": 44.0,
+      "y_percent": 76.0
     }
   },
   {
@@ -65,18 +35,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 28.73,
-      "y_percent": 70.04
-    },
-    "pdf_position": {
-      "x": 342.1332092285156,
-      "y": 252.2992935180664
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 659.98,
-      "y": 352.6,
-      "z": 0.0
+      "x_percent": 80.5,
+      "y_percent": 39.0
     }
   },
   {
@@ -85,18 +45,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 32.3,
-      "y_percent": 70.02
-    },
-    "pdf_position": {
-      "x": 384.6734313964844,
-      "y": 252.41999053955078
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 659.86,
-      "y": 321.94,
-      "z": 0.0
+      "x_percent": 82.0,
+      "y_percent": 47.0
     }
   },
   {
@@ -105,18 +55,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 42.75,
-      "y_percent": 44.53
-    },
-    "pdf_position": {
-      "x": 509.1732177734375,
-      "y": 467.03993225097656
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 505.19,
-      "y": 232.18,
-      "z": 0.0
+      "x_percent": 68.5,
+      "y_percent": 33.0
     }
   },
   {
@@ -125,18 +65,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 38.68,
-      "y_percent": 70.21
-    },
-    "pdf_position": {
-      "x": 460.63311767578125,
-      "y": 250.8600845336914
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 661.23,
-      "y": 267.17,
-      "z": 0.0
+      "x_percent": 78.0,
+      "y_percent": 55.0
     }
   },
   {
@@ -145,18 +75,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 41.48,
-      "y_percent": 68.77
-    },
-    "pdf_position": {
-      "x": 493.99322509765625,
-      "y": 262.91983795166016
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 652.54,
-      "y": 243.12,
-      "z": 0.0
+      "x_percent": 50.5,
+      "y_percent": 76.0
     }
   },
   {
@@ -165,18 +85,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 48.11,
-      "y_percent": 29.46
-    },
-    "pdf_position": {
-      "x": 572.9533386230469,
-      "y": 593.9400329589844
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 413.94,
-      "y": 186.19,
-      "z": 0.0
+      "x_percent": 48.0,
+      "y_percent": 29.5
     }
   },
   {
@@ -185,18 +95,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 48.31,
-      "y_percent": 9.6
-    },
-    "pdf_position": {
-      "x": 575.4132385253906,
-      "y": 761.1590576171875
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 293.12,
-      "y": 184.44,
-      "z": 0.0
+      "x_percent": 48.5,
+      "y_percent": 10.0
     }
   },
   {
@@ -205,18 +105,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 49.46,
-      "y_percent": 10.08
-    },
-    "pdf_position": {
-      "x": 589.0334167480469,
-      "y": 757.1398620605469
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 296.26,
-      "y": 174.58,
-      "z": 0.0
+      "x_percent": 46.0,
+      "y_percent": 78.0
     }
   },
   {
@@ -225,18 +115,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 48.29,
-      "y_percent": 15.39
-    },
-    "pdf_position": {
-      "x": 575.1133117675781,
-      "y": 712.4389038085938
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 328.27,
-      "y": 184.64,
-      "z": 0.0
+      "x_percent": 48.5,
+      "y_percent": 15.5
     }
   },
   {
@@ -245,18 +125,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 47.83,
-      "y_percent": -16.22
-    },
-    "pdf_position": {
-      "x": 569.7131042480469,
-      "y": 978.5396423339844
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 136.63,
-      "y": 188.53,
-      "z": 0.0
+      "x_percent": 22.0,
+      "y_percent": 68.0
     }
   },
   {
@@ -265,18 +135,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 49.37,
-      "y_percent": -15.65
-    },
-    "pdf_position": {
-      "x": 587.9531555175781,
-      "y": 973.7991943359375
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 139.84,
-      "y": 175.39,
-      "z": 0.0
+      "x_percent": 24.0,
+      "y_percent": 68.5
     }
   },
   {
@@ -285,18 +145,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 49.37,
-      "y_percent": -10.85
-    },
-    "pdf_position": {
-      "x": 587.9531555175781,
-      "y": 933.3606262207031
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 169.01,
-      "y": 175.39,
-      "z": 0.0
+      "x_percent": 24.0,
+      "y_percent": 63.0
     }
   },
   {
@@ -305,18 +155,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 47.83,
-      "y_percent": -10.17
-    },
-    "pdf_position": {
-      "x": 569.7131042480469,
-      "y": 927.6597900390625
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 173.24,
-      "y": 188.53,
-      "z": 0.0
+      "x_percent": 22.0,
+      "y_percent": 63.0
     }
   },
   {
@@ -325,18 +165,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 29.74,
-      "y_percent": 2.08
-    },
-    "pdf_position": {
-      "x": 354.1935729980469,
-      "y": 824.5188598632812
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 247.47,
-      "y": 343.89,
-      "z": 0.0
+      "x_percent": 28.0,
+      "y_percent": 55.0
     }
   },
   {
@@ -345,18 +175,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 30.48,
-      "y_percent": -1.71
-    },
-    "pdf_position": {
-      "x": 363.0138244628906,
-      "y": 856.3795776367188
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 224.64,
-      "y": 337.54,
-      "z": 0.0
+      "x_percent": 30.0,
+      "y_percent": 58.0
     }
   },
   {
@@ -365,18 +185,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 33.12,
-      "y_percent": -0.5
-    },
-    "pdf_position": {
-      "x": 394.45416259765625,
-      "y": 846.1797790527344
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 232.06,
-      "y": 314.89,
-      "z": 0.0
+      "x_percent": 33.0,
+      "y_percent": 56.0
     }
   },
   {
@@ -385,18 +195,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 29.74,
-      "y_percent": -3.04
-    },
-    "pdf_position": {
-      "x": 354.1932067871094,
-      "y": 867.5990905761719
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 216.34,
-      "y": 343.89,
-      "z": 0.0
+      "x_percent": 28.0,
+      "y_percent": 58.0
     }
   },
   {
@@ -406,17 +206,7 @@
     "location": "DH Live Condensate System",
     "position": {
       "x_percent": 54.0,
-      "y_percent": 27.74
-    },
-    "pdf_position": {
-      "x": 643.1242370605469,
-      "y": 608.4623718261719
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 412.16,
-      "y": 129.13,
-      "z": 0.0
+      "y_percent": 28.0
     }
   },
   {
@@ -425,18 +215,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 49.53,
-      "y_percent": 15.05
-    },
-    "pdf_position": {
-      "x": 589.9331970214844,
-      "y": 715.2597045898438
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 326.42,
-      "y": 173.95,
-      "z": 0.0
+      "x_percent": 50.0,
+      "y_percent": 15.0
     }
   },
   {
@@ -445,18 +225,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 52.2,
-      "y_percent": 12.55
-    },
-    "pdf_position": {
-      "x": 621.7332458496094,
-      "y": 736.3197021484375
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 311.25,
-      "y": 151.0,
-      "z": 0.0
+      "x_percent": 52.5,
+      "y_percent": 12.5
     }
   },
   {
@@ -465,18 +235,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 19.4,
-      "y_percent": 20.67
-    },
-    "pdf_position": {
-      "x": 231.0132064819336,
-      "y": 667.9790649414062
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 360.3,
-      "y": 432.71,
-      "z": 0.0
+      "x_percent": 19.5,
+      "y_percent": 21.0
     }
   },
   {
@@ -485,18 +245,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 18.49,
-      "y_percent": 22.72
-    },
-    "pdf_position": {
-      "x": 220.27306365966797,
-      "y": 650.6997680664062
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 372.77,
-      "y": 440.48,
-      "z": 0.0
+      "x_percent": 18.5,
+      "y_percent": 23.0
     }
   },
   {
@@ -505,18 +255,8 @@
     "drawing": "DH-Live-Condensate-System.png",
     "location": "DH Live Condensate System",
     "position": {
-      "x_percent": 19.48,
-      "y_percent": 27.72
-    },
-    "pdf_position": {
-      "x": 232.03321075439453,
-      "y": 608.6394348144531
-    },
-    "layer": "TEXT",
-    "cad_position": {
-      "x": 403.41,
-      "y": 431.95,
-      "z": 0.0
+      "x_percent": 19.5,
+      "y_percent": 28.0
     }
   }
 ]

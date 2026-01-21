@@ -1,16 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
+import { ValveData } from "@/types/valve";
 
 interface ImageViewerProps {
   imageUrl: string;
   onLoadSuccess?: () => void;
+  selectedValve?: ValveData | null;
 }
 
-export default function ImageViewer({ imageUrl, onLoadSuccess }: ImageViewerProps) {
+export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: ImageViewerProps) {
   const [loading, setLoading] = useState(true);
   const [scale, setScale] = useState(100);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleLoad = () => {
     setLoading(false);
@@ -42,7 +45,7 @@ export default function ImageViewer({ imageUrl, onLoadSuccess }: ImageViewerProp
       )}
 
       {/* 이미지 뷰어 */}
-      <div className="flex-1 overflow-auto custom-scrollbar">
+      <div className="flex-1 overflow-auto custom-scrollbar" ref={containerRef}>
         <div
           className="w-full h-full flex items-center justify-center p-4"
           style={{
@@ -60,6 +63,26 @@ export default function ImageViewer({ imageUrl, onLoadSuccess }: ImageViewerProp
               onLoad={handleLoad}
               priority
             />
+            {/* 밸브 마커 */}
+            {selectedValve && selectedValve.position && (
+              <div
+                className="absolute z-10 pointer-events-none"
+                style={{
+                  left: `${selectedValve.position.x_percent}%`,
+                  top: `${selectedValve.position.y_percent}%`,
+                  transform: 'translate(-50%, -50%)'
+                }}
+              >
+                {/* 펄스 애니메이션 */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-primary/30 rounded-full animate-ping"></div>
+                </div>
+                {/* 마커 본체 */}
+                <div className="relative w-8 h-8 bg-primary rounded-full border-2 border-white shadow-lg shadow-primary/50 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-white !text-[16px]">location_on</span>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
