@@ -62,7 +62,7 @@ function CheckValveModel() {
 // 게이트밸브 3D 모델
 function GateValveModel() {
   return (
-    <group>
+    <group position={[0, -1, 0]}>
       {/* 메인 바디 */}
       <mesh position={[0, 0, 0]} castShadow receiveShadow>
         <boxGeometry args={[2, 1.6, 1.6]} />
@@ -118,7 +118,7 @@ function GateValveModel() {
 // 글로브밸브 3D 모델
 function GlobeValveModel() {
   return (
-    <group>
+    <group position={[0, -0.8, 0]}>
       {/* 구형 바디 */}
       <mesh position={[0, 0, 0]} castShadow receiveShadow>
         <sphereGeometry args={[1, 32, 32]} />
@@ -165,7 +165,7 @@ function GlobeValveModel() {
 // 레벨 컨트롤 밸브 (LCV) 3D 모델 - 글로브밸브 + 공압 액추에이터
 function LevelControlValveModel() {
   return (
-    <group>
+    <group position={[0, -1.2, 0]}>
       {/* 글로브 바디 */}
       <mesh position={[0, 0, 0]} castShadow receiveShadow>
         <sphereGeometry args={[0.9, 32, 32]} />
@@ -224,7 +224,7 @@ function LevelControlValveModel() {
 // 플로우 컨트롤 밸브 (FCV) 3D 모델 - 글로브밸브 + 다이어프램 액추에이터
 function FlowControlValveModel() {
   return (
-    <group>
+    <group position={[0, -0.8, 0]}>
       {/* 글로브 바디 */}
       <mesh position={[0, 0, 0]} castShadow receiveShadow>
         <sphereGeometry args={[0.9, 32, 32]} />
@@ -283,7 +283,7 @@ function FlowControlValveModel() {
 // 핸드 밸브 (HV) 3D 모델 - 수동 게이트밸브
 function HandValveModel() {
   return (
-    <group>
+    <group position={[0, -1, 0]}>
       {/* 메인 바디 */}
       <mesh position={[0, 0, 0]} castShadow receiveShadow>
         <boxGeometry args={[1.8, 1.4, 1.4]} />
