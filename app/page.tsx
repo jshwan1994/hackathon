@@ -77,7 +77,7 @@ export default function Home() {
               </div>
               <input
                 className="w-full bg-transparent border-none text-white placeholder-[#9da6b9] focus:ring-0 text-base font-normal h-full rounded-r-full outline-none"
-                placeholder="밸브 태그 검색 (예: V-102, HV-6003)..."
+                placeholder="밸브 태그 검색 (예: VC-0581, HV-7011)..."
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
