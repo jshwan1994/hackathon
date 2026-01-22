@@ -37,18 +37,17 @@ export default function Home() {
     if (searchQuery.trim()) {
       const results = searchValves(valves, searchQuery);
       setSearchResults(results);
-      // 검색어가 바뀌면 선택된 밸브 초기화
-      setSelectedValve(null);
-      setShowDetailPanel(false);
+      // 검색 중에도 선택된 밸브와 상세 패널 유지
     } else {
       setSearchResults([]);
-      setSelectedValve(null);
     }
   }, [searchQuery, valves]);
 
   const handleValveSelect = (valve: ValveData) => {
     setSelectedValve(valve);
     setShowDetailPanel(true);
+    setSearchQuery("");
+    setSearchResults([]);
   };
 
   const handleClosePanel = () => {
@@ -59,6 +58,12 @@ export default function Home() {
     setSearchQuery("");
     setSearchResults([]);
     setSelectedValve(null);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && searchResults.length > 0) {
+      handleValveSelect(searchResults[0]);
+    }
   };
 
   return (
@@ -81,6 +86,7 @@ export default function Home() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleKeyDown}
               />
               {searchQuery && (
                 <button
@@ -96,39 +102,23 @@ export default function Home() {
           {/* 검색 결과 드롭다운 */}
           {searchQuery && searchResults.length > 0 && (
             <div className="mt-2 bg-[#1c1f27]/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl max-h-[400px] overflow-y-auto custom-scrollbar">
-              {selectedValve ? (
+              {searchResults.slice(0, 20).map((valve, index) => (
                 <button
-                  key={selectedValve.tag}
-                  onClick={() => setShowDetailPanel(true)}
-                  className="w-full px-6 py-3 text-left hover:bg-white/10 transition-colors flex items-center justify-between"
+                  key={`${valve.tag}-${index}`}
+                  onClick={() => handleValveSelect(valve)}
+                  className="w-full px-6 py-3 text-left hover:bg-white/10 transition-colors border-b border-white/5 last:border-b-0 flex items-center justify-between"
                 >
                   <div>
-                    <div className="text-white font-medium">{selectedValve.tag}</div>
-                    <div className="text-[#9da6b9] text-sm">{selectedValve.location}</div>
+                    <div className="text-white font-medium">{valve.tag}</div>
+                    <div className="text-[#9da6b9] text-sm">{valve.location}</div>
                   </div>
                   <span className="material-symbols-outlined text-primary">chevron_right</span>
                 </button>
-              ) : (
-                <>
-                  {searchResults.slice(0, 20).map((valve, index) => (
-                    <button
-                      key={`${valve.tag}-${index}`}
-                      onClick={() => handleValveSelect(valve)}
-                      className="w-full px-6 py-3 text-left hover:bg-white/10 transition-colors border-b border-white/5 last:border-b-0 flex items-center justify-between"
-                    >
-                      <div>
-                        <div className="text-white font-medium">{valve.tag}</div>
-                        <div className="text-[#9da6b9] text-sm">{valve.location}</div>
-                      </div>
-                      <span className="material-symbols-outlined text-primary">chevron_right</span>
-                    </button>
-                  ))}
-                  {searchResults.length > 20 && (
-                    <div className="px-6 py-3 text-center text-[#9da6b9] text-sm">
-                      {searchResults.length - 20}개 결과 더 있음
-                    </div>
-                  )}
-                </>
+              ))}
+              {searchResults.length > 20 && (
+                <div className="px-6 py-3 text-center text-[#9da6b9] text-sm">
+                  {searchResults.length - 20}개 결과 더 있음
+                </div>
               )}
             </div>
           )}

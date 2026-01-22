@@ -8,12 +8,30 @@ interface ValveDetailPanelProps {
   onClose: () => void;
 }
 
+// 밸브 타입별 목업 기술 사양
+const mockSpecs: Record<string, { pressureRating: string; temperature: string; manufacturerId: string; size: string }> = {
+  VC: { pressureRating: "150#", temperature: "-29°C ~ 200°C", manufacturerId: "FV-2024-0581", size: "4\"" },
+  VL: { pressureRating: "300#", temperature: "-29°C ~ 250°C", manufacturerId: "FV-2024-0603", size: "3\"" },
+  VG: { pressureRating: "150#", temperature: "-29°C ~ 180°C", manufacturerId: "FV-2024-0583", size: "2\"" },
+  VB: { pressureRating: "600#", temperature: "-46°C ~ 300°C", manufacturerId: "FV-2024-4301", size: "6\"" },
+  FV: { pressureRating: "300#", temperature: "-29°C ~ 220°C", manufacturerId: "FV-2024-7014", size: "4\"" },
+  FCV: { pressureRating: "300#", temperature: "-29°C ~ 200°C", manufacturerId: "CV-2024-7011", size: "6\"" },
+  LCV: { pressureRating: "150#", temperature: "-29°C ~ 180°C", manufacturerId: "CV-2024-7011", size: "3\"" },
+  HV: { pressureRating: "300#", temperature: "-46°C ~ 250°C", manufacturerId: "HV-2024-7011", size: "8\"" },
+};
+
+// 목업 점검 이력
+const mockInspectionHistory = [
+  { date: "2025-01-15", type: "정기점검", result: "양호", inspector: "김철수" },
+  { date: "2024-10-20", type: "예방정비", result: "패킹 교체", inspector: "이영희" },
+  { date: "2024-07-08", type: "정기점검", result: "양호", inspector: "박민수" },
+  { date: "2024-04-12", type: "긴급점검", result: "누설 수리", inspector: "김철수" },
+  { date: "2024-01-25", type: "정기점검", result: "양호", inspector: "이영희" },
+];
+
 export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelProps) {
-  const statusColor = {
-    operational: "bg-green-500/20 text-green-400 border-green-500/30",
-    maintenance: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
-    offline: "bg-red-500/20 text-red-400 border-red-500/30",
-  };
+  // 밸브 타입에 맞는 목업 사양 가져오기
+  const specs = mockSpecs[valve.type || 'VG'] || mockSpecs.VG;
 
   const statusText = {
     operational: "정상 작동",
@@ -73,31 +91,25 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
               <div className="bg-[#1c1f27]/80 p-4 hover:bg-[#1c1f27] transition-colors">
                 <p className="text-[#9da6b9] text-xs mb-1">압력 등급</p>
                 <p className="text-white text-sm font-mono font-medium">
-                  {valve.specs?.pressureRating || "-"}
+                  {specs.pressureRating}
                 </p>
               </div>
               <div className="bg-[#1c1f27]/80 p-4 hover:bg-[#1c1f27] transition-colors">
                 <p className="text-[#9da6b9] text-xs mb-1">온도 범위</p>
                 <p className="text-white text-sm font-mono font-medium">
-                  {valve.specs?.temperature || "-"}
+                  {specs.temperature}
                 </p>
               </div>
               <div className="bg-[#1c1f27]/80 p-4 hover:bg-[#1c1f27] transition-colors">
-                <p className="text-[#9da6b9] text-xs mb-1">재질</p>
+                <p className="text-[#9da6b9] text-xs mb-1">크기</p>
                 <p className="text-white text-sm font-mono font-medium">
-                  {valve.specs?.material || "-"}
+                  {specs.size}
                 </p>
               </div>
               <div className="bg-[#1c1f27]/80 p-4 hover:bg-[#1c1f27] transition-colors">
-                <p className="text-[#9da6b9] text-xs mb-1">유량 계수</p>
-                <p className="text-white text-sm font-mono font-medium">
-                  {valve.specs?.flowCoeff || "-"}
-                </p>
-              </div>
-              <div className="bg-[#1c1f27]/80 p-4 col-span-2 hover:bg-[#1c1f27] transition-colors border-t border-white/5">
                 <p className="text-[#9da6b9] text-xs mb-1">제조사 ID</p>
                 <p className="text-white text-sm font-mono font-medium">
-                  {valve.specs?.manufacturerId || "-"}
+                  {specs.manufacturerId}
                 </p>
               </div>
             </div>
@@ -118,6 +130,30 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
           </div>
         </div>
 
+        {/* 점검 이력 */}
+        <div className="space-y-3">
+          <h3 className="text-white text-sm font-semibold px-1">점검 이력</h3>
+          <div className="bg-[#1c1f27]/30 rounded-xl border border-white/5 overflow-hidden">
+            {mockInspectionHistory.map((record, index) => (
+              <div
+                key={index}
+                className={`p-3 flex items-center justify-between hover:bg-[#1c1f27]/60 transition-colors ${index !== mockInspectionHistory.length - 1 ? 'border-b border-white/5' : ''}`}
+              >
+                <div className="flex items-center gap-3">
+                  <div className={`w-2 h-2 rounded-full ${record.result === '양호' ? 'bg-green-500' : 'bg-yellow-500'}`}></div>
+                  <div>
+                    <p className="text-white text-sm">{record.type}</p>
+                    <p className="text-[#9da6b9] text-xs">{record.date} · {record.inspector}</p>
+                  </div>
+                </div>
+                <span className={`text-xs px-2 py-1 rounded ${record.result === '양호' ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'}`}>
+                  {record.result}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* 관련 문서 */}
         <div className="space-y-3">
           <h3 className="text-white text-sm font-semibold px-1">관련 문서</h3>
@@ -132,19 +168,6 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
             </div>
             <span className="material-symbols-outlined text-[#9da6b9] !text-[18px]">
               open_in_new
-            </span>
-          </button>
-          <button className="w-full flex items-center justify-between p-3 rounded-lg bg-[#1c1f27]/30 border border-white/5 hover:bg-[#1c1f27]/60 hover:border-primary/30 transition-all group">
-            <div className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">
-                history
-              </span>
-              <span className="text-sm text-[#9da6b9] group-hover:text-white">
-                점검 이력
-              </span>
-            </div>
-            <span className="material-symbols-outlined text-[#9da6b9] !text-[18px]">
-              chevron_right
             </span>
           </button>
         </div>
