@@ -283,7 +283,7 @@
     "tag": "LCV-7011",
     "type": "LCV",
     "drawing": "DH-Live-Condensate-System.png",
-    "location": "DH Live Condensate System",
+    "location": "스팀터빈동 1층",
     "position": {
       "x_percent": 39.8,
       "y_percent": 66.7
@@ -293,7 +293,7 @@
     "tag": "FCV-7011",
     "type": "FCV",
     "drawing": "DH-Live-Condensate-System.png",
-    "location": "DH Live Condensate System",
+    "location": "스팀터빈동 1층",
     "position": {
       "x_percent": 26.4,
       "y_percent": 37.6
@@ -303,7 +303,7 @@
     "tag": "HV-7011-A",
     "type": "HV",
     "drawing": "DH-Live-Condensate-System.png",
-    "location": "DH Live Condensate System",
+    "location": "스팀터빈동 1층",
     "position": {
       "x_percent": 28.4,
       "y_percent": 67.5
@@ -313,7 +313,7 @@
     "tag": "HV-7011-B",
     "type": "HV",
     "drawing": "DH-Live-Condensate-System.png",
-    "location": "DH Live Condensate System",
+    "location": "스팀터빈동 1층",
     "position": {
       "x_percent": 18.8,
       "y_percent": 57.7
