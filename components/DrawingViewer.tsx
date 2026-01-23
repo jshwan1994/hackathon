@@ -12,9 +12,9 @@ interface DrawingViewerProps {
 }
 
 export default function DrawingViewer({ selectedValve }: DrawingViewerProps) {
-  // 선택된 밸브가 있으면 도면 표시
+  // 선택된 밸브가 있으면 해당 밸브의 도면 표시
   const shouldShowDrawing = selectedValve !== null;
-  const drawingUrl = "/drawings/DH-Live-Condensate-System.png";
+  const drawingUrl = selectedValve ? `/drawings/${selectedValve.drawing}` : "";
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden">

@@ -18,7 +18,7 @@ export default function Home() {
   useEffect(() => {
     async function loadValveData() {
       try {
-        const response = await fetch("/data/valve_data_new.json");
+        const response = await fetch("/data/all_valves.json");
         const rawData = await response.json();
         const parsedValves = parseValveDataNew(rawData);
         setValves(parsedValves);
