@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import { ValveData } from "@/types/valve";
 
@@ -13,6 +13,10 @@ interface ImageViewerProps {
 export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: ImageViewerProps) {
   const [loading, setLoading] = useState(true);
   const [scale, setScale] = useState(100);
+  const [isPanning, setIsPanning] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleLoad = () => {
@@ -30,17 +34,42 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: 
 
   const resetZoom = () => {
     setScale(100);
+    setPosition({ x: 0, y: 0 });
   };
 
-  // 줌 변경 시 스크롤 위치 중앙으로
-  useEffect(() => {
-    if (containerRef.current && scale > 100) {
-      const container = containerRef.current;
-      const scrollLeft = (container.scrollWidth - container.clientWidth) / 2;
-      const scrollTop = (container.scrollHeight - container.clientHeight) / 2;
-      container.scrollTo({ left: scrollLeft, top: scrollTop, behavior: 'smooth' });
-    }
-  }, [scale]);
+  // 팬 모드 토글
+  const togglePanMode = () => {
+    setIsPanning(!isPanning);
+  };
+
+  // 마우스 드래그 핸들러
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!isPanning) return;
+    e.preventDefault();
+    setIsDragging(true);
+    setStartPos({
+      x: e.clientX - position.x,
+      y: e.clientY - position.y
+    });
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !isPanning) return;
+    e.preventDefault();
+    setPosition({
+      x: e.clientX - startPos.x,
+      y: e.clientY - startPos.y
+    });
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
 
   return (
     <div className="relative w-full h-full flex flex-col bg-[#0f1115]">
@@ -56,16 +85,22 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: 
 
       {/* 이미지 뷰어 */}
       <div
-        className="flex-1 overflow-auto custom-scrollbar"
+        className={`flex-1 overflow-hidden ${isPanning ? 'cursor-grab' : ''} ${isDragging ? '!cursor-grabbing' : ''}`}
         ref={containerRef}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          userSelect: isPanning ? 'none' : 'auto'
+        }}
       >
         <div
-          className="relative"
+          className="relative w-full h-full"
           style={{
-            width: `${scale}%`,
-            height: `${scale}%`,
-            minWidth: '100%',
-            minHeight: '100%',
+            transform: `translate(${position.x}px, ${position.y}px) scale(${scale / 100})`,
+            transformOrigin: 'center center',
+            transition: isDragging ? 'none' : 'transform 0.2s ease-out',
           }}
         >
           <Image
@@ -132,6 +167,19 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: 
             </span>
           </button>
         </div>
+
+        <div className="w-px h-5 md:h-6 bg-white/10"></div>
+
+        {/* 손바닥(팬) 모드 */}
+        <button
+          onClick={togglePanMode}
+          className={`p-1.5 md:p-2 rounded transition-colors ${isPanning ? 'bg-primary/80 hover:bg-primary' : 'hover:bg-white/10 active:bg-white/20'}`}
+          title="손바닥 도구 (드래그로 이동)"
+        >
+          <span className="material-symbols-outlined !text-[18px] md:!text-[20px] text-white">
+            pan_tool
+          </span>
+        </button>
 
         <div className="w-px h-5 md:h-6 bg-white/10"></div>
 
