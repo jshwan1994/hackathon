@@ -18,15 +18,15 @@ interface ValveDetailPanelProps {
 }
 
 // 밸브 타입별 목업 기술 사양
-const mockSpecs: Record<string, { pressureRating: string; temperature: string; manufacturerId: string; size: string }> = {
-  VC: { pressureRating: "150#", temperature: "-29°C ~ 200°C", manufacturerId: "FV-2024-0581", size: "4\"" },
-  VL: { pressureRating: "300#", temperature: "-29°C ~ 250°C", manufacturerId: "FV-2024-0603", size: "3\"" },
-  VG: { pressureRating: "150#", temperature: "-29°C ~ 180°C", manufacturerId: "FV-2024-0583", size: "2\"" },
-  VB: { pressureRating: "600#", temperature: "-46°C ~ 300°C", manufacturerId: "FV-2024-4301", size: "6\"" },
-  FV: { pressureRating: "300#", temperature: "-29°C ~ 220°C", manufacturerId: "FV-2024-7014", size: "4\"" },
-  FCV: { pressureRating: "300#", temperature: "-29°C ~ 200°C", manufacturerId: "CV-2024-7011", size: "6\"" },
-  LCV: { pressureRating: "150#", temperature: "-29°C ~ 180°C", manufacturerId: "CV-2024-7011", size: "3\"" },
-  HV: { pressureRating: "300#", temperature: "-46°C ~ 250°C", manufacturerId: "HV-2024-7011", size: "8\"" },
+const mockSpecs: Record<string, { pressureRating: string; temperature: string; manufacturerId: string; fluid: string }> = {
+  VC: { pressureRating: "150#", temperature: "-29°C ~ 200°C", manufacturerId: "FV-2024-0581", fluid: "응축수" },
+  VL: { pressureRating: "300#", temperature: "-29°C ~ 250°C", manufacturerId: "FV-2024-0603", fluid: "Steam" },
+  VG: { pressureRating: "150#", temperature: "-29°C ~ 180°C", manufacturerId: "FV-2024-0583", fluid: "급수" },
+  VB: { pressureRating: "600#", temperature: "-46°C ~ 300°C", manufacturerId: "FV-2024-4301", fluid: "Steam" },
+  FV: { pressureRating: "300#", temperature: "-29°C ~ 220°C", manufacturerId: "FV-2024-7014", fluid: "급수" },
+  FCV: { pressureRating: "300#", temperature: "-29°C ~ 200°C", manufacturerId: "CV-2024-7011", fluid: "Steam" },
+  LCV: { pressureRating: "150#", temperature: "-29°C ~ 180°C", manufacturerId: "CV-2024-7011", fluid: "응축수" },
+  HV: { pressureRating: "300#", temperature: "-46°C ~ 250°C", manufacturerId: "HV-2024-7011", fluid: "급수" },
 };
 
 export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelProps) {
@@ -45,7 +45,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
         onClick={onClose}
       />
 
-      <div className="fixed md:absolute inset-x-0 bottom-0 md:inset-auto md:top-0 md:right-0 md:h-full h-[85vh] w-full md:w-[400px] z-30 transform transition-transform duration-300 ease-out translate-x-0 bg-[#111318]/95 md:bg-[#111318]/60 backdrop-blur-2xl md:border-l border-t md:border-t-0 border-white/10 shadow-[-10px_0_30px_rgba(0,0,0,0.5)] flex flex-col rounded-t-2xl md:rounded-none">
+      <div className="fixed md:absolute inset-x-0 bottom-0 md:inset-auto md:top-0 md:right-0 md:h-full h-[85vh] w-full md:w-[400px] z-30 transform transition-transform duration-300 ease-out translate-x-0 bg-[#111318] md:border-l border-t md:border-t-0 border-white/10 shadow-[-10px_0_30px_rgba(0,0,0,0.5)] flex flex-col rounded-t-2xl md:rounded-none">
         <div className="md:hidden flex justify-center py-3">
           <div className="w-12 h-1 bg-white/20 rounded-full" />
         </div>
@@ -74,8 +74,6 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
 
         {/* 스크롤 가능한 컨텐츠 */}
         <div className="flex-1 overflow-y-auto custom-scrollbar p-4 md:p-6 pt-2 space-y-4 md:space-y-6">
-          <Valve3DViewer valveType={valve.type || 'VG'} />
-
           {/* 상태 표시 */}
           <div className="bg-[#1c1f27]/50 border border-white/5 rounded-lg p-3 md:p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -91,40 +89,28 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
             )}
           </div>
 
+          <Valve3DViewer valveType={valve.type || 'VG'} />
+
           {/* 기술 사양 */}
           <div className="space-y-3 md:space-y-4">
             <h3 className="text-white text-sm font-semibold px-1">기술 사양</h3>
-            <div className="bg-[#1c1f27]/30 rounded-xl border border-white/5 overflow-hidden">
-              <div className="grid grid-cols-2 gap-px bg-white/5">
-                <div className="bg-[#1c1f27]/80 p-3 md:p-4 hover:bg-[#1c1f27] transition-colors">
-                  <p className="text-[#9da6b9] text-xs mb-1">압력 등급</p>
-                  <p className="text-white text-sm font-mono font-medium">{specs.pressureRating}</p>
+            <div className="bg-[#1c1f27] rounded-xl border border-white/10 overflow-hidden">
+              <div className="grid grid-cols-2 gap-[1px] bg-white/20">
+                <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                  <p className="text-[#9da6b9] text-xs mb-0.5">압력 등급</p>
+                  <p className="text-white text-sm font-medium">{specs.pressureRating}</p>
                 </div>
-                <div className="bg-[#1c1f27]/80 p-3 md:p-4 hover:bg-[#1c1f27] transition-colors">
-                  <p className="text-[#9da6b9] text-xs mb-1">온도 범위</p>
-                  <p className="text-white text-xs md:text-sm font-mono font-medium">{specs.temperature}</p>
+                <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                  <p className="text-[#9da6b9] text-xs mb-0.5">온도 범위</p>
+                  <p className="text-white text-xs font-medium">{specs.temperature}</p>
                 </div>
-                <div className="bg-[#1c1f27]/80 p-3 md:p-4 hover:bg-[#1c1f27] transition-colors">
-                  <p className="text-[#9da6b9] text-xs mb-1">크기</p>
-                  <p className="text-white text-sm font-mono font-medium">{specs.size}</p>
+                <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                  <p className="text-[#9da6b9] text-xs mb-0.5">유체</p>
+                  <p className="text-white text-sm font-medium">{specs.fluid}</p>
                 </div>
-                <div className="bg-[#1c1f27]/80 p-3 md:p-4 hover:bg-[#1c1f27] transition-colors">
-                  <p className="text-[#9da6b9] text-xs mb-1">제조사 ID</p>
-                  <p className="text-white text-xs md:text-sm font-mono font-medium">{specs.manufacturerId}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 위치 정보 */}
-          <div className="space-y-3">
-            <h3 className="text-white text-sm font-semibold px-1">위치 정보</h3>
-            <div className="bg-[#1c1f27]/30 rounded-xl border border-white/5 p-4">
-              <div className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-primary">location_on</span>
-                <div>
-                  <p className="text-white font-medium text-sm mb-1">설치 위치</p>
-                  <p className="text-[#9da6b9] text-sm">{valve.location}</p>
+                <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                  <p className="text-[#9da6b9] text-xs mb-0.5">제조사 ID</p>
+                  <p className="text-white text-xs font-medium">{specs.manufacturerId}</p>
                 </div>
               </div>
             </div>
@@ -138,11 +124,11 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                 {maintenanceRecords.length}건
               </span>
             </div>
-            <div className="bg-[#1c1f27]/30 rounded-xl border border-white/5 overflow-hidden">
+            <div className="bg-[#1c1f27] rounded-xl border border-white/10 overflow-hidden">
               {maintenanceRecords.map((record, index) => (
                 <div
                   key={record.permittowork}
-                  className={`p-3 hover:bg-[#1c1f27]/60 transition-colors ${index !== maintenanceRecords.length - 1 ? 'border-b border-white/5' : ''}`}
+                  className={`p-3 hover:bg-[#252830] transition-colors ${index !== maintenanceRecords.length - 1 ? 'border-b border-white/10' : ''}`}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
@@ -156,15 +142,8 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                     </span>
                   </div>
                   <p className="text-white text-sm leading-relaxed mb-2">{record.description}</p>
-                  <div className="flex items-center gap-3 text-xs text-[#9da6b9]">
-                    <span className="flex items-center gap-1">
-                      <span className="material-symbols-outlined !text-[14px]">person</span>
-                      {record.requester}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <span className="material-symbols-outlined !text-[14px]">group</span>
-                      {record.department}
-                    </span>
+                  <div className="text-xs text-[#9da6b9]">
+                    {record.department} {record.requester} 매니저
                   </div>
                 </div>
               ))}
@@ -179,11 +158,11 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                 {diaryRecords.length}건
               </span>
             </div>
-            <div className="bg-[#1c1f27]/30 rounded-xl border border-white/5 overflow-hidden">
+            <div className="bg-[#1c1f27] rounded-xl border border-white/10 overflow-hidden">
               {diaryRecords.map((diary, index) => (
                 <div
                   key={diary.diary_id}
-                  className={`p-3 hover:bg-[#1c1f27]/60 transition-colors ${index !== diaryRecords.length - 1 ? 'border-b border-white/5' : ''}`}
+                  className={`p-3 hover:bg-[#252830] transition-colors ${index !== diaryRecords.length - 1 ? 'border-b border-white/10' : ''}`}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
@@ -200,23 +179,20 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
             </div>
           </div>
 
-          {/* 관련 문서 */}
+          {/* 위치 정보 */}
           <div className="space-y-3">
-            <h3 className="text-white text-sm font-semibold px-1">관련 문서</h3>
-            <button className="w-full flex items-center justify-between p-3 rounded-lg bg-[#1c1f27]/30 border border-white/5 hover:bg-[#1c1f27]/60 hover:border-primary/30 transition-all group">
-              <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">
-                  description
-                </span>
-                <span className="text-sm text-[#9da6b9] group-hover:text-white">
-                  P&ID 도면
-                </span>
+            <h3 className="text-white text-sm font-semibold px-1">위치 정보</h3>
+            <div className="bg-[#1c1f27] rounded-xl border border-white/10 p-4">
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-primary">location_on</span>
+                <div>
+                  <p className="text-white font-medium text-sm mb-1">설치 위치</p>
+                  <p className="text-[#9da6b9] text-sm">{valve.location}</p>
+                </div>
               </div>
-              <span className="material-symbols-outlined text-[#9da6b9] !text-[18px]">
-                open_in_new
-              </span>
-            </button>
+            </div>
           </div>
+
         </div>
       </div>
     </>

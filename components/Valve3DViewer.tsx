@@ -498,9 +498,6 @@ export default function Valve3DViewer({ valveType }: Valve3DViewerProps) {
     <div className="flex flex-col gap-3">
       <div className="flex justify-between items-center px-1">
         <h2 className="text-white text-sm font-semibold">3D 모델 미리보기</h2>
-        <span className="bg-green-500/20 text-green-400 text-[10px] px-2 py-0.5 rounded-full font-mono uppercase tracking-wide border border-green-500/30">
-          LIVE
-        </span>
       </div>
 
       <div className="relative aspect-[4/3] w-full bg-gradient-to-br from-[#0a0c10] to-[#1c1f27] rounded-xl overflow-hidden border border-white/10 group shadow-lg">
