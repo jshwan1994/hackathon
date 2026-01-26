@@ -1,7 +1,17 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { ValveData } from "@/types/valve";
 import Valve3DViewer from "./Valve3DViewer";
+import {
+  DiaryEntry,
+  fetchDiaries,
+  searchDiariesByValveTag,
+  extractRelevantContent,
+  formatDiaryDate,
+  formatShift,
+  getDateRange,
+} from "@/lib/diaryData";
 
 interface ValveDetailPanelProps {
   valve: ValveData;
@@ -20,18 +30,42 @@ const mockSpecs: Record<string, { pressureRating: string; temperature: string; m
   HV: { pressureRating: "300#", temperature: "-46°C ~ 250°C", manufacturerId: "HV-2024-7011", size: "8\"" },
 };
 
-// 목업 점검 이력
-const mockInspectionHistory = [
-  { date: "2025-01-15", type: "정기점검", result: "양호", inspector: "김철수" },
-  { date: "2024-10-20", type: "예방정비", result: "패킹 교체", inspector: "이영희" },
-  { date: "2024-07-08", type: "정기점검", result: "양호", inspector: "박민수" },
-  { date: "2024-04-12", type: "긴급점검", result: "누설 수리", inspector: "김철수" },
-  { date: "2024-01-25", type: "정기점검", result: "양호", inspector: "이영희" },
-];
-
 export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelProps) {
   // 밸브 타입에 맞는 목업 사양 가져오기
   const specs = mockSpecs[valve.type || 'VG'] || mockSpecs.VG;
+
+  // 인계일지 관련 상태
+  const [diaryEntries, setDiaryEntries] = useState<DiaryEntry[]>([]);
+  const [diaryLoading, setDiaryLoading] = useState(false);
+  const [diaryError, setDiaryError] = useState<string | null>(null);
+
+  // 밸브가 변경될 때 인계일지 검색
+  useEffect(() => {
+    async function loadDiaryData() {
+      if (!valve.tag) return;
+
+      setDiaryLoading(true);
+      setDiaryError(null);
+
+      try {
+        // 최근 90일 데이터 조회
+        const { firstDate, lastDate } = getDateRange(90);
+        const allDiaries = await fetchDiaries(firstDate, lastDate);
+
+        // 현재 밸브 태그가 언급된 일지만 필터링
+        const relevantDiaries = searchDiariesByValveTag(allDiaries, valve.tag);
+        setDiaryEntries(relevantDiaries.slice(0, 10)); // 최대 10개
+      } catch (error) {
+        console.error("인계일지 로드 실패:", error);
+        const errorMessage = error instanceof Error ? error.message : "인계일지를 불러오는데 실패했습니다.";
+        setDiaryError(errorMessage);
+      } finally {
+        setDiaryLoading(false);
+      }
+    }
+
+    loadDiaryData();
+  }, [valve.tag]);
 
   const statusText = {
     operational: "정상 작동",
@@ -142,27 +176,67 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
           </div>
         </div>
 
-        {/* 점검 이력 */}
+        {/* 인계일지 (점검이력 대체) */}
         <div className="space-y-3">
-          <h3 className="text-white text-sm font-semibold px-1">점검 이력</h3>
+          <div className="flex items-center justify-between px-1">
+            <h3 className="text-white text-sm font-semibold">인계일지</h3>
+            {diaryEntries.length > 0 && (
+              <span className="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                {diaryEntries.length}건
+              </span>
+            )}
+          </div>
           <div className="bg-[#1c1f27]/30 rounded-xl border border-white/5 overflow-hidden">
-            {mockInspectionHistory.map((record, index) => (
-              <div
-                key={index}
-                className={`p-3 flex items-center justify-between hover:bg-[#1c1f27]/60 transition-colors ${index !== mockInspectionHistory.length - 1 ? 'border-b border-white/5' : ''}`}
-              >
-                <div className="flex items-center gap-3">
-                  <div className={`w-2 h-2 rounded-full ${record.result === '양호' ? 'bg-green-500' : 'bg-yellow-500'}`}></div>
-                  <div>
-                    <p className="text-white text-sm">{record.type}</p>
-                    <p className="text-[#9da6b9] text-xs">{record.date} · {record.inspector}</p>
-                  </div>
-                </div>
-                <span className={`text-xs px-2 py-1 rounded ${record.result === '양호' ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'}`}>
-                  {record.result}
-                </span>
+            {diaryLoading ? (
+              <div className="p-4 flex items-center justify-center gap-2">
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary"></div>
+                <span className="text-[#9da6b9] text-sm">인계일지 검색 중...</span>
               </div>
-            ))}
+            ) : diaryError ? (
+              <div className="p-4 text-center">
+                <span className="material-symbols-outlined text-red-400 !text-[20px] mb-1">error</span>
+                <p className="text-red-400 text-sm">{diaryError}</p>
+              </div>
+            ) : diaryEntries.length === 0 ? (
+              <div className="p-4 text-center">
+                <span className="material-symbols-outlined text-[#9da6b9] !text-[24px] mb-1">search_off</span>
+                <p className="text-[#9da6b9] text-sm">최근 90일 내 관련 일지가 없습니다</p>
+              </div>
+            ) : (
+              diaryEntries.map((diary, index) => {
+                const relevantContents = extractRelevantContent(diary, valve.tag);
+                return (
+                  <div
+                    key={diary.diary_id}
+                    className={`p-3 hover:bg-[#1c1f27]/60 transition-colors ${index !== diaryEntries.length - 1 ? 'border-b border-white/5' : ''}`}
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <span className={`text-xs px-1.5 py-0.5 rounded ${diary.shift === 'DAY' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-blue-500/20 text-blue-400'}`}>
+                          {formatShift(diary.shift)}
+                        </span>
+                        <span className="text-[#9da6b9] text-xs">
+                          {formatDiaryDate(diary.date)}
+                        </span>
+                      </div>
+                      <span className="text-[#9da6b9] text-xs">
+                        {diary.writer_name}
+                      </span>
+                    </div>
+                    {relevantContents.slice(0, 3).map((content, contentIndex) => (
+                      <p key={contentIndex} className="text-white text-sm leading-relaxed mb-2 last:mb-0 whitespace-pre-wrap">
+                        {content.length > 200 ? `${content.slice(0, 200)}...` : content}
+                      </p>
+                    ))}
+                    {relevantContents.length > 2 && (
+                      <p className="text-primary text-xs mt-1">
+                        +{relevantContents.length - 2}건 더보기
+                      </p>
+                    )}
+                  </div>
+                );
+              })
+            )}
           </div>
         </div>
 
