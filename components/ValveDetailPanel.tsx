@@ -19,14 +19,14 @@ interface ValveDetailPanelProps {
 
 // 밸브 타입별 목업 기술 사양
 const mockSpecs: Record<string, { pressureRating: string; temperature: string; manufacturerId: string; fluid: string }> = {
-  VC: { pressureRating: "150#", temperature: "-29°C ~ 200°C", manufacturerId: "FV-2024-0581", fluid: "응축수" },
-  VL: { pressureRating: "300#", temperature: "-29°C ~ 250°C", manufacturerId: "FV-2024-0603", fluid: "Steam" },
-  VG: { pressureRating: "150#", temperature: "-29°C ~ 180°C", manufacturerId: "FV-2024-0583", fluid: "급수" },
-  VB: { pressureRating: "600#", temperature: "-46°C ~ 300°C", manufacturerId: "FV-2024-4301", fluid: "Steam" },
-  FV: { pressureRating: "300#", temperature: "-29°C ~ 220°C", manufacturerId: "FV-2024-7014", fluid: "급수" },
-  FCV: { pressureRating: "300#", temperature: "-29°C ~ 200°C", manufacturerId: "CV-2024-7011", fluid: "Steam" },
-  LCV: { pressureRating: "150#", temperature: "-29°C ~ 180°C", manufacturerId: "CV-2024-7011", fluid: "응축수" },
-  HV: { pressureRating: "300#", temperature: "-46°C ~ 250°C", manufacturerId: "HV-2024-7011", fluid: "급수" },
+  VC: { pressureRating: "20 kg/cm²", temperature: "-29°C ~ 200°C", manufacturerId: "FV-2024-0581", fluid: "응축수" },
+  VL: { pressureRating: "50 kg/cm²", temperature: "-29°C ~ 250°C", manufacturerId: "FV-2024-0603", fluid: "Steam" },
+  VG: { pressureRating: "20 kg/cm²", temperature: "-29°C ~ 180°C", manufacturerId: "FV-2024-0583", fluid: "급수" },
+  VB: { pressureRating: "100 kg/cm²", temperature: "-46°C ~ 300°C", manufacturerId: "FV-2024-4301", fluid: "Steam" },
+  FV: { pressureRating: "50 kg/cm²", temperature: "-29°C ~ 220°C", manufacturerId: "FV-2024-7014", fluid: "급수" },
+  FCV: { pressureRating: "50 kg/cm²", temperature: "-29°C ~ 200°C", manufacturerId: "CV-2024-7011", fluid: "Steam" },
+  LCV: { pressureRating: "20 kg/cm²", temperature: "-29°C ~ 180°C", manufacturerId: "CV-2024-7011", fluid: "응축수" },
+  HV: { pressureRating: "50 kg/cm²", temperature: "-46°C ~ 250°C", manufacturerId: "HV-2024-7011", fluid: "급수" },
 };
 
 export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelProps) {
@@ -89,7 +89,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
             )}
           </div>
 
-          <Valve3DViewer valveType={valve.type || 'VG'} />
+          <Valve3DViewer valveType={valve.type || 'VG'} fluidType={specs.fluid} />
 
           {/* 기술 사양 */}
           <div className="space-y-3 md:space-y-4">
@@ -102,7 +102,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                 </div>
                 <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
                   <p className="text-[#9da6b9] text-xs mb-0.5">온도 범위</p>
-                  <p className="text-white text-xs font-medium">{specs.temperature}</p>
+                  <p className="text-white text-sm font-medium">{specs.temperature}</p>
                 </div>
                 <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
                   <p className="text-[#9da6b9] text-xs mb-0.5">유체</p>
@@ -110,7 +110,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                 </div>
                 <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
                   <p className="text-[#9da6b9] text-xs mb-0.5">제조사 ID</p>
-                  <p className="text-white text-xs font-medium">{specs.manufacturerId}</p>
+                  <p className="text-white text-sm font-medium">{specs.manufacturerId}</p>
                 </div>
               </div>
             </div>
@@ -183,13 +183,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
           <div className="space-y-3">
             <h3 className="text-white text-sm font-semibold px-1">위치 정보</h3>
             <div className="bg-[#1c1f27] rounded-xl border border-white/10 p-4">
-              <div className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-primary">location_on</span>
-                <div>
-                  <p className="text-white font-medium text-sm mb-1">설치 위치</p>
-                  <p className="text-[#9da6b9] text-sm">{valve.location}</p>
-                </div>
-              </div>
+              <p className="text-white text-sm">{valve.location}</p>
             </div>
           </div>
 

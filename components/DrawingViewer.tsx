@@ -9,9 +9,10 @@ const ImageViewer = lazy(() => import("./ImageViewer"));
 
 interface DrawingViewerProps {
   selectedValve: ValveData | null;
+  isPanelOpen?: boolean;
 }
 
-export default function DrawingViewer({ selectedValve }: DrawingViewerProps) {
+export default function DrawingViewer({ selectedValve, isPanelOpen = false }: DrawingViewerProps) {
   // 선택된 밸브가 있으면 해당 밸브의 도면 표시
   const shouldShowDrawing = selectedValve !== null;
   const drawingUrl = selectedValve ? `/drawings/${selectedValve.drawing}` : "";
@@ -31,7 +32,7 @@ export default function DrawingViewer({ selectedValve }: DrawingViewerProps) {
               </div>
             }
           >
-            <ImageViewer imageUrl={drawingUrl} selectedValve={selectedValve} />
+            <ImageViewer imageUrl={drawingUrl} selectedValve={selectedValve} isPanelOpen={isPanelOpen} />
           </Suspense>
 
           {/* 밸브 마커 제거 - 도면만 표시 */}

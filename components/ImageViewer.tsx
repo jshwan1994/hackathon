@@ -8,9 +8,10 @@ interface ImageViewerProps {
   imageUrl: string;
   onLoadSuccess?: () => void;
   selectedValve?: ValveData | null;
+  isPanelOpen?: boolean;
 }
 
-export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: ImageViewerProps) {
+export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve, isPanelOpen = false }: ImageViewerProps) {
   const [loading, setLoading] = useState(true);
   const [scale, setScale] = useState(100);
   const [isPanning, setIsPanning] = useState(false);
@@ -72,7 +73,7 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: 
 
 
   return (
-    <div className="relative w-full h-full flex flex-col bg-[#0f1115]">
+    <div className={`relative w-full h-full flex flex-col bg-[#0f1115] transition-all duration-300 ${isPanelOpen ? 'md:pr-[400px]' : ''}`}>
       {/* 로딩 표시 */}
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center bg-[#0f1115] z-50">
@@ -133,7 +134,7 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve }: 
       </div>
 
       {/* 하단 컨트롤 바 */}
-      <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 bg-[#1c1f27]/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl px-3 md:px-4 py-2 md:py-3 flex items-center gap-2 md:gap-4 z-40">
+      <div className={`absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 bg-[#1c1f27]/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl px-3 md:px-4 py-2 md:py-3 flex items-center gap-2 md:gap-4 z-40 transition-all duration-300 ${isPanelOpen ? 'md:-translate-x-[calc(50%+200px)]' : ''}`}>
         {/* 줌 컨트롤 */}
         <div className="flex items-center gap-1 md:gap-2">
           <button

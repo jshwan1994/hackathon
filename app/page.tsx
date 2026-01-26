@@ -69,7 +69,7 @@ export default function Home() {
   return (
     <div className="relative h-screen w-screen overflow-hidden">
       {/* 배경 도면 영역 */}
-      <DrawingViewer selectedValve={selectedValve} />
+      <DrawingViewer selectedValve={selectedValve} isPanelOpen={showDetailPanel} />
 
       {/* 검색창 */}
       <div className="absolute top-0 left-0 right-0 z-20 flex justify-center pt-4 md:pt-8 px-3 md:px-4 pointer-events-none">

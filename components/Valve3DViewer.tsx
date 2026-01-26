@@ -1,11 +1,133 @@
 "use client";
 
-import { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Suspense, useRef, useMemo } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Environment } from "@react-three/drei";
+import * as THREE from "three";
 
 interface Valve3DViewerProps {
   valveType: string; // VC, VG, VL, VB, LCV, FCV, HV
+  fluidType?: string; // Steam, 급수, 응축수
+}
+
+// 밸브 타입별 파이프 Y 위치 매핑
+const valvePipePositions: Record<string, number> = {
+  VC: 0,      // 체크밸브: 파이프가 Y=0에 위치
+  VG: -1,     // 게이트밸브: group Y=-1, 파이프 상대위치 Y=0
+  VL: -1.2,   // 글로브밸브: group Y=-0.8, 파이프 상대위치 Y=-0.4
+  VB: 0,      // 볼밸브: 파이프가 Y=0에 위치
+  LCV: -1.5,  // 레벨 컨트롤: group Y=-1.2, 파이프 상대위치 Y=-0.3
+  FCV: -1.1,  // 플로우 컨트롤: group Y=-0.8, 파이프 상대위치 Y=-0.3
+  HV: -1,     // 핸드밸브: group Y=-1, 파이프 상대위치 Y=0
+};
+
+// 유체 파티클 애니메이션
+function FluidParticles({ fluidType, valveType }: { fluidType: string; valveType: string }) {
+  const particlesRef = useRef<THREE.Points>(null);
+  const particleCount = 80; // 고정 파티클 수
+  const pipeY = valvePipePositions[valveType] ?? -1; // 밸브 타입별 파이프 Y 위치
+  const pipeRadius = 0.4; // 파이프 반경
+
+  const { positions, colors, sizes } = useMemo(() => {
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
+    const sizes = new Float32Array(particleCount);
+
+    // 유체별 색상 설정
+    let baseColor: THREE.Color;
+    if (fluidType === "Steam") {
+      baseColor = new THREE.Color("#ffffff");
+    } else if (fluidType === "급수") {
+      baseColor = new THREE.Color("#3b82f6");
+    } else {
+      baseColor = new THREE.Color("#60a5fa"); // 응축수
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      // 파이프 형태로 파티클 배치 (X축 방향으로 흐름)
+      const t = Math.random();
+      const angle = Math.random() * Math.PI * 2;
+      const radius = Math.random() * pipeRadius;
+
+      positions[i * 3] = (t - 0.5) * 6; // X: -3 ~ 3 (파이프 길이)
+      positions[i * 3 + 1] = pipeY + Math.sin(angle) * radius; // Y: 파이프 중심
+      positions[i * 3 + 2] = Math.cos(angle) * radius; // Z: 파이프 단면
+
+      // 색상 변화
+      const colorVariation = 0.8 + Math.random() * 0.2;
+      colors[i * 3] = baseColor.r * colorVariation;
+      colors[i * 3 + 1] = baseColor.g * colorVariation;
+      colors[i * 3 + 2] = baseColor.b * colorVariation;
+
+      sizes[i] = fluidType === "Steam" ? 0.1 + Math.random() * 0.12 : 0.06 + Math.random() * 0.06;
+    }
+
+    return { positions, colors, sizes };
+  }, [fluidType, pipeY]);
+
+  useFrame((state) => {
+    if (!particlesRef.current) return;
+
+    const positions = particlesRef.current.geometry.attributes.position.array as Float32Array;
+    const time = state.clock.elapsedTime;
+    const speed = fluidType === "Steam" ? 2 : 3;
+
+    for (let i = 0; i < particleCount; i++) {
+      // X축 방향으로 이동 (좌 → 우)
+      positions[i * 3] += 0.025 * speed;
+
+      // 범위를 벗어나면 리셋
+      if (positions[i * 3] > 3) {
+        positions[i * 3] = -3;
+        const angle = Math.random() * Math.PI * 2;
+        const radius = Math.random() * pipeRadius;
+        positions[i * 3 + 1] = pipeY + Math.sin(angle) * radius;
+        positions[i * 3 + 2] = Math.cos(angle) * radius;
+      }
+
+      // 스팀은 약간의 난류 효과
+      if (fluidType === "Steam") {
+        positions[i * 3 + 1] += Math.sin(time * 5 + i * 0.5) * 0.002;
+        positions[i * 3 + 2] += Math.cos(time * 4 + i * 0.3) * 0.002;
+      }
+    }
+
+    particlesRef.current.geometry.attributes.position.needsUpdate = true;
+  });
+
+  return (
+    <points ref={particlesRef}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={particleCount}
+          array={positions}
+          itemSize={3}
+        />
+        <bufferAttribute
+          attach="attributes-color"
+          count={particleCount}
+          array={colors}
+          itemSize={3}
+        />
+        <bufferAttribute
+          attach="attributes-size"
+          count={particleCount}
+          array={sizes}
+          itemSize={1}
+        />
+      </bufferGeometry>
+      <pointsMaterial
+        size={fluidType === "Steam" ? 0.18 : 0.1}
+        vertexColors
+        transparent
+        opacity={fluidType === "Steam" ? 0.7 : 0.85}
+        blending={THREE.AdditiveBlending}
+        depthWrite={false}
+        sizeAttenuation
+      />
+    </points>
+  );
 }
 
 // 체크밸브 3D 모델
@@ -436,7 +558,7 @@ function BallValveModel() {
 }
 
 // 3D 씬
-function ValveScene({ valveType }: { valveType: string }) {
+function ValveScene({ valveType, fluidType }: { valveType: string; fluidType?: string }) {
   return (
     <>
       <PerspectiveCamera makeDefault position={[4, 3, 4]} fov={50} />
@@ -463,6 +585,9 @@ function ValveScene({ valveType }: { valveType: string }) {
       {/* 환경 맵 */}
       <Environment preset="studio" />
 
+      {/* 유체 흐름 파티클 */}
+      {fluidType && <FluidParticles fluidType={fluidType} valveType={valveType} />}
+
       {/* 밸브 타입별 모델 */}
       {valveType === "VC" && <CheckValveModel />}
       {valveType === "VG" && <GateValveModel />}
@@ -481,7 +606,7 @@ function ValveScene({ valveType }: { valveType: string }) {
   );
 }
 
-export default function Valve3DViewer({ valveType }: Valve3DViewerProps) {
+export default function Valve3DViewer({ valveType, fluidType }: Valve3DViewerProps) {
   const valveInfo = {
     VC: { name: "체크밸브 (Check Valve)" },
     VG: { name: "게이트밸브 (Gate Valve)" },
@@ -494,6 +619,9 @@ export default function Valve3DViewer({ valveType }: Valve3DViewerProps) {
 
   const info = valveInfo[valveType as keyof typeof valveInfo] || valveInfo.VG;
 
+  // 유체 타입별 표시 텍스트
+  const fluidLabel = fluidType === "Steam" ? "Steam" : fluidType === "급수" ? "급수" : fluidType === "응축수" ? "응축수" : null;
+
   return (
     <div className="flex flex-col gap-3">
       <div className="flex justify-between items-center px-1">
@@ -504,18 +632,34 @@ export default function Valve3DViewer({ valveType }: Valve3DViewerProps) {
         {/* 3D Canvas */}
         <Canvas shadows>
           <Suspense fallback={null}>
-            <ValveScene valveType={valveType} />
+            <ValveScene valveType={valveType} fluidType={fluidType} />
           </Suspense>
         </Canvas>
 
         {/* 밸브 타입 표시 */}
-        <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/10">
-          <p className="text-xs text-white/80 font-medium">{info.name}</p>
+        <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg border border-white/10">
+          <p className="text-sm text-white/80 font-medium">{info.name}</p>
         </div>
+
+        {/* 유체 타입 표시 */}
+        {fluidLabel && (
+          <div className={`absolute top-3 right-3 px-2 py-1 rounded-lg border backdrop-blur-sm ${
+            fluidType === "Steam"
+              ? "bg-orange-500/20 border-orange-500/30 text-orange-300"
+              : fluidType === "급수"
+                ? "bg-blue-500/20 border-blue-500/30 text-blue-300"
+                : "bg-cyan-500/20 border-cyan-500/30 text-cyan-300"
+          }`}>
+            <p className="text-[10px] font-medium flex items-center gap-1">
+              <span className="material-symbols-outlined !text-[12px]">water_drop</span>
+              {fluidLabel}
+            </p>
+          </div>
+        )}
 
         {/* 회전 힌트 */}
         <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg border border-white/10">
-          <span className="material-symbols-outlined text-white/60 !text-[16px]">
+          <span className="material-symbols-outlined text-white/60 !text-[12px]">
             3d_rotation
           </span>
         </div>
