@@ -124,10 +124,19 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve, is
             >
               {/* 펄스 애니메이션 */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-8 h-8 bg-red-500/40 rounded-full animate-ping"></div>
+                <div className="w-16 h-16 border-2 border-red-500/40 rounded animate-ping"></div>
               </div>
-              {/* 마커 본체 */}
-              <div className="relative w-4 h-4 bg-red-500 rounded-full border-2 border-white shadow-lg shadow-red-500/50"></div>
+              {/* 마커 본체 - 모서리 괄호 스타일 */}
+              <div className="relative w-14 h-14">
+                {/* 좌상단 */}
+                <div className="absolute top-0 left-0 w-4 h-4 border-t-[3px] border-l-[3px] border-red-500"></div>
+                {/* 우상단 */}
+                <div className="absolute top-0 right-0 w-4 h-4 border-t-[3px] border-r-[3px] border-red-500"></div>
+                {/* 좌하단 */}
+                <div className="absolute bottom-0 left-0 w-4 h-4 border-b-[3px] border-l-[3px] border-red-500"></div>
+                {/* 우하단 */}
+                <div className="absolute bottom-0 right-0 w-4 h-4 border-b-[3px] border-r-[3px] border-red-500"></div>
+              </div>
             </div>
           )}
         </div>
