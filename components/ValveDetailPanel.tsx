@@ -32,12 +32,6 @@ const mockSpecs: Record<string, { pressureRating: string; temperature: string; m
 export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelProps) {
   const specs = mockSpecs[valve.type || 'VG'] || mockSpecs.VG;
 
-  const statusText = {
-    operational: "정상 작동",
-    maintenance: "점검 중",
-    offline: "작동 중지",
-  };
-
   return (
     <>
       <div
@@ -74,21 +68,6 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
 
         {/* 스크롤 가능한 컨텐츠 */}
         <div className="flex-1 overflow-y-auto custom-scrollbar p-4 md:p-6 pt-2 space-y-4 md:space-y-6">
-          {/* 상태 표시 */}
-          <div className="bg-[#1c1f27]/50 border border-white/5 rounded-lg p-3 md:p-4 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className={`size-2 rounded-full ${valve.status === 'operational' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]' : 'bg-gray-500'}`}></div>
-              <span className="text-sm font-medium text-white">
-                {statusText[valve.status || 'operational']}
-              </span>
-            </div>
-            {valve.lastInspected && (
-              <span className="text-xs text-[#9da6b9]">
-                마지막 점검: {valve.lastInspected}
-              </span>
-            )}
-          </div>
-
           <Valve3DViewer valveType={valve.type || 'VG'} fluidType={specs.fluid} />
 
           {/* 기술 사양 */}
