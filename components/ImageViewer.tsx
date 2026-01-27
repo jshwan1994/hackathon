@@ -129,13 +129,13 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve, is
               {/* 마커 본체 - 모서리 괄호 스타일 */}
               <div className="relative w-14 h-14">
                 {/* 좌상단 */}
-                <div className="absolute top-0 left-0 w-4 h-4 border-t-[3px] border-l-[3px] border-red-500"></div>
+                <div className="absolute top-0 left-0 w-5 h-5 border-t-4 border-l-4 border-red-500"></div>
                 {/* 우상단 */}
-                <div className="absolute top-0 right-0 w-4 h-4 border-t-[3px] border-r-[3px] border-red-500"></div>
+                <div className="absolute top-0 right-0 w-5 h-5 border-t-4 border-r-4 border-red-500"></div>
                 {/* 좌하단 */}
-                <div className="absolute bottom-0 left-0 w-4 h-4 border-b-[3px] border-l-[3px] border-red-500"></div>
+                <div className="absolute bottom-0 left-0 w-5 h-5 border-b-4 border-l-4 border-red-500"></div>
                 {/* 우하단 */}
-                <div className="absolute bottom-0 right-0 w-4 h-4 border-b-[3px] border-r-[3px] border-red-500"></div>
+                <div className="absolute bottom-0 right-0 w-5 h-5 border-b-4 border-r-4 border-red-500"></div>
               </div>
             </div>
           )}
