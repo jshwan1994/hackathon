@@ -53,7 +53,7 @@ export default function DrawingViewer({ selectedValve, isPanelOpen = false }: Dr
 
           {/* 안내 메시지 - 밸브 아래에 위치 */}
           <div className="text-center -mt-40">
-            <h2 className="text-2xl font-bold text-white mb-2">PID 밸브 검색기</h2>
+            <h2 className="text-2xl font-bold text-white mb-2">GLANCE</h2>
             <p className="text-[#9da6b9] text-lg">P&ID 도면에서 밸브 위치를 빠르게 찾아보세요</p>
           </div>
         </div>
