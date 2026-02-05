@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ValveData } from "@/types/valve";
-import { parseValveDataNew, searchValves } from "@/lib/valveData";
+import Link from "next/link";
+import { ValveData, CATEGORY_CONFIG } from "@/types/valve";
+import { searchValves } from "@/lib/valveData";
 import ValveDetailPanel from "@/components/ValveDetailPanel";
 import DrawingViewer from "@/components/DrawingViewer";
+import CategoryIcon from "@/components/CategoryIcon";
 
 export default function Home() {
   const [valves, setValves] = useState<ValveData[]>([]);
@@ -14,22 +16,21 @@ export default function Home() {
   const [showDetailPanel, setShowDetailPanel] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // 밸브 데이터 로드
+  // 컴포넌트 데이터 로드 (밸브 + 계기류)
   useEffect(() => {
-    async function loadValveData() {
+    async function loadComponentData() {
       try {
-        const response = await fetch("/data/all_valves.json");
-        const rawData = await response.json();
-        const parsedValves = parseValveDataNew(rawData);
-        setValves(parsedValves);
+        const response = await fetch("/data/all_components.json");
+        const data = await response.json();
+        setValves(data);
       } catch (error) {
-        console.error("밸브 데이터 로드 실패:", error);
+        console.error("컴포넌트 데이터 로드 실패:", error);
       } finally {
         setLoading(false);
       }
     }
 
-    loadValveData();
+    loadComponentData();
   }, []);
 
   // 검색어 변경 시 검색 실행
@@ -71,18 +72,32 @@ export default function Home() {
       {/* 배경 도면 영역 */}
       <DrawingViewer selectedValve={selectedValve} isPanelOpen={showDetailPanel} />
 
+      {/* 사전 카드 - 왼쪽 상단 */}
+      <Link
+        href="/dictionary"
+        className="hidden md:flex absolute top-8 left-8 z-20 items-center gap-3 h-14 px-5 bg-[#1c1f27]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl hover:bg-[#1c1f27] hover:border-primary/30 transition-all duration-300 group pointer-events-auto"
+      >
+        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors relative overflow-hidden">
+          <svg className="w-5 h-5 text-primary relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+          </svg>
+          <div className="shine-effect"></div>
+        </div>
+        <div className="text-white font-semibold text-sm">밸브/계기 사전</div>
+      </Link>
+
       {/* 검색창 */}
       <div className="absolute top-0 left-0 right-0 z-20 flex justify-center pt-4 md:pt-8 px-3 md:px-4 pointer-events-none">
         <div className="w-full max-w-[640px] pointer-events-auto">
-          <div className="relative group">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/50 to-purple-600/50 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-200"></div>
-            <label className="relative flex items-center w-full h-12 md:h-14 bg-[#1c1f27]/90 md:bg-[#1c1f27]/80 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl transition-all duration-300 focus-within:ring-2 focus-within:ring-primary/50 focus-within:bg-[#1c1f27]/95">
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/50 to-purple-600/50 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-200"></div>
+              <label className="relative flex items-center w-full h-12 md:h-14 bg-[#1c1f27]/90 md:bg-[#1c1f27]/80 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl transition-all duration-300 focus-within:ring-2 focus-within:ring-primary/50 focus-within:bg-[#1c1f27]/95">
               <div className="pl-4 md:pl-6 pr-2 md:pr-3 text-[#9da6b9]">
                 <span className="material-symbols-outlined !text-[20px] md:!text-[24px]">search</span>
               </div>
               <input
                 className="w-full bg-transparent border-none text-white placeholder-[#9da6b9] focus:ring-0 text-sm md:text-base font-normal h-full rounded-r-full outline-none"
-                placeholder="밸브 태그 검색..."
+                placeholder="밸브/계기 태그 검색... (예: TI, PI, FCV, VG)"
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -102,19 +117,40 @@ export default function Home() {
           {/* 검색 결과 드롭다운 */}
           {searchQuery && searchResults.length > 0 && (
             <div className="mt-2 bg-[#1c1f27]/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl max-h-[60vh] md:max-h-[400px] overflow-y-auto custom-scrollbar">
-              {searchResults.slice(0, 20).map((valve, index) => (
-                <button
-                  key={`${valve.tag}-${index}`}
-                  onClick={() => handleValveSelect(valve)}
-                  className="w-full px-4 md:px-6 py-3 text-left hover:bg-white/10 active:bg-white/20 transition-colors border-b border-white/5 last:border-b-0 flex items-center justify-between"
-                >
-                  <div>
-                    <div className="text-white font-medium text-sm md:text-base">{valve.tag}</div>
-                    <div className="text-[#9da6b9] text-xs md:text-sm">{valve.location}</div>
-                  </div>
-                  <span className="material-symbols-outlined text-primary !text-[20px]">chevron_right</span>
-                </button>
-              ))}
+              {searchResults.slice(0, 20).map((valve, index) => {
+                const config = CATEGORY_CONFIG[valve.category || 'Other'] || CATEGORY_CONFIG['Other'];
+                return (
+                  <button
+                    key={`${valve.tag}-${index}`}
+                    onClick={() => handleValveSelect(valve)}
+                    className="w-full px-4 md:px-6 py-3 text-left hover:bg-white/10 active:bg-white/20 transition-colors border-b border-white/5 last:border-b-0 flex items-center justify-between"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+                        style={{ backgroundColor: `${config.color}15` }}
+                      >
+                        <CategoryIcon category={valve.category || 'Other'} size={20} color={config.color} />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="text-white font-semibold text-sm md:text-base">{valve.tag}</span>
+                          <span
+                            className="text-[10px] px-1.5 py-0.5 rounded font-medium shrink-0"
+                            style={{ backgroundColor: `${config.color}20`, color: config.color }}
+                          >
+                            {config.label}
+                          </span>
+                        </div>
+                        <div className="text-[#9da6b9] text-xs md:text-sm truncate">{valve.location}</div>
+                      </div>
+                    </div>
+                    <svg className="w-5 h-5 text-[#9da6b9] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                );
+              })}
               {searchResults.length > 20 && (
                 <div className="px-4 md:px-6 py-3 text-center text-[#9da6b9] text-xs md:text-sm">
                   {searchResults.length - 20}개 결과 더 있음
@@ -137,31 +173,42 @@ export default function Home() {
         <ValveDetailPanel valve={selectedValve} onClose={handleClosePanel} />
       )}
 
-      {/* 선택된 밸브 플로팅 버튼 (패널 닫힌 상태) */}
-      {selectedValve && !showDetailPanel && (
-        <button
-          onClick={() => setShowDetailPanel(true)}
-          className="absolute bottom-20 md:bottom-auto md:top-8 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 z-30 bg-[#1c1f27]/95 md:bg-[#1c1f27]/90 backdrop-blur-xl border border-white/10 rounded-full md:rounded-lg shadow-2xl px-4 py-3 hover:bg-[#1c1f27] active:scale-95 transition-all duration-200 group"
-        >
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-              <span className="material-symbols-outlined text-primary !text-[20px]">valve</span>
+      {/* 선택된 컴포넌트 플로팅 버튼 (패널 닫힌 상태) */}
+      {selectedValve && !showDetailPanel && (() => {
+        const config = CATEGORY_CONFIG[selectedValve.category || 'Other'] || CATEGORY_CONFIG['Other'];
+        return (
+          <button
+            onClick={() => setShowDetailPanel(true)}
+            className="absolute bottom-20 md:bottom-auto md:top-8 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 z-30 bg-[#1c1f27]/95 md:bg-[#1c1f27]/90 backdrop-blur-xl border border-white/10 rounded-full md:rounded-lg shadow-2xl px-4 py-3 hover:bg-[#1c1f27] active:scale-95 transition-all duration-200 group"
+          >
+            <div className="flex items-center gap-3">
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center"
+                style={{ backgroundColor: `${config.color}20` }}
+              >
+                <CategoryIcon category={selectedValve.category || 'Other'} size={22} color={config.color} />
+              </div>
+              <div className="text-left">
+                <div className="text-white font-semibold text-sm md:text-base">{selectedValve.tag}</div>
+                <div className="text-[#9da6b9] text-xs">{config.label} · 탭하여 상세보기</div>
+              </div>
+              <svg className="w-5 h-5 text-[#9da6b9] group-hover:text-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              </svg>
             </div>
-            <div className="text-left">
-              <div className="text-white font-semibold text-sm md:text-base">{selectedValve.tag}</div>
-              <div className="text-[#9da6b9] text-xs">{selectedValve.type || selectedValve.tag.split('-')[0]} · 탭하여 상세보기</div>
-            </div>
-            <span className="material-symbols-outlined text-[#9da6b9] group-hover:text-primary transition-colors !text-[20px]">
-              open_in_full
-            </span>
-          </div>
-        </button>
-      )}
+          </button>
+        );
+      })()}
 
       {/* 하단 정보 */}
-      <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8 bg-[#1c1f27]/80 backdrop-blur-md border border-white/10 rounded-lg shadow-lg px-3 md:px-4 py-2 pointer-events-auto">
-        <div className="text-xs md:text-sm text-[#9da6b9]">
-          총 <span className="text-white font-semibold">{valves.length.toLocaleString()}</span>개 밸브
+      <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8 pointer-events-auto">
+        <div className="bg-[#1c1f27]/80 backdrop-blur-md border border-white/10 rounded-lg shadow-lg px-3 md:px-4 py-2">
+          <div className="text-xs md:text-sm text-[#9da6b9]">
+            총 <span className="text-white font-semibold">{valves.length.toLocaleString()}</span>개 컴포넌트
+            <span className="text-[#6b7280] ml-1">
+              (밸브 {valves.filter(v => v.category === 'Valve' || v.category === 'Control Valve' || v.category === 'Safety Valve').length.toLocaleString()} + 계기 {valves.filter(v => v.category !== 'Valve' && v.category !== 'Control Valve' && v.category !== 'Safety Valve').length.toLocaleString()})
+            </span>
+          </div>
         </div>
       </div>
 
@@ -179,6 +226,30 @@ export default function Home() {
 
         .animate-fade-in {
           animation: fade-in 0.8s ease-out;
+        }
+
+        .shine-effect {
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 100%
+          );
+          animation: shine 2.5s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+          0% {
+            left: -100%;
+          }
+          50%, 100% {
+            left: 100%;
+          }
         }
       `}</style>
     </div>

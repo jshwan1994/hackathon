@@ -1,7 +1,8 @@
 "use client";
 
-import { ValveData } from "@/types/valve";
+import { ValveData, CATEGORY_CONFIG } from "@/types/valve";
 import Valve3DViewer from "./Valve3DViewer";
+import CategoryIcon from "./CategoryIcon";
 import {
   diaryRecords,
   formatShift,
@@ -27,10 +28,44 @@ const mockSpecs: Record<string, { pressureRating: string; temperature: string; m
   FCV: { pressureRating: "50 kg/cm²", temperature: "-29°C ~ 200°C", manufacturerId: "CV-2024-7011", fluid: "Steam" },
   LCV: { pressureRating: "20 kg/cm²", temperature: "-29°C ~ 180°C", manufacturerId: "CV-2024-7011", fluid: "응축수" },
   HV: { pressureRating: "50 kg/cm²", temperature: "-46°C ~ 250°C", manufacturerId: "HV-2024-7011", fluid: "급수" },
+  // 안전밸브 (PSV, PRV)
+  PSV: { pressureRating: "설정압력 10.5 kg/cm²", temperature: "-29°C ~ 350°C", manufacturerId: "SV-2024-1001", fluid: "Steam" },
+  PRV: { pressureRating: "설정압력 8.5 kg/cm²", temperature: "-29°C ~ 300°C", manufacturerId: "SV-2024-2001", fluid: "Steam/Gas" },
 };
 
+// 계기류 타입별 목업 사양
+const instrumentSpecs: Record<string, { range: string; unit: string; signal: string; manufacturer: string }> = {
+  PI: { range: "0 ~ 50", unit: "kg/cm²", signal: "4-20mA", manufacturer: "Rosemount" },
+  TI: { range: "0 ~ 500", unit: "°C", signal: "4-20mA", manufacturer: "Rosemount" },
+  FI: { range: "0 ~ 1000", unit: "m³/h", signal: "4-20mA", manufacturer: "Yokogawa" },
+  LI: { range: "0 ~ 100", unit: "%", signal: "4-20mA", manufacturer: "Endress+Hauser" },
+  PT: { range: "0 ~ 100", unit: "kg/cm²", signal: "4-20mA", manufacturer: "Rosemount" },
+  TT: { range: "-50 ~ 600", unit: "°C", signal: "4-20mA", manufacturer: "Rosemount" },
+  FT: { range: "0 ~ 2000", unit: "m³/h", signal: "4-20mA", manufacturer: "Yokogawa" },
+  LT: { range: "0 ~ 100", unit: "%", signal: "4-20mA", manufacturer: "Endress+Hauser" },
+  PSV: { range: "설정압력", unit: "kg/cm²", signal: "기계식", manufacturer: "Consolidated" },
+  TCV: { range: "0 ~ 100", unit: "%", signal: "4-20mA", manufacturer: "Fisher" },
+  FCV: { range: "0 ~ 100", unit: "%", signal: "4-20mA", manufacturer: "Fisher" },
+  PCV: { range: "0 ~ 100", unit: "%", signal: "4-20mA", manufacturer: "Fisher" },
+  LCV: { range: "0 ~ 100", unit: "%", signal: "4-20mA", manufacturer: "Fisher" },
+};
+
+// 밸브 카테고리인지 확인 (3D 모델 표시용 - 안전밸브 제외)
+function isValveCategory(category?: string): boolean {
+  return category === 'Valve' || category === 'Control Valve';
+}
+
+// 안전밸브인지 확인
+function isSafetyValve(category?: string): boolean {
+  return category === 'Safety Valve';
+}
+
 export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelProps) {
-  const specs = mockSpecs[valve.type || 'VG'] || mockSpecs.VG;
+  const isValve = isValveCategory(valve.category);
+  const isSafety = isSafetyValve(valve.category);
+  const valveSpecs = mockSpecs[valve.type || 'VG'] || mockSpecs.VG;
+  const instSpecs = instrumentSpecs[valve.type || 'PI'] || instrumentSpecs.PI;
+  const categoryConfig = CATEGORY_CONFIG[valve.category || 'Other'] || CATEGORY_CONFIG['Other'];
 
   return (
     <>
@@ -48,11 +83,22 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
         <div className="flex items-start justify-between p-4 md:p-6 pb-2">
           <div>
             <div className="flex items-center gap-3 mb-1">
-              <div className="bg-primary/20 text-primary p-1.5 rounded-lg">
-                <span className="material-symbols-outlined !text-[20px]">valve</span>
+              <div
+                className="p-1.5 rounded-lg"
+                style={{ backgroundColor: `${categoryConfig.color}20` }}
+              >
+                <span
+                  className="material-symbols-outlined !text-[20px]"
+                  style={{ color: categoryConfig.color }}
+                >
+                  {categoryConfig.icon}
+                </span>
               </div>
-              <span className="text-xs font-bold tracking-wider text-primary uppercase">
-                선택된 밸브
+              <span
+                className="text-xs font-bold tracking-wider uppercase"
+                style={{ color: categoryConfig.color }}
+              >
+                {categoryConfig.label}
               </span>
             </div>
             <h1 className="text-white text-2xl font-bold leading-tight">{valve.tag}</h1>
@@ -68,32 +114,97 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
 
         {/* 스크롤 가능한 컨텐츠 */}
         <div className="flex-1 overflow-y-auto custom-scrollbar p-4 md:p-6 pt-2 space-y-4 md:space-y-6">
-          <Valve3DViewer valveType={valve.type || 'VG'} fluidType={specs.fluid} />
+          {/* 밸브인 경우 3D 뷰어 표시 (안전밸브 제외) */}
+          {isValve && !isSafety && (
+            <Valve3DViewer valveType={valve.type || 'VG'} fluidType={valveSpecs.fluid} />
+          )}
 
-          {/* 기술 사양 */}
-          <div className="space-y-3 md:space-y-4">
-            <h3 className="text-white text-sm font-semibold px-1">기술 사양</h3>
-            <div className="bg-[#1c1f27] rounded-xl border border-white/10 overflow-hidden">
-              <div className="grid grid-cols-2 gap-[1px] bg-white/20">
-                <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
-                  <p className="text-[#9da6b9] text-xs mb-0.5">압력 등급</p>
-                  <p className="text-white text-sm font-medium">{specs.pressureRating}</p>
-                </div>
-                <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
-                  <p className="text-[#9da6b9] text-xs mb-0.5">온도 범위</p>
-                  <p className="text-white text-sm font-medium">{specs.temperature}</p>
-                </div>
-                <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
-                  <p className="text-[#9da6b9] text-xs mb-0.5">유체</p>
-                  <p className="text-white text-sm font-medium">{specs.fluid}</p>
-                </div>
-                <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
-                  <p className="text-[#9da6b9] text-xs mb-0.5">제조사 ID</p>
-                  <p className="text-white text-sm font-medium">{specs.manufacturerId}</p>
+          {/* 안전밸브인 경우 아이콘 표시 */}
+          {isSafety && (
+            <div className="bg-[#1c1f27] rounded-xl border border-white/10 p-6 flex flex-col items-center justify-center">
+              <div
+                className="w-24 h-24 rounded-2xl flex items-center justify-center mb-3"
+                style={{ backgroundColor: `${categoryConfig.color}20` }}
+              >
+                <CategoryIcon category="Safety Valve" size={56} color={categoryConfig.color} />
+              </div>
+              <p className="text-white font-semibold text-lg">{valve.type}</p>
+              <p className="text-[#9da6b9] text-sm">{categoryConfig.label}</p>
+            </div>
+          )}
+
+          {/* 계기류인 경우 아이콘 표시 */}
+          {!isValve && !isSafety && (
+            <div className="bg-[#1c1f27] rounded-xl border border-white/10 p-6 flex flex-col items-center justify-center">
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mb-3"
+                style={{ backgroundColor: `${categoryConfig.color}20` }}
+              >
+                <span
+                  className="material-symbols-outlined !text-[48px]"
+                  style={{ color: categoryConfig.color }}
+                >
+                  {categoryConfig.icon}
+                </span>
+              </div>
+              <p className="text-white font-semibold">{valve.type}</p>
+              <p className="text-[#9da6b9] text-sm">{categoryConfig.label} 계기</p>
+            </div>
+          )}
+
+          {/* 기술 사양 - 밸브 (안전밸브 포함) */}
+          {(isValve || isSafety) && (
+            <div className="space-y-3 md:space-y-4">
+              <h3 className="text-white text-sm font-semibold px-1">기술 사양</h3>
+              <div className="bg-[#1c1f27] rounded-xl border border-white/10 overflow-hidden">
+                <div className="grid grid-cols-2 gap-[1px] bg-white/20">
+                  <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                    <p className="text-[#9da6b9] text-xs mb-0.5">{isSafety ? '설정 압력' : '압력 등급'}</p>
+                    <p className="text-white text-sm font-medium">{valveSpecs.pressureRating}</p>
+                  </div>
+                  <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                    <p className="text-[#9da6b9] text-xs mb-0.5">온도 범위</p>
+                    <p className="text-white text-sm font-medium">{valveSpecs.temperature}</p>
+                  </div>
+                  <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                    <p className="text-[#9da6b9] text-xs mb-0.5">유체</p>
+                    <p className="text-white text-sm font-medium">{valveSpecs.fluid}</p>
+                  </div>
+                  <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                    <p className="text-[#9da6b9] text-xs mb-0.5">제조사 ID</p>
+                    <p className="text-white text-sm font-medium">{valveSpecs.manufacturerId}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
+
+          {/* 기술 사양 - 계기류 */}
+          {!isValve && !isSafety && (
+            <div className="space-y-3 md:space-y-4">
+              <h3 className="text-white text-sm font-semibold px-1">계기 사양</h3>
+              <div className="bg-[#1c1f27] rounded-xl border border-white/10 overflow-hidden">
+                <div className="grid grid-cols-2 gap-[1px] bg-white/20">
+                  <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                    <p className="text-[#9da6b9] text-xs mb-0.5">측정 범위</p>
+                    <p className="text-white text-sm font-medium">{instSpecs.range} {instSpecs.unit}</p>
+                  </div>
+                  <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                    <p className="text-[#9da6b9] text-xs mb-0.5">단위</p>
+                    <p className="text-white text-sm font-medium">{instSpecs.unit}</p>
+                  </div>
+                  <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                    <p className="text-[#9da6b9] text-xs mb-0.5">출력 신호</p>
+                    <p className="text-white text-sm font-medium">{instSpecs.signal}</p>
+                  </div>
+                  <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                    <p className="text-[#9da6b9] text-xs mb-0.5">제조사</p>
+                    <p className="text-white text-sm font-medium">{instSpecs.manufacturer}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* 정비이력 */}
           <div className="space-y-3">
