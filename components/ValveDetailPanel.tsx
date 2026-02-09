@@ -12,6 +12,11 @@ import {
   formatMaintenanceDate,
   getStatusColor,
 } from "@/lib/maintenanceData";
+import {
+  getIsolationProcedure,
+  getActionColor,
+  getActionIcon,
+} from "@/lib/isolationData";
 
 interface ValveDetailPanelProps {
   valve: ValveData;
@@ -66,6 +71,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
   const valveSpecs = mockSpecs[valve.type || 'VG'] || mockSpecs.VG;
   const instSpecs = instrumentSpecs[valve.type || 'PI'] || instrumentSpecs.PI;
   const categoryConfig = CATEGORY_CONFIG[valve.category || 'Other'] || CATEGORY_CONFIG['Other'];
+  const isolationProcedure = getIsolationProcedure(valve.tag);
 
   return (
     <>
@@ -239,6 +245,48 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
               ))}
             </div>
           </div>
+
+          {/* 점검시 조작사항 - 밸브에만 표시 */}
+          {(isValve || isSafety) && isolationProcedure && (
+            <div className="space-y-3">
+              <div className="flex items-center justify-between px-1">
+                <h3 className="text-white text-sm font-semibold">점검시 조작사항</h3>
+                <span className="text-xs text-orange-400 bg-orange-500/10 px-2 py-0.5 rounded-full">
+                  {isolationProcedure.steps.length}단계
+                </span>
+              </div>
+              <div className="bg-[#1c1f27] rounded-xl border border-white/10 overflow-hidden">
+                {isolationProcedure.steps.map((step, index) => (
+                  <div
+                    key={step.step}
+                    className={`p-3 hover:bg-[#252830] transition-colors ${index !== isolationProcedure.steps.length - 1 ? 'border-b border-white/10' : ''}`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white/10 text-white text-xs font-bold shrink-0 mt-0.5">
+                        {step.step}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className={`text-xs px-1.5 py-0.5 rounded font-medium ${getActionColor(step.action)}`}>
+                            {step.action}
+                          </span>
+                          {step.valve && (
+                            <span className="text-xs font-mono text-primary">{step.valve}</span>
+                          )}
+                          {step.direction && (
+                            <span className="text-[10px] text-[#9da6b9]">
+                              ({step.direction === 'upstream' ? '전단' : step.direction === 'downstream' ? '후단' : '드레인'})
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-white text-sm leading-relaxed">{step.description_ko}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* 인계일지 */}
           <div className="space-y-3">

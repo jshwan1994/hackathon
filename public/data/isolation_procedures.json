@@ -1,0 +1,89 @@
+[
+  {
+    "drawing": "1M-PI-111-001  DH HE Condensate System-1(R2).dxf",
+    "valve_count": 62,
+    "line_count": 5999
+  },
+  {
+    "drawing": "1M-PI-111-002  DH HE Condensate System-2rev2 (1).dxf",
+    "valve_count": 26,
+    "line_count": 3178
+  },
+  {
+    "drawing": "1M-PI-111-003  DH HE Condensate System-3rev2.dxf",
+    "valve_count": 25,
+    "line_count": 3312,
+    "isolation_analysis": {
+      "target": "VC-4307",
+      "target_type": "check",
+      "target_position": {
+        "x": 357.2049486159871,
+        "y": 441.6093542510234
+      },
+      "upstream_isolation": [],
+      "downstream_isolation": [
+        {
+          "tag": "VG-4308",
+          "type": "gate",
+          "direction": "downstream",
+          "depth": 1,
+          "path": [
+            "VC-4307",
+            "VG-4308"
+          ],
+          "position": {
+            "x": 344.8669846700402,
+            "y": 434.2672028159166
+          }
+        },
+        {
+          "tag": "VB-4302",
+          "type": "ball",
+          "direction": "downstream",
+          "depth": 1,
+          "path": [
+            "VC-4307",
+            "VB-4302"
+          ],
+          "position": {
+            "x": 403.6918165000337,
+            "y": 433.0285804137749
+          }
+        }
+      ],
+      "all_connected_valves": [
+        "VG-4308",
+        "VB-4302"
+      ]
+    },
+    "isolation_procedure": {
+      "target": "VC-4307",
+      "steps": [
+        {
+          "step": 1,
+          "action": "CLOSE",
+          "valve": "VG-4308",
+          "type": "gate",
+          "description_ko": "하류(후단) gate 밸브 VG-4308 폐쇄",
+          "description_en": "Close downstream gate valve VG-4308",
+          "direction": "downstream"
+        },
+        {
+          "step": 2,
+          "action": "CLOSE",
+          "valve": "VB-4302",
+          "type": "ball",
+          "description_ko": "하류(후단) ball 밸브 VB-4302 폐쇄",
+          "description_en": "Close downstream ball valve VB-4302",
+          "direction": "downstream"
+        },
+        {
+          "step": 3,
+          "action": "VERIFY",
+          "description_ko": "압력계 확인 - 잔압 0 확인 후 작업 시작",
+          "description_en": "Check pressure gauge - Verify zero pressure before starting work"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,3764 @@
+[
+  {
+    "tag": "B-0005",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 51.7,
+      "y_percent": 33.5
+    },
+    "drawing": "1M-PI-313-001-Fuel-Gas-System-1_REV.2-배치1.png",
+    "location": "Fuel Gas System-1_REV.2-배치1"
+  },
+  {
+    "tag": "B-0005",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 52.3,
+      "y_percent": 26.8
+    },
+    "drawing": "1M-PI-313-001-Fuel-Gas-System-1_REV.2.png",
+    "location": "Fuel Gas System-1_REV.2"
+  },
+  {
+    "tag": "B-0005",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 51.7,
+      "y_percent": 33.5
+    },
+    "drawing": "1M-PI-313-001-Fuel-Gas-System-1_REV.3-배치1.png",
+    "location": "Fuel Gas System-1_REV.3-배치1"
+  },
+  {
+    "tag": "B-0005",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 52.3,
+      "y_percent": 26.8
+    },
+    "drawing": "1M-PI-313-001-Fuel-Gas-System-1_REV.3.png",
+    "location": "Fuel Gas System-1_REV.3"
+  },
+  {
+    "tag": "B-0006",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 48.2,
+      "y_percent": 60.0
+    },
+    "drawing": "1M-PI-313-001-Fuel-Gas-System-1_REV.2-배치1.png",
+    "location": "Fuel Gas System-1_REV.2-배치1"
+  },
+  {
+    "tag": "B-0006",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 47.7,
+      "y_percent": 64.1
+    },
+    "drawing": "1M-PI-313-001-Fuel-Gas-System-1_REV.2.png",
+    "location": "Fuel Gas System-1_REV.2"
+  },
+  {
+    "tag": "B-0006",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 48.2,
+      "y_percent": 60.0
+    },
+    "drawing": "1M-PI-313-001-Fuel-Gas-System-1_REV.3-배치1.png",
+    "location": "Fuel Gas System-1_REV.3-배치1"
+  },
+  {
+    "tag": "B-0006",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 47.7,
+      "y_percent": 64.1
+    },
+    "drawing": "1M-PI-313-001-Fuel-Gas-System-1_REV.3.png",
+    "location": "Fuel Gas System-1_REV.3"
+  },
+  {
+    "tag": "B-100",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 66.1,
+      "y_percent": 39.1
+    },
+    "drawing": "1M-PI-342-001-Primary-Cooling-Water-System-1(REV1).png",
+    "location": "Primary Cooling Water System-1(REV1)"
+  },
+  {
+    "tag": "B-100",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 66.1,
+      "y_percent": 41.3
+    },
+    "drawing": "1M-PI-342-001-Primary-Cooling-Water-System-1(중수도수정).png",
+    "location": "Primary Cooling Water System-1(중수도수정)"
+  },
+  {
+    "tag": "B-100",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 66.1,
+      "y_percent": 39.1
+    },
+    "drawing": "1M-PI-342-001-Primary-Cooling-Water-System-1.png",
+    "location": "Primary Cooling Water System-1"
+  },
+  {
+    "tag": "B-100",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 54.7,
+      "y_percent": 80.5
+    },
+    "drawing": "1M-PI-359-001-Service-Water-Distribution-System-1.png",
+    "location": "Service Water Distribution System-1"
+  },
+  {
+    "tag": "B-100",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 54.7,
+      "y_percent": 80.4
+    },
+    "drawing": "1M-PI-359-001-Service-Water-Distribution-1.png",
+    "location": "Service Water Distribution-1"
+  },
+  {
+    "tag": "B-100",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 64.6,
+      "y_percent": 71.2
+    },
+    "drawing": "1M-PI-391-001-#1-GT-Misc.-Drain-&-Vent.png",
+    "location": "#1 GT Misc. Drain & Vent"
+  },
+  {
+    "tag": "B-100",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 40.8,
+      "y_percent": 62.6
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1(R1).png",
+    "location": "WW transfer-1(R1)"
+  },
+  {
+    "tag": "B-100",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 40.8,
+      "y_percent": 65.5
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1.png",
+    "location": "WW transfer-1"
+  },
+  {
+    "tag": "B-100",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 6.0,
+      "y_percent": 65.7
+    },
+    "drawing": "1M-PI-611-002-WW-transfer-System-2(R1).png",
+    "location": "WW transfer System-2(R1)"
+  },
+  {
+    "tag": "B-100",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 43.7,
+      "y_percent": 25.6
+    },
+    "drawing": "2-M-PI-331-101-Raw-Water-Tank(중수도수정).png",
+    "location": "2-M-PI-331-101 Raw Water Tank(중수도수정)"
+  },
+  {
+    "tag": "B-100",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 43.7,
+      "y_percent": 25.6
+    },
+    "drawing": "2-M-PI-331-101.png",
+    "location": "2-M-PI-331-101"
+  },
+  {
+    "tag": "B-1005",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 52.4,
+      "y_percent": 72.9
+    },
+    "drawing": "1M-PI-263-003-Turbine-Bypass-Sys-1-배치2.png",
+    "location": "Turbine Bypass Sys-1-배치2"
+  },
+  {
+    "tag": "B-1005",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 53.1,
+      "y_percent": 82.3
+    },
+    "drawing": "1M-PI-263-003-Turbine-Bypass-Sys-1.png",
+    "location": "Turbine Bypass Sys-1"
+  },
+  {
+    "tag": "B-1010",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 44.8,
+      "y_percent": 87.0
+    },
+    "drawing": "1M-PI-263-004-Turbine-Bypass-Sys-2.png",
+    "location": "Turbine Bypass Sys-2"
+  },
+  {
+    "tag": "B-1105",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 43.3,
+      "y_percent": 70.9
+    },
+    "drawing": "1M-PI-263-003-Turbine-Bypass-Sys-1-배치2.png",
+    "location": "Turbine Bypass Sys-1-배치2"
+  },
+  {
+    "tag": "B-1105",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 41.3,
+      "y_percent": 79.5
+    },
+    "drawing": "1M-PI-263-003-Turbine-Bypass-Sys-1.png",
+    "location": "Turbine Bypass Sys-1"
+  },
+  {
+    "tag": "B-1110",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 23.6,
+      "y_percent": 71.8
+    },
+    "drawing": "1M-PI-263-004-Turbine-Bypass-Sys-2.png",
+    "location": "Turbine Bypass Sys-2"
+  },
+  {
+    "tag": "B-114",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 48.5,
+      "y_percent": 82.9
+    },
+    "drawing": "1M-PI-359-001-Service-Water-Distribution-System-1.png",
+    "location": "Service Water Distribution System-1"
+  },
+  {
+    "tag": "B-114",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 48.4,
+      "y_percent": 82.8
+    },
+    "drawing": "1M-PI-359-001-Service-Water-Distribution-1.png",
+    "location": "Service Water Distribution-1"
+  },
+  {
+    "tag": "B-117",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 45.2,
+      "y_percent": 22.6
+    },
+    "drawing": "1M-PI-391-001-#1-GT-Misc.-Drain-&-Vent.png",
+    "location": "#1 GT Misc. Drain & Vent"
+  },
+  {
+    "tag": "B-117",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 44.1,
+      "y_percent": 22.7
+    },
+    "drawing": "1M-PI-391-002-#2-GT-Misc.-Drain-&-Vent.png",
+    "location": "#2 GT Misc. Drain & Vent"
+  },
+  {
+    "tag": "B-1171",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 24.3,
+      "y_percent": 19.7
+    },
+    "drawing": "1M-PI-264-101-HRSG-Condensate-Preheater-System.png",
+    "location": "HRSG Condensate Preheater System"
+  },
+  {
+    "tag": "B-118",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 45.2,
+      "y_percent": 17.4
+    },
+    "drawing": "1M-PI-391-001-#1-GT-Misc.-Drain-&-Vent.png",
+    "location": "#1 GT Misc. Drain & Vent"
+  },
+  {
+    "tag": "B-118",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 44.1,
+      "y_percent": 17.5
+    },
+    "drawing": "1M-PI-391-002-#2-GT-Misc.-Drain-&-Vent.png",
+    "location": "#2 GT Misc. Drain & Vent"
+  },
+  {
+    "tag": "B-1205",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 46.8,
+      "y_percent": 70.9
+    },
+    "drawing": "1M-PI-263-003-Turbine-Bypass-Sys-1-배치2.png",
+    "location": "Turbine Bypass Sys-1-배치2"
+  },
+  {
+    "tag": "B-1205",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 45.8,
+      "y_percent": 79.5
+    },
+    "drawing": "1M-PI-263-003-Turbine-Bypass-Sys-1.png",
+    "location": "Turbine Bypass Sys-1"
+  },
+  {
+    "tag": "B-1210",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 59.6,
+      "y_percent": 71.8
+    },
+    "drawing": "1M-PI-263-004-Turbine-Bypass-Sys-2.png",
+    "location": "Turbine Bypass Sys-2"
+  },
+  {
+    "tag": "B-1271",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 22.3,
+      "y_percent": 17.6
+    },
+    "drawing": "1M-PI-264-201-HRSG-Condensate-Preheater-System.png",
+    "location": "HRSG Condensate Preheater System"
+  },
+  {
+    "tag": "B-150",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 63.5,
+      "y_percent": 71.3
+    },
+    "drawing": "1M-PI-391-002-#2-GT-Misc.-Drain-&-Vent.png",
+    "location": "#2 GT Misc. Drain & Vent"
+  },
+  {
+    "tag": "B-150",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 60.9,
+      "y_percent": 83.5
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1(R1).png",
+    "location": "WW transfer-1(R1)"
+  },
+  {
+    "tag": "B-150",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 60.9,
+      "y_percent": 83.5
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1.png",
+    "location": "WW transfer-1"
+  },
+  {
+    "tag": "B-200A",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 84.6,
+      "y_percent": 36.8
+    },
+    "drawing": "2-M-PI-611-102.png",
+    "location": "2-M-PI-611-102"
+  },
+  {
+    "tag": "B-300",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 24.2,
+      "y_percent": 35.0
+    },
+    "drawing": "미래엔열교환기실-P&id-rev-3-012.png",
+    "location": "미래엔열교환기실 P&id rev-3-012"
+  },
+  {
+    "tag": "B-331",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 33.5,
+      "y_percent": 24.1
+    },
+    "drawing": "2-M-PI-331-101-Raw-Water-Tank(중수도수정).png",
+    "location": "2-M-PI-331-101 Raw Water Tank(중수도수정)"
+  },
+  {
+    "tag": "B-331",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 33.5,
+      "y_percent": 24.1
+    },
+    "drawing": "2-M-PI-331-101.png",
+    "location": "2-M-PI-331-101"
+  },
+  {
+    "tag": "B-6010",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 14.6,
+      "y_percent": 79.4
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1(R1).png",
+    "location": "WW transfer-1(R1)"
+  },
+  {
+    "tag": "B-6010",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 14.6,
+      "y_percent": 79.4
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1.png",
+    "location": "WW transfer-1"
+  },
+  {
+    "tag": "B-7005",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 23.1,
+      "y_percent": 42.1
+    },
+    "drawing": "1M-PI-111-001-DH-HE-Condensate-System-1(R2).png",
+    "location": "DH HE Condensate System-1(R2)"
+  },
+  {
+    "tag": "B-7010",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 30.5,
+      "y_percent": 73.4
+    },
+    "drawing": "1M-PI-111-003-DH-HE-Condensate-System-3rev2.png",
+    "location": "DH HE Condensate System-3rev2"
+  },
+  {
+    "tag": "B-7011",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 33.4,
+      "y_percent": 77.7
+    },
+    "drawing": "1M-PI-111-002-DH-HE-Condensate-System-2rev2.png",
+    "location": "DH HE Condensate System-2rev2"
+  },
+  {
+    "tag": "B-7071",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 15.7,
+      "y_percent": 86.6
+    },
+    "drawing": "1M-PI-342-001-Primary-Cooling-Water-System-1(REV1).png",
+    "location": "Primary Cooling Water System-1(REV1)"
+  },
+  {
+    "tag": "B-7071",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 15.7,
+      "y_percent": 86.6
+    },
+    "drawing": "1M-PI-342-001-Primary-Cooling-Water-System-1(중수도수정).png",
+    "location": "Primary Cooling Water System-1(중수도수정)"
+  },
+  {
+    "tag": "B-7071",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 15.7,
+      "y_percent": 86.6
+    },
+    "drawing": "1M-PI-342-001-Primary-Cooling-Water-System-1.png",
+    "location": "Primary Cooling Water System-1"
+  },
+  {
+    "tag": "B-750",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 33.2,
+      "y_percent": 37.7
+    },
+    "drawing": "1M-PI-313-001-Fuel-Gas-System-1_REV.2-배치1.png",
+    "location": "Fuel Gas System-1_REV.2-배치1"
+  },
+  {
+    "tag": "B-750",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 28.3,
+      "y_percent": 32.6
+    },
+    "drawing": "1M-PI-313-001-Fuel-Gas-System-1_REV.2.png",
+    "location": "Fuel Gas System-1_REV.2"
+  },
+  {
+    "tag": "B-750",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 33.2,
+      "y_percent": 37.7
+    },
+    "drawing": "1M-PI-313-001-Fuel-Gas-System-1_REV.3-배치1.png",
+    "location": "Fuel Gas System-1_REV.3-배치1"
+  },
+  {
+    "tag": "B-750",
+    "type": "B",
+    "category": "Blower",
+    "position": {
+      "x_percent": 28.3,
+      "y_percent": 32.6
+    },
+    "drawing": "1M-PI-313-001-Fuel-Gas-System-1_REV.3.png",
+    "location": "Fuel Gas System-1_REV.3"
+  },
+  {
+    "tag": "C-1005",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 46.8,
+      "y_percent": 72.3
+    },
+    "drawing": "1M-PI-263-003-Turbine-Bypass-Sys-1-배치2.png",
+    "location": "Turbine Bypass Sys-1-배치2"
+  },
+  {
+    "tag": "C-1005",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 45.8,
+      "y_percent": 81.5
+    },
+    "drawing": "1M-PI-263-003-Turbine-Bypass-Sys-1.png",
+    "location": "Turbine Bypass Sys-1"
+  },
+  {
+    "tag": "C-1110",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 24.8,
+      "y_percent": 55.2
+    },
+    "drawing": "1M-PI-263-004-Turbine-Bypass-Sys-2.png",
+    "location": "Turbine Bypass Sys-2"
+  },
+  {
+    "tag": "C-115",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 52.3,
+      "y_percent": 10.1
+    },
+    "drawing": "1M-PI-111-003-DH-HE-Condensate-System-3rev2.png",
+    "location": "DH HE Condensate System-3rev2"
+  },
+  {
+    "tag": "C-120",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 12.6,
+      "y_percent": 18.4
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R1).png",
+    "location": "GT Inlet Air Heating System(R1)"
+  },
+  {
+    "tag": "C-120",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 12.6,
+      "y_percent": 18.4
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R2).png",
+    "location": "GT Inlet Air Heating System(R2)"
+  },
+  {
+    "tag": "C-120",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 34.5,
+      "y_percent": 22.2
+    },
+    "drawing": "1M-PI-313-004-Fuel-Gas-System-4(REV)-배치1.png",
+    "location": "Fuel Gas System-4(REV)-배치1"
+  },
+  {
+    "tag": "C-120",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 30.0,
+      "y_percent": 10.8
+    },
+    "drawing": "1M-PI-313-004-Fuel-Gas-System-4(REV).png",
+    "location": "Fuel Gas System-4(REV)"
+  },
+  {
+    "tag": "C-120",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 34.5,
+      "y_percent": 22.2
+    },
+    "drawing": "1M-PI-313-004-Fuel-Gas-System-5(REV)-배치1.png",
+    "location": "Fuel Gas System-5(REV)-배치1"
+  },
+  {
+    "tag": "C-120",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 30.0,
+      "y_percent": 10.8
+    },
+    "drawing": "1M-PI-313-004-Fuel-Gas-System-5(REV).png",
+    "location": "Fuel Gas System-5(REV)"
+  },
+  {
+    "tag": "C-1204",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 32.7,
+      "y_percent": 83.8
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R1).png",
+    "location": "GT Inlet Air Heating System(R1)"
+  },
+  {
+    "tag": "C-1204",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 32.7,
+      "y_percent": 83.8
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R2).png",
+    "location": "GT Inlet Air Heating System(R2)"
+  },
+  {
+    "tag": "C-1205",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 58.0,
+      "y_percent": 27.7
+    },
+    "drawing": "1M-PI-263-003-Turbine-Bypass-Sys-1-배치2.png",
+    "location": "Turbine Bypass Sys-1-배치2"
+  },
+  {
+    "tag": "C-1205",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 60.4,
+      "y_percent": 18.4
+    },
+    "drawing": "1M-PI-263-003-Turbine-Bypass-Sys-1.png",
+    "location": "Turbine Bypass Sys-1"
+  },
+  {
+    "tag": "C-121",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 17.1,
+      "y_percent": 114.5
+    },
+    "drawing": "1M-PI-116-004-Heat-Pump-(VENDOR).png",
+    "location": "Heat Pump (VENDOR)"
+  },
+  {
+    "tag": "C-1210",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 58.5,
+      "y_percent": 55.0
+    },
+    "drawing": "1M-PI-263-004-Turbine-Bypass-Sys-2.png",
+    "location": "Turbine Bypass Sys-2"
+  },
+  {
+    "tag": "C-150",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 32.7,
+      "y_percent": 39.2
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R1).png",
+    "location": "GT Inlet Air Heating System(R1)"
+  },
+  {
+    "tag": "C-150",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 32.7,
+      "y_percent": 39.2
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R2).png",
+    "location": "GT Inlet Air Heating System(R2)"
+  },
+  {
+    "tag": "C-200",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 39.5,
+      "y_percent": 11.7
+    },
+    "drawing": "1M-PI-111-001-DH-HE-Condensate-System-1(R2).png",
+    "location": "DH HE Condensate System-1(R2)"
+  },
+  {
+    "tag": "C-200",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 58.6,
+      "y_percent": 10.9
+    },
+    "drawing": "1M-PI-251-001-Condensate-System-1(R1).png",
+    "location": "Condensate System-1(R1)"
+  },
+  {
+    "tag": "C-200",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 60.1,
+      "y_percent": 42.6
+    },
+    "drawing": "1M-PI-262-001-Feed-Water-Sys-1(R1).png",
+    "location": "Feed Water Sys-1(R1)"
+  },
+  {
+    "tag": "C-200/95",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 58.9,
+      "y_percent": 11.7
+    },
+    "drawing": "1M-PI-111-001-DH-HE-Condensate-System-1(R2).png",
+    "location": "DH HE Condensate System-1(R2)"
+  },
+  {
+    "tag": "C-200/95",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 58.6,
+      "y_percent": 10.9
+    },
+    "drawing": "1M-PI-251-001-Condensate-System-1(R1).png",
+    "location": "Condensate System-1(R1)"
+  },
+  {
+    "tag": "C-360",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 49.2,
+      "y_percent": 11.7
+    },
+    "drawing": "1M-PI-111-001-DH-HE-Condensate-System-1(R2).png",
+    "location": "DH HE Condensate System-1(R2)"
+  },
+  {
+    "tag": "C-7065",
+    "type": "C",
+    "category": "Compressor",
+    "position": {
+      "x_percent": 72.6,
+      "y_percent": 39.8
+    },
+    "drawing": "1M-PI-342-004-Secondary-Cooling-Water-System-3(R2).png",
+    "location": "Secondary Cooling Water System-3(R2)"
+  },
+  {
+    "tag": "E-0102",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 27.5,
+      "y_percent": 69.6
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R1).png",
+    "location": "Fuel Gas System-2(R1)"
+  },
+  {
+    "tag": "E-0102",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 27.5,
+      "y_percent": 69.6
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R2),윤현변경관리-4월.png",
+    "location": "Fuel Gas System-2(R2),윤현변경관리 4월"
+  },
+  {
+    "tag": "E-0102",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 27.5,
+      "y_percent": 69.6
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R2).png",
+    "location": "Fuel Gas System-2(R2)"
+  },
+  {
+    "tag": "E-0102",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 27.5,
+      "y_percent": 69.6
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R3).png",
+    "location": "Fuel Gas System-2(R3)"
+  },
+  {
+    "tag": "E-0110",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 68.1,
+      "y_percent": 39.9
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R1).png",
+    "location": "Fuel Gas System-2(R1)"
+  },
+  {
+    "tag": "E-0110",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 68.1,
+      "y_percent": 39.9
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R2),윤현변경관리-4월.png",
+    "location": "Fuel Gas System-2(R2),윤현변경관리 4월"
+  },
+  {
+    "tag": "E-0110",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 68.1,
+      "y_percent": 39.9
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R2).png",
+    "location": "Fuel Gas System-2(R2)"
+  },
+  {
+    "tag": "E-0110",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 68.1,
+      "y_percent": 39.9
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R3).png",
+    "location": "Fuel Gas System-2(R3)"
+  },
+  {
+    "tag": "E-0735",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 83.5,
+      "y_percent": 21.3
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R1).png",
+    "location": "GT Inlet Air Heating System(R1)"
+  },
+  {
+    "tag": "E-0735",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 83.5,
+      "y_percent": 21.3
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R2).png",
+    "location": "GT Inlet Air Heating System(R2)"
+  },
+  {
+    "tag": "E-0735",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 72.3,
+      "y_percent": 27.1
+    },
+    "drawing": "1M-PI-313-004-Fuel-Gas-System-4(REV)-배치1.png",
+    "location": "Fuel Gas System-4(REV)-배치1"
+  },
+  {
+    "tag": "E-0735",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 78.8,
+      "y_percent": 17.7
+    },
+    "drawing": "1M-PI-313-004-Fuel-Gas-System-4(REV).png",
+    "location": "Fuel Gas System-4(REV)"
+  },
+  {
+    "tag": "E-0735",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 72.3,
+      "y_percent": 27.1
+    },
+    "drawing": "1M-PI-313-004-Fuel-Gas-System-5(REV)-배치1.png",
+    "location": "Fuel Gas System-5(REV)-배치1"
+  },
+  {
+    "tag": "E-0735",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 78.8,
+      "y_percent": 17.7
+    },
+    "drawing": "1M-PI-313-004-Fuel-Gas-System-5(REV).png",
+    "location": "Fuel Gas System-5(REV)"
+  },
+  {
+    "tag": "E-0735",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 86.0,
+      "y_percent": 13.0
+    },
+    "drawing": "1M-PI-342-004-Secondary-Cooling-Water-System-3(R2).png",
+    "location": "Secondary Cooling Water System-3(R2)"
+  },
+  {
+    "tag": "E-0735",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 80.9,
+      "y_percent": 16.4
+    },
+    "drawing": "1M-PI-359-001-Service-Water-Distribution-System-1.png",
+    "location": "Service Water Distribution System-1"
+  },
+  {
+    "tag": "E-0735",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 81.1,
+      "y_percent": 16.0
+    },
+    "drawing": "1M-PI-359-001-Service-Water-Distribution-1.png",
+    "location": "Service Water Distribution-1"
+  },
+  {
+    "tag": "E-0735",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 87.2,
+      "y_percent": 16.7
+    },
+    "drawing": "1M-PI-391-001-#1-GT-Misc.-Drain-&-Vent.png",
+    "location": "#1 GT Misc. Drain & Vent"
+  },
+  {
+    "tag": "E-0735",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 87.1,
+      "y_percent": 17.3
+    },
+    "drawing": "1M-PI-391-002-#2-GT-Misc.-Drain-&-Vent.png",
+    "location": "#2 GT Misc. Drain & Vent"
+  },
+  {
+    "tag": "E-0735",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 80.8,
+      "y_percent": 15.1
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1(R1).png",
+    "location": "WW transfer-1(R1)"
+  },
+  {
+    "tag": "E-0735",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 80.8,
+      "y_percent": 15.1
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1.png",
+    "location": "WW transfer-1"
+  },
+  {
+    "tag": "E-100",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 37.2,
+      "y_percent": 19.4
+    },
+    "drawing": "2-M-PI-331-101-Raw-Water-Tank(중수도수정).png",
+    "location": "2-M-PI-331-101 Raw Water Tank(중수도수정)"
+  },
+  {
+    "tag": "E-100",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 37.2,
+      "y_percent": 19.4
+    },
+    "drawing": "2-M-PI-331-101.png",
+    "location": "2-M-PI-331-101"
+  },
+  {
+    "tag": "E-131",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 34.7,
+      "y_percent": 53.6
+    },
+    "drawing": "2-M-PI-131-101(D)_DH-ACCUMULATOR-SYSTEM(REV4).png",
+    "location": "2-M-PI-131-101(D)_DH ACCUMULATOR SYSTEM(REV4)"
+  },
+  {
+    "tag": "E-131",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 35.1,
+      "y_percent": 53.5
+    },
+    "drawing": "2-M-PI-131-101.png",
+    "location": "2-M-PI-131-101"
+  },
+  {
+    "tag": "E-200A",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 17.6,
+      "y_percent": 52.2
+    },
+    "drawing": "2-M-PI-331-101-Raw-Water-Tank(중수도수정).png",
+    "location": "2-M-PI-331-101 Raw Water Tank(중수도수정)"
+  },
+  {
+    "tag": "E-200A",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 17.6,
+      "y_percent": 52.2
+    },
+    "drawing": "2-M-PI-331-101.png",
+    "location": "2-M-PI-331-101"
+  },
+  {
+    "tag": "E-2506",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 67.2,
+      "y_percent": 18.1
+    },
+    "drawing": "2-M-PI-331-101-Raw-Water-Tank(중수도수정).png",
+    "location": "2-M-PI-331-101 Raw Water Tank(중수도수정)"
+  },
+  {
+    "tag": "E-2506",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 67.2,
+      "y_percent": 18.1
+    },
+    "drawing": "2-M-PI-331-101.png",
+    "location": "2-M-PI-331-101"
+  },
+  {
+    "tag": "E-4086",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 40.5,
+      "y_percent": 53.6
+    },
+    "drawing": "2-M-PI-131-101(D)_DH-ACCUMULATOR-SYSTEM(REV4).png",
+    "location": "2-M-PI-131-101(D)_DH ACCUMULATOR SYSTEM(REV4)"
+  },
+  {
+    "tag": "E-450",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 49.7,
+      "y_percent": 40.1
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System(R1).png",
+    "location": "DH ECO II System(R1)"
+  },
+  {
+    "tag": "E-5111C",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 15.6,
+      "y_percent": 71.0
+    },
+    "drawing": "3M-PI-341-001-AIR-GAS-SYSTEM-(NO.1)_R2(160).png",
+    "location": "AIR GAS SYSTEM (NO.1)_R2(160)"
+  },
+  {
+    "tag": "E-5211C",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 15.3,
+      "y_percent": 71.0
+    },
+    "drawing": "3M-PI-341-002-AIR-GAS-SYSTEM-(NO.2)_R2(161).png",
+    "location": "AIR GAS SYSTEM (NO.2)_R2(161)"
+  },
+  {
+    "tag": "E-6004",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 9.5,
+      "y_percent": 65.8
+    },
+    "drawing": "2-M-PI-331-101-Raw-Water-Tank(중수도수정).png",
+    "location": "2-M-PI-331-101 Raw Water Tank(중수도수정)"
+  },
+  {
+    "tag": "E-6004",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 9.5,
+      "y_percent": 65.8
+    },
+    "drawing": "2-M-PI-331-101.png",
+    "location": "2-M-PI-331-101"
+  },
+  {
+    "tag": "E-6504",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 23.2,
+      "y_percent": 70.1
+    },
+    "drawing": "2-M-PI-333-102(REV1).png",
+    "location": "2-M-PI-333-102(REV1)"
+  },
+  {
+    "tag": "E-6504",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 23.2,
+      "y_percent": 70.1
+    },
+    "drawing": "2-M-PI-333-102.png",
+    "location": "2-M-PI-333-102"
+  },
+  {
+    "tag": "E-6702",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 24.9,
+      "y_percent": 75.8
+    },
+    "drawing": "2-M-PI-334-101(REV).png",
+    "location": "2-M-PI-334-101(REV)"
+  },
+  {
+    "tag": "E-6702",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 24.9,
+      "y_percent": 75.8
+    },
+    "drawing": "2-M-PI-334-101(REV2).png",
+    "location": "2-M-PI-334-101(REV2)"
+  },
+  {
+    "tag": "E-6702",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 24.9,
+      "y_percent": 75.8
+    },
+    "drawing": "2-M-PI-334-101(REV3).png",
+    "location": "2-M-PI-334-101(REV3)"
+  },
+  {
+    "tag": "E-6702",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 24.9,
+      "y_percent": 75.8
+    },
+    "drawing": "2-M-PI-334-101(REV4).png",
+    "location": "2-M-PI-334-101(REV4)"
+  },
+  {
+    "tag": "E-6718",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 26.7,
+      "y_percent": 72.1
+    },
+    "drawing": "2-M-PI-334-101(REV).png",
+    "location": "2-M-PI-334-101(REV)"
+  },
+  {
+    "tag": "E-6718",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 26.7,
+      "y_percent": 72.1
+    },
+    "drawing": "2-M-PI-334-101(REV2).png",
+    "location": "2-M-PI-334-101(REV2)"
+  },
+  {
+    "tag": "E-6718",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 26.7,
+      "y_percent": 72.1
+    },
+    "drawing": "2-M-PI-334-101(REV3).png",
+    "location": "2-M-PI-334-101(REV3)"
+  },
+  {
+    "tag": "E-6718",
+    "type": "E",
+    "category": "Equipment",
+    "position": {
+      "x_percent": 26.7,
+      "y_percent": 72.1
+    },
+    "drawing": "2-M-PI-334-101(REV4).png",
+    "location": "2-M-PI-334-101(REV4)"
+  },
+  {
+    "tag": "FN-101",
+    "type": "FN",
+    "category": "Fan",
+    "position": {
+      "x_percent": 31.7,
+      "y_percent": 80.0
+    },
+    "drawing": "3M-PI-341-001-AIR-GAS-SYSTEM-(NO.1)_R2(160).png",
+    "location": "AIR GAS SYSTEM (NO.1)_R2(160)"
+  },
+  {
+    "tag": "FN-102",
+    "type": "FN",
+    "category": "Fan",
+    "position": {
+      "x_percent": 64.1,
+      "y_percent": 73.5
+    },
+    "drawing": "3M-PI-341-001-AIR-GAS-SYSTEM-(NO.1)_R2(160).png",
+    "location": "AIR GAS SYSTEM (NO.1)_R2(160)"
+  },
+  {
+    "tag": "FN-201",
+    "type": "FN",
+    "category": "Fan",
+    "position": {
+      "x_percent": 31.8,
+      "y_percent": 80.3
+    },
+    "drawing": "3M-PI-341-002-AIR-GAS-SYSTEM-(NO.2)_R2(161).png",
+    "location": "AIR GAS SYSTEM (NO.2)_R2(161)"
+  },
+  {
+    "tag": "FN-202",
+    "type": "FN",
+    "category": "Fan",
+    "position": {
+      "x_percent": 64.3,
+      "y_percent": 73.7
+    },
+    "drawing": "3M-PI-341-002-AIR-GAS-SYSTEM-(NO.2)_R2(161).png",
+    "location": "AIR GAS SYSTEM (NO.2)_R2(161)"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 30.1,
+      "y_percent": 6.3
+    },
+    "drawing": "06_D-M-PI-12200-001_P&ID-CHEONG-NA-BOOSTING-PUMP-STATION_R0.png",
+    "location": "06_D-M-PI-12200-001_P&ID CHEONG-NA BOOSTING PUMP STATION_R0"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 30.4,
+      "y_percent": 64.2
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System(R1).png",
+    "location": "DH ECO II System(R1)"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 21.9,
+      "y_percent": 74.6
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System.png",
+    "location": "DH ECO II System"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 44.0,
+      "y_percent": 39.4
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R1).png",
+    "location": "GT Inlet Air Heating System(R1)"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 44.0,
+      "y_percent": 39.4
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R2).png",
+    "location": "GT Inlet Air Heating System(R2)"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 37.1,
+      "y_percent": 54.9
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R1)-배치1.png",
+    "location": "Fuel Gas System-2(R1)-배치1"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 33.4,
+      "y_percent": 57.0
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R1).png",
+    "location": "Fuel Gas System-2(R1)"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 37.1,
+      "y_percent": 54.9
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R2),윤현변경관리-4월-배치1.png",
+    "location": "Fuel Gas System-2(R2),윤현변경관리 4월-배치1"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 33.4,
+      "y_percent": 57.0
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R2),윤현변경관리-4월.png",
+    "location": "Fuel Gas System-2(R2),윤현변경관리 4월"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 37.1,
+      "y_percent": 54.9
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R2)-배치1.png",
+    "location": "Fuel Gas System-2(R2)-배치1"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 33.4,
+      "y_percent": 57.0
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R2).png",
+    "location": "Fuel Gas System-2(R2)"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 37.1,
+      "y_percent": 54.9
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R3)-배치1.png",
+    "location": "Fuel Gas System-2(R3)-배치1"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 33.4,
+      "y_percent": 57.0
+    },
+    "drawing": "1M-PI-313-002-Fuel-Gas-System-2(R3).png",
+    "location": "Fuel Gas System-2(R3)"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 56.4,
+      "y_percent": 57.7
+    },
+    "drawing": "미래엔열교환기실-P&id-rev-3-003.png",
+    "location": "미래엔열교환기실 P&id rev-3-003"
+  },
+  {
+    "tag": "HE-101",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 28.5,
+      "y_percent": 50.3
+    },
+    "drawing": "미래엔열교환기실-P&id-rev-3-열교환-계통도001.png",
+    "location": "미래엔열교환기실 P&id rev-3-열교환 계통도001"
+  },
+  {
+    "tag": "HE-102",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 50.5,
+      "y_percent": 59.7
+    },
+    "drawing": "06_D-M-PI-12200-001_P&ID-CHEONG-NA-BOOSTING-PUMP-STATION_R0.png",
+    "location": "06_D-M-PI-12200-001_P&ID CHEONG-NA BOOSTING PUMP STATION_R0"
+  },
+  {
+    "tag": "HE-102",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 56.3,
+      "y_percent": 72.0
+    },
+    "drawing": "미래엔열교환기실-P&id-rev-3-003.png",
+    "location": "미래엔열교환기실 P&id rev-3-003"
+  },
+  {
+    "tag": "HE-102",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 38.7,
+      "y_percent": 50.5
+    },
+    "drawing": "미래엔열교환기실-P&id-rev-3-열교환-계통도001.png",
+    "location": "미래엔열교환기실 P&id rev-3-열교환 계통도001"
+  },
+  {
+    "tag": "HE-201",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 44.3,
+      "y_percent": 83.5
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R1).png",
+    "location": "GT Inlet Air Heating System(R1)"
+  },
+  {
+    "tag": "HE-201",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 44.3,
+      "y_percent": 83.5
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R2).png",
+    "location": "GT Inlet Air Heating System(R2)"
+  },
+  {
+    "tag": "HE-201",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 36.9,
+      "y_percent": 56.0
+    },
+    "drawing": "1M-PI-313-003-Fuel-Gas-System-3(R1)-배치1.png",
+    "location": "Fuel Gas System-3(R1)-배치1"
+  },
+  {
+    "tag": "HE-201",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 33.1,
+      "y_percent": 58.5
+    },
+    "drawing": "1M-PI-313-003-Fuel-Gas-System-3(R1).png",
+    "location": "Fuel Gas System-3(R1)"
+  },
+  {
+    "tag": "HE-201",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 36.9,
+      "y_percent": 56.0
+    },
+    "drawing": "1M-PI-313-003-Fuel-Gas-System-3(R2)-배치1.png",
+    "location": "Fuel Gas System-3(R2)-배치1"
+  },
+  {
+    "tag": "HE-201",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 33.1,
+      "y_percent": 58.5
+    },
+    "drawing": "1M-PI-313-003-Fuel-Gas-System-3(R2).png",
+    "location": "Fuel Gas System-3(R2)"
+  },
+  {
+    "tag": "HE-201",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 36.9,
+      "y_percent": 56.0
+    },
+    "drawing": "1M-PI-313-003-Fuel-Gas-System-3(R2)윤현변경관리-4월-배치1.png",
+    "location": "Fuel Gas System-3(R2)윤현변경관리 4월-배치1"
+  },
+  {
+    "tag": "HE-201",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 33.1,
+      "y_percent": 58.5
+    },
+    "drawing": "1M-PI-313-003-Fuel-Gas-System-3(R2)윤현변경관리-4월.png",
+    "location": "Fuel Gas System-3(R2)윤현변경관리 4월"
+  },
+  {
+    "tag": "HE-201",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 36.9,
+      "y_percent": 56.0
+    },
+    "drawing": "1M-PI-313-003-Fuel-Gas-System-3(R3)-배치1.png",
+    "location": "Fuel Gas System-3(R3)-배치1"
+  },
+  {
+    "tag": "HE-201",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 33.1,
+      "y_percent": 58.5
+    },
+    "drawing": "1M-PI-313-003-Fuel-Gas-System-3(R3).png",
+    "location": "Fuel Gas System-3(R3)"
+  },
+  {
+    "tag": "HE-6501",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 28.9,
+      "y_percent": 81.9
+    },
+    "drawing": "2-M-PI-333-102(REV1).png",
+    "location": "2-M-PI-333-102(REV1)"
+  },
+  {
+    "tag": "HE-6501",
+    "type": "HE",
+    "category": "Heat Exchanger",
+    "position": {
+      "x_percent": 28.9,
+      "y_percent": 81.9
+    },
+    "drawing": "2-M-PI-333-102.png",
+    "location": "2-M-PI-333-102"
+  },
+  {
+    "tag": "M-100A",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 13.0,
+      "y_percent": 39.6
+    },
+    "drawing": "2-M-PI-331-101-Raw-Water-Tank(중수도수정).png",
+    "location": "2-M-PI-331-101 Raw Water Tank(중수도수정)"
+  },
+  {
+    "tag": "M-100A",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 13.0,
+      "y_percent": 39.6
+    },
+    "drawing": "2-M-PI-331-101.png",
+    "location": "2-M-PI-331-101"
+  },
+  {
+    "tag": "M-1035",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 71.5,
+      "y_percent": 76.9
+    },
+    "drawing": "1M-PI-262-001-Feed-Water-Sys-1(R1).png",
+    "location": "Feed Water Sys-1(R1)"
+  },
+  {
+    "tag": "M-1036",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 71.5,
+      "y_percent": 88.7
+    },
+    "drawing": "1M-PI-262-001-Feed-Water-Sys-1(R1).png",
+    "location": "Feed Water Sys-1(R1)"
+  },
+  {
+    "tag": "M-1042",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 34.6,
+      "y_percent": 67.6
+    },
+    "drawing": "1M-PI-262-002-Feed-Water-Sys-2.png",
+    "location": "Feed Water Sys-2"
+  },
+  {
+    "tag": "M-1141",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 68.3,
+      "y_percent": 14.3
+    },
+    "drawing": "1M-PI-262-002-Feed-Water-Sys-2.png",
+    "location": "Feed Water Sys-2"
+  },
+  {
+    "tag": "M-1142",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 18.4,
+      "y_percent": 67.6
+    },
+    "drawing": "1M-PI-262-002-Feed-Water-Sys-2.png",
+    "location": "Feed Water Sys-2"
+  },
+  {
+    "tag": "M-117",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 21.7,
+      "y_percent": 12.6
+    },
+    "drawing": "1M-PI-111-101-DH-Economizer-System-1.png",
+    "location": "DH Economizer System-1"
+  },
+  {
+    "tag": "M-117",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 21.7,
+      "y_percent": 12.6
+    },
+    "drawing": "1M-PI-111-201-DH-Economizer-System-2.png",
+    "location": "DH Economizer System-2"
+  },
+  {
+    "tag": "M-122",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 22.1,
+      "y_percent": 67.7
+    },
+    "drawing": "06_D-M-PI-12200-001_P&ID-CHEONG-NA-BOOSTING-PUMP-STATION_R0.png",
+    "location": "06_D-M-PI-12200-001_P&ID CHEONG-NA BOOSTING PUMP STATION_R0"
+  },
+  {
+    "tag": "M-1242",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 50.8,
+      "y_percent": 67.6
+    },
+    "drawing": "1M-PI-262-002-Feed-Water-Sys-2.png",
+    "location": "Feed Water Sys-2"
+  },
+  {
+    "tag": "M-125",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 35.3,
+      "y_percent": 50.2
+    },
+    "drawing": "2-M-PI-333-102(REV1).png",
+    "location": "2-M-PI-333-102(REV1)"
+  },
+  {
+    "tag": "M-125",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 35.3,
+      "y_percent": 50.2
+    },
+    "drawing": "2-M-PI-333-102.png",
+    "location": "2-M-PI-333-102"
+  },
+  {
+    "tag": "M-150",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 26.9,
+      "y_percent": 71.6
+    },
+    "drawing": "1M-PI-251-001-Condensate-System-1(R1).png",
+    "location": "Condensate System-1(R1)"
+  },
+  {
+    "tag": "M-200",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 52.6,
+      "y_percent": 38.9
+    },
+    "drawing": "미래엔열교환기실-P&id-rev-3-열교환-계통도001.png",
+    "location": "미래엔열교환기실 P&id rev-3-열교환 계통도001"
+  },
+  {
+    "tag": "M-200",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 48.9,
+      "y_percent": 25.6
+    },
+    "drawing": "미래엔열교환기실-P&id-rev-3-펌프계통도002.png",
+    "location": "미래엔열교환기실 P&id rev-3-펌프계통도002"
+  },
+  {
+    "tag": "M-200A",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 8.6,
+      "y_percent": 74.4
+    },
+    "drawing": "미래엔열교환기실-P&id-rev-3-013.png",
+    "location": "미래엔열교환기실 P&id rev-3-013"
+  },
+  {
+    "tag": "M-2403",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 68.9,
+      "y_percent": 49.5
+    },
+    "drawing": "2-M-PI-121-102(D)_DH-RETRUN-&-SUPPLY-SYSTEM(2)(REV5).png",
+    "location": "2-M-PI-121-102(D)_DH RETRUN & SUPPLY SYSTEM(2)(REV5)"
+  },
+  {
+    "tag": "M-2403",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 66.7,
+      "y_percent": 50.4
+    },
+    "drawing": "2-M-PI-121-102(REV).png",
+    "location": "2-M-PI-121-102(REV)"
+  },
+  {
+    "tag": "M-2710",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 52.9,
+      "y_percent": 62.8
+    },
+    "drawing": "2-M-PI-611-101.png",
+    "location": "2-M-PI-611-101"
+  },
+  {
+    "tag": "M-300",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 81.2,
+      "y_percent": 60.0
+    },
+    "drawing": "2-M-PI-121-102(REV).png",
+    "location": "2-M-PI-121-102(REV)"
+  },
+  {
+    "tag": "M-3077A",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 62.0,
+      "y_percent": 43.5
+    },
+    "drawing": "1M-PI-253-003.png",
+    "location": "3"
+  },
+  {
+    "tag": "M-3077E",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 35.6,
+      "y_percent": 16.6
+    },
+    "drawing": "1M-PI-253-003.png",
+    "location": "3"
+  },
+  {
+    "tag": "M-333",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 13.6,
+      "y_percent": 76.4
+    },
+    "drawing": "2-M-PI-333-103.png",
+    "location": "2-M-PI-333-103"
+  },
+  {
+    "tag": "M-350",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 27.8,
+      "y_percent": 62.4
+    },
+    "drawing": "1M-PI-116-001-Heat-Pump-1.png",
+    "location": "Heat Pump-1"
+  },
+  {
+    "tag": "M-400",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 31.6,
+      "y_percent": 77.7
+    },
+    "drawing": "3M-PI-341-001-AIR-GAS-SYSTEM-(NO.1)_R2(160).png",
+    "location": "AIR GAS SYSTEM (NO.1)_R2(160)"
+  },
+  {
+    "tag": "M-400",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 31.8,
+      "y_percent": 78.0
+    },
+    "drawing": "3M-PI-341-002-AIR-GAS-SYSTEM-(NO.2)_R2(161).png",
+    "location": "AIR GAS SYSTEM (NO.2)_R2(161)"
+  },
+  {
+    "tag": "M-4002",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 32.9,
+      "y_percent": 50.2
+    },
+    "drawing": "2-M-PI-121-101(D)_DH-RETRUN-&-SUPPLY-SYSTEM(1)(REV4).png",
+    "location": "2-M-PI-121-101(D)_DH RETRUN & SUPPLY SYSTEM(1)(REV4)"
+  },
+  {
+    "tag": "M-4003",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 41.5,
+      "y_percent": 42.5
+    },
+    "drawing": "2-M-PI-121-101(D)_DH-RETRUN-&-SUPPLY-SYSTEM(1)(REV4).png",
+    "location": "2-M-PI-121-101(D)_DH RETRUN & SUPPLY SYSTEM(1)(REV4)"
+  },
+  {
+    "tag": "M-4005",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 41.5,
+      "y_percent": 51.7
+    },
+    "drawing": "2-M-PI-121-101(D)_DH-RETRUN-&-SUPPLY-SYSTEM(1)(REV4).png",
+    "location": "2-M-PI-121-101(D)_DH RETRUN & SUPPLY SYSTEM(1)(REV4)"
+  },
+  {
+    "tag": "M-4007",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 41.5,
+      "y_percent": 61.0
+    },
+    "drawing": "2-M-PI-121-101(D)_DH-RETRUN-&-SUPPLY-SYSTEM(1)(REV4).png",
+    "location": "2-M-PI-121-101(D)_DH RETRUN & SUPPLY SYSTEM(1)(REV4)"
+  },
+  {
+    "tag": "M-4010",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 41.5,
+      "y_percent": 70.3
+    },
+    "drawing": "2-M-PI-121-101(D)_DH-RETRUN-&-SUPPLY-SYSTEM(1)(REV4).png",
+    "location": "2-M-PI-121-101(D)_DH RETRUN & SUPPLY SYSTEM(1)(REV4)"
+  },
+  {
+    "tag": "M-4012",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 41.5,
+      "y_percent": 79.5
+    },
+    "drawing": "2-M-PI-121-101(D)_DH-RETRUN-&-SUPPLY-SYSTEM(1)(REV4).png",
+    "location": "2-M-PI-121-101(D)_DH RETRUN & SUPPLY SYSTEM(1)(REV4)"
+  },
+  {
+    "tag": "M-4014",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 91.5,
+      "y_percent": 51.7
+    },
+    "drawing": "2-M-FD-100-101(D)_MAIN-FLOW-DIAGRAM(REV4).png",
+    "location": "2-M-FD-100-101(D)_MAIN FLOW DIAGRAM(REV4)"
+  },
+  {
+    "tag": "M-4014",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 87.2,
+      "y_percent": 52.1
+    },
+    "drawing": "2-M-FD-100-101.png",
+    "location": "2-M-FD-100-101"
+  },
+  {
+    "tag": "M-4014",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 41.5,
+      "y_percent": 88.8
+    },
+    "drawing": "2-M-PI-121-101(D)_DH-RETRUN-&-SUPPLY-SYSTEM(1)(REV4).png",
+    "location": "2-M-PI-121-101(D)_DH RETRUN & SUPPLY SYSTEM(1)(REV4)"
+  },
+  {
+    "tag": "M-4015",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 28.9,
+      "y_percent": 37.5
+    },
+    "drawing": "2-M-PI-121-101(D)_DH-RETRUN-&-SUPPLY-SYSTEM(1)(REV4).png",
+    "location": "2-M-PI-121-101(D)_DH RETRUN & SUPPLY SYSTEM(1)(REV4)"
+  },
+  {
+    "tag": "M-4016",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 63.5,
+      "y_percent": 65.4
+    },
+    "drawing": "2-M-FD-100-101(D)_MAIN-FLOW-DIAGRAM(REV4).png",
+    "location": "2-M-FD-100-101(D)_MAIN FLOW DIAGRAM(REV4)"
+  },
+  {
+    "tag": "M-4018",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 32.9,
+      "y_percent": 38.6
+    },
+    "drawing": "2-M-PI-121-101(D)_DH-RETRUN-&-SUPPLY-SYSTEM(1)(REV4).png",
+    "location": "2-M-PI-121-101(D)_DH RETRUN & SUPPLY SYSTEM(1)(REV4)"
+  },
+  {
+    "tag": "M-4024",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 32.9,
+      "y_percent": 85.1
+    },
+    "drawing": "2-M-PI-121-101(D)_DH-RETRUN-&-SUPPLY-SYSTEM(1)(REV4).png",
+    "location": "2-M-PI-121-101(D)_DH RETRUN & SUPPLY SYSTEM(1)(REV4)"
+  },
+  {
+    "tag": "M-4027",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 53.2,
+      "y_percent": 39.1
+    },
+    "drawing": "2-M-PI-121-101(D)_DH-RETRUN-&-SUPPLY-SYSTEM(1)(REV4).png",
+    "location": "2-M-PI-121-101(D)_DH RETRUN & SUPPLY SYSTEM(1)(REV4)"
+  },
+  {
+    "tag": "M-4029",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 53.2,
+      "y_percent": 79.0
+    },
+    "drawing": "2-M-PI-121-101(D)_DH-RETRUN-&-SUPPLY-SYSTEM(1)(REV4).png",
+    "location": "2-M-PI-121-101(D)_DH RETRUN & SUPPLY SYSTEM(1)(REV4)"
+  },
+  {
+    "tag": "M-4039",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 51.0,
+      "y_percent": 14.1
+    },
+    "drawing": "2-M-PI-121-102(D)_DH-RETRUN-&-SUPPLY-SYSTEM(2)(REV5).png",
+    "location": "2-M-PI-121-102(D)_DH RETRUN & SUPPLY SYSTEM(2)(REV5)"
+  },
+  {
+    "tag": "M-4039",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 50.0,
+      "y_percent": 17.3
+    },
+    "drawing": "2-M-PI-121-102(REV).png",
+    "location": "2-M-PI-121-102(REV)"
+  },
+  {
+    "tag": "M-4041",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 51.0,
+      "y_percent": 25.0
+    },
+    "drawing": "2-M-PI-121-102(D)_DH-RETRUN-&-SUPPLY-SYSTEM(2)(REV5).png",
+    "location": "2-M-PI-121-102(D)_DH RETRUN & SUPPLY SYSTEM(2)(REV5)"
+  },
+  {
+    "tag": "M-4041",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 50.0,
+      "y_percent": 27.6
+    },
+    "drawing": "2-M-PI-121-102(REV).png",
+    "location": "2-M-PI-121-102(REV)"
+  },
+  {
+    "tag": "M-4043",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 42.6,
+      "y_percent": 34.6
+    },
+    "drawing": "2-M-PI-121-102(D)_DH-RETRUN-&-SUPPLY-SYSTEM(2)(REV5).png",
+    "location": "2-M-PI-121-102(D)_DH RETRUN & SUPPLY SYSTEM(2)(REV5)"
+  },
+  {
+    "tag": "M-4043",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 42.2,
+      "y_percent": 36.6
+    },
+    "drawing": "2-M-PI-121-102(REV).png",
+    "location": "2-M-PI-121-102(REV)"
+  },
+  {
+    "tag": "M-4046",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 58.4,
+      "y_percent": 31.1
+    },
+    "drawing": "2-M-PI-121-102(D)_DH-RETRUN-&-SUPPLY-SYSTEM(2)(REV5).png",
+    "location": "2-M-PI-121-102(D)_DH RETRUN & SUPPLY SYSTEM(2)(REV5)"
+  },
+  {
+    "tag": "M-4046",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 56.9,
+      "y_percent": 33.3
+    },
+    "drawing": "2-M-PI-121-102(REV).png",
+    "location": "2-M-PI-121-102(REV)"
+  },
+  {
+    "tag": "M-4047",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 37.9,
+      "y_percent": 43.4
+    },
+    "drawing": "2-M-PI-121-102(D)_DH-RETRUN-&-SUPPLY-SYSTEM(2)(REV5).png",
+    "location": "2-M-PI-121-102(D)_DH RETRUN & SUPPLY SYSTEM(2)(REV5)"
+  },
+  {
+    "tag": "M-4047",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 37.7,
+      "y_percent": 44.8
+    },
+    "drawing": "2-M-PI-121-102(REV).png",
+    "location": "2-M-PI-121-102(REV)"
+  },
+  {
+    "tag": "M-4077B",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 61.0,
+      "y_percent": 64.9
+    },
+    "drawing": "2-M-FD-100-101.png",
+    "location": "2-M-FD-100-101"
+  },
+  {
+    "tag": "M-4078B",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 61.0,
+      "y_percent": 38.9
+    },
+    "drawing": "2-M-FD-100-101.png",
+    "location": "2-M-FD-100-101"
+  },
+  {
+    "tag": "M-4505",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 14.8,
+      "y_percent": 46.2
+    },
+    "drawing": "1M-PI-111-001-DH-HE-Condensate-System-1(R2).png",
+    "location": "DH HE Condensate System-1(R2)"
+  },
+  {
+    "tag": "M-500",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 55.0,
+      "y_percent": 85.6
+    },
+    "drawing": "06_D-M-PI-12200-001_P&ID-CHEONG-NA-BOOSTING-PUMP-STATION_R0.png",
+    "location": "06_D-M-PI-12200-001_P&ID CHEONG-NA BOOSTING PUMP STATION_R0"
+  },
+  {
+    "tag": "M-500",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 25.9,
+      "y_percent": 62.4
+    },
+    "drawing": "1M-PI-116-002-Heat-Pump-2.png",
+    "location": "Heat Pump-2"
+  },
+  {
+    "tag": "M-5124",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 68.7,
+      "y_percent": 40.3
+    },
+    "drawing": "3M-PI-341-001-AIR-GAS-SYSTEM-(NO.1)_R2(160).png",
+    "location": "AIR GAS SYSTEM (NO.1)_R2(160)"
+  },
+  {
+    "tag": "M-5224",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 68.8,
+      "y_percent": 42.8
+    },
+    "drawing": "3M-PI-341-002-AIR-GAS-SYSTEM-(NO.2)_R2(161).png",
+    "location": "AIR GAS SYSTEM (NO.2)_R2(161)"
+  },
+  {
+    "tag": "M-550",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 39.9,
+      "y_percent": 42.2
+    },
+    "drawing": "3M-PI-241-001-DH-SYSTEM-(NO-1)-2008.03.27-수정.png",
+    "location": "DH SYSTEM (NO 1) 2008.03.27 수정"
+  },
+  {
+    "tag": "M-600",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 60.9,
+      "y_percent": 67.4
+    },
+    "drawing": "1M-PI-313-004-Fuel-Gas-System-4(REV)-배치1.png",
+    "location": "Fuel Gas System-4(REV)-배치1"
+  },
+  {
+    "tag": "M-600",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 64.1,
+      "y_percent": 74.6
+    },
+    "drawing": "1M-PI-313-004-Fuel-Gas-System-4(REV).png",
+    "location": "Fuel Gas System-4(REV)"
+  },
+  {
+    "tag": "M-600",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 60.9,
+      "y_percent": 67.4
+    },
+    "drawing": "1M-PI-313-004-Fuel-Gas-System-5(REV)-배치1.png",
+    "location": "Fuel Gas System-5(REV)-배치1"
+  },
+  {
+    "tag": "M-600",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 64.1,
+      "y_percent": 74.6
+    },
+    "drawing": "1M-PI-313-004-Fuel-Gas-System-5(REV).png",
+    "location": "Fuel Gas System-5(REV)"
+  },
+  {
+    "tag": "M-6105",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 45.2,
+      "y_percent": 40.2
+    },
+    "drawing": "1M-PI-342-001-Primary-Cooling-Water-System-1(REV1).png",
+    "location": "Primary Cooling Water System-1(REV1)"
+  },
+  {
+    "tag": "M-6105",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 45.2,
+      "y_percent": 40.2
+    },
+    "drawing": "1M-PI-342-001-Primary-Cooling-Water-System-1(중수도수정).png",
+    "location": "Primary Cooling Water System-1(중수도수정)"
+  },
+  {
+    "tag": "M-6105",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 45.2,
+      "y_percent": 40.2
+    },
+    "drawing": "1M-PI-342-001-Primary-Cooling-Water-System-1.png",
+    "location": "Primary Cooling Water System-1"
+  },
+  {
+    "tag": "M-6110",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 63.4,
+      "y_percent": 35.1
+    },
+    "drawing": "1M-PI-264-101-HRSG-Condensate-Preheater-System.png",
+    "location": "HRSG Condensate Preheater System"
+  },
+  {
+    "tag": "M-6111",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 69.7,
+      "y_percent": 75.9
+    },
+    "drawing": "1M-PI-264-101-HRSG-Condensate-Preheater-System.png",
+    "location": "HRSG Condensate Preheater System"
+  },
+  {
+    "tag": "M-6112",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 16.4,
+      "y_percent": 65.4
+    },
+    "drawing": "1M-PI-264-101-HRSG-Condensate-Preheater-System.png",
+    "location": "HRSG Condensate Preheater System"
+  },
+  {
+    "tag": "M-6114",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 71.0,
+      "y_percent": 52.1
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System(R1).png",
+    "location": "DH ECO II System(R1)"
+  },
+  {
+    "tag": "M-6114",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 50.2,
+      "y_percent": 65.5
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System.png",
+    "location": "DH ECO II System"
+  },
+  {
+    "tag": "M-6115",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 71.0,
+      "y_percent": 64.2
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System(R1).png",
+    "location": "DH ECO II System(R1)"
+  },
+  {
+    "tag": "M-6115",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 50.2,
+      "y_percent": 74.1
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System.png",
+    "location": "DH ECO II System"
+  },
+  {
+    "tag": "M-6116",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 71.0,
+      "y_percent": 76.3
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System(R1).png",
+    "location": "DH ECO II System(R1)"
+  },
+  {
+    "tag": "M-6116",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 50.2,
+      "y_percent": 82.6
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System.png",
+    "location": "DH ECO II System"
+  },
+  {
+    "tag": "M-6117",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 73.3,
+      "y_percent": 61.8
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System(R1).png",
+    "location": "DH ECO II System(R1)"
+  },
+  {
+    "tag": "M-6117",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 51.8,
+      "y_percent": 72.4
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System.png",
+    "location": "DH ECO II System"
+  },
+  {
+    "tag": "M-6118",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 73.3,
+      "y_percent": 71.4
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System(R1).png",
+    "location": "DH ECO II System(R1)"
+  },
+  {
+    "tag": "M-6118",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 51.8,
+      "y_percent": 79.1
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System.png",
+    "location": "DH ECO II System"
+  },
+  {
+    "tag": "M-6210",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 63.4,
+      "y_percent": 33.0
+    },
+    "drawing": "1M-PI-264-201-HRSG-Condensate-Preheater-System.png",
+    "location": "HRSG Condensate Preheater System"
+  },
+  {
+    "tag": "M-6211",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 69.7,
+      "y_percent": 73.9
+    },
+    "drawing": "1M-PI-264-201-HRSG-Condensate-Preheater-System.png",
+    "location": "HRSG Condensate Preheater System"
+  },
+  {
+    "tag": "M-6212",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 16.4,
+      "y_percent": 63.3
+    },
+    "drawing": "1M-PI-264-201-HRSG-Condensate-Preheater-System.png",
+    "location": "HRSG Condensate Preheater System"
+  },
+  {
+    "tag": "M-6501",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 24.1,
+      "y_percent": 59.3
+    },
+    "drawing": "2-M-PI-331-102(REV1)-Pneumatic-Tank(중수도수정).png",
+    "location": "2-M-PI-331-102(REV1) Pneumatic Tank(중수도수정)"
+  },
+  {
+    "tag": "M-6501",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 24.1,
+      "y_percent": 59.3
+    },
+    "drawing": "2-M-PI-331-102(REV1).png",
+    "location": "2-M-PI-331-102(REV1)"
+  },
+  {
+    "tag": "M-6501",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 18.8,
+      "y_percent": 24.8
+    },
+    "drawing": "2-M-PI-333-101(REV1).png",
+    "location": "2-M-PI-333-101(REV1)"
+  },
+  {
+    "tag": "M-650A",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 31.7,
+      "y_percent": 92.9
+    },
+    "drawing": "2-M-PI-121-101(D)_DH-RETRUN-&-SUPPLY-SYSTEM(1)(REV4).png",
+    "location": "2-M-PI-121-101(D)_DH RETRUN & SUPPLY SYSTEM(1)(REV4)"
+  },
+  {
+    "tag": "M-6527",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 25.5,
+      "y_percent": 73.6
+    },
+    "drawing": "2-M-PI-333-102(REV1).png",
+    "location": "2-M-PI-333-102(REV1)"
+  },
+  {
+    "tag": "M-6527",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 25.5,
+      "y_percent": 73.6
+    },
+    "drawing": "2-M-PI-333-102.png",
+    "location": "2-M-PI-333-102"
+  },
+  {
+    "tag": "M-6563",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 14.2,
+      "y_percent": 39.1
+    },
+    "drawing": "2-M-PI-333-104.png",
+    "location": "2-M-PI-333-104"
+  },
+  {
+    "tag": "M-6901",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 48.1,
+      "y_percent": 60.8
+    },
+    "drawing": "2-M-PI-611-102.png",
+    "location": "2-M-PI-611-102"
+  },
+  {
+    "tag": "M-6902",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 48.1,
+      "y_percent": 82.7
+    },
+    "drawing": "2-M-PI-611-102.png",
+    "location": "2-M-PI-611-102"
+  },
+  {
+    "tag": "M-6906",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 48.1,
+      "y_percent": 21.8
+    },
+    "drawing": "2-M-PI-611-102.png",
+    "location": "2-M-PI-611-102"
+  },
+  {
+    "tag": "M-6909",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 22.6,
+      "y_percent": 32.3
+    },
+    "drawing": "2-M-PI-611-103(-R1).png",
+    "location": "2-M-PI-611-103( R1)"
+  },
+  {
+    "tag": "M-700",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 30.0,
+      "y_percent": 64.5
+    },
+    "drawing": "3M-PI-241-003-IA-SUMP-SYSTEM.png",
+    "location": "IA SUMP SYSTEM"
+  },
+  {
+    "tag": "M-7050",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 71.4,
+      "y_percent": 33.0
+    },
+    "drawing": "1M-PI-342-001-Primary-Cooling-Water-System-1(중수도수정).png",
+    "location": "Primary Cooling Water System-1(중수도수정)"
+  },
+  {
+    "tag": "M-7051",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 32.5,
+      "y_percent": 82.4
+    },
+    "drawing": "2-M-PI-331-102(REV1)-Pneumatic-Tank(중수도수정).png",
+    "location": "2-M-PI-331-102(REV1) Pneumatic Tank(중수도수정)"
+  },
+  {
+    "tag": "M-7052",
+    "type": "M",
+    "category": "Motor",
+    "position": {
+      "x_percent": 55.0,
+      "y_percent": 54.9
+    },
+    "drawing": "2-M-PI-331-102(REV1)-Pneumatic-Tank(중수도수정).png",
+    "location": "2-M-PI-331-102(REV1) Pneumatic Tank(중수도수정)"
+  },
+  {
+    "tag": "PP-023/24",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 59.9,
+      "y_percent": 60.7
+    },
+    "drawing": "2-M-PI-333-105.png",
+    "location": "2-M-PI-333-105"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 65.1,
+      "y_percent": 81.0
+    },
+    "drawing": "06_D-M-PI-12200-001_P&ID-CHEONG-NA-BOOSTING-PUMP-STATION_R0.png",
+    "location": "06_D-M-PI-12200-001_P&ID CHEONG-NA BOOSTING PUMP STATION_R0"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 18.7,
+      "y_percent": 8.0
+    },
+    "drawing": "1M-PI-111-101-DH-Economizer-System-1.png",
+    "location": "DH Economizer System-1"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 10.8,
+      "y_percent": 36.9
+    },
+    "drawing": "1M-PI-116-002-Heat-Pump-2.png",
+    "location": "Heat Pump-2"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 61.8,
+      "y_percent": 86.3
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System(R1).png",
+    "location": "DH ECO II System(R1)"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 43.7,
+      "y_percent": 89.6
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System.png",
+    "location": "DH ECO II System"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 58.4,
+      "y_percent": 32.3
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R1).png",
+    "location": "GT Inlet Air Heating System(R1)"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 58.4,
+      "y_percent": 32.3
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R2).png",
+    "location": "GT Inlet Air Heating System(R2)"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 18.3,
+      "y_percent": 62.8
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System-R2.png",
+    "location": "Chemical Dosing System R2"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 18.3,
+      "y_percent": 62.8
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System.png",
+    "location": "Chemical Dosing System"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 24.9,
+      "y_percent": 59.0
+    },
+    "drawing": "1M-PI-342-004-Secondary-Cooling-Water-System-3(R2).png",
+    "location": "Secondary Cooling Water System-3(R2)"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 81.8,
+      "y_percent": 26.0
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1(R1).png",
+    "location": "WW transfer-1(R1)"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 81.8,
+      "y_percent": 26.0
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1.png",
+    "location": "WW transfer-1"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 35.1,
+      "y_percent": 41.8
+    },
+    "drawing": "3M-PI-241-001-DH-SYSTEM-(NO-1)-2008.03.27-수정.png",
+    "location": "DH SYSTEM (NO 1) 2008.03.27 수정"
+  },
+  {
+    "tag": "PP-101",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 79.8,
+      "y_percent": 65.2
+    },
+    "drawing": "미래엔열교환기실-P&id-rev-3-열교환-계통도001.png",
+    "location": "미래엔열교환기실 P&id rev-3-열교환 계통도001"
+  },
+  {
+    "tag": "PP-102",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 46.6,
+      "y_percent": 6.3
+    },
+    "drawing": "06_D-M-PI-12200-001_P&ID-CHEONG-NA-BOOSTING-PUMP-STATION_R0.png",
+    "location": "06_D-M-PI-12200-001_P&ID CHEONG-NA BOOSTING PUMP STATION_R0"
+  },
+  {
+    "tag": "PP-102",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 48.8,
+      "y_percent": 42.1
+    },
+    "drawing": "1M-PI-264-101-HRSG-Condensate-Preheater-System.png",
+    "location": "HRSG Condensate Preheater System"
+  },
+  {
+    "tag": "PP-102",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 24.8,
+      "y_percent": 78.1
+    },
+    "drawing": "1M-PI-342-004-Secondary-Cooling-Water-System-3(R2).png",
+    "location": "Secondary Cooling Water System-3(R2)"
+  },
+  {
+    "tag": "PP-103",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 10.8,
+      "y_percent": 72.9
+    },
+    "drawing": "1M-PI-116-002-Heat-Pump-2.png",
+    "location": "Heat Pump-2"
+  },
+  {
+    "tag": "PP-103",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 44.3,
+      "y_percent": 62.8
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System-R2.png",
+    "location": "Chemical Dosing System R2"
+  },
+  {
+    "tag": "PP-103",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 44.3,
+      "y_percent": 62.8
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System.png",
+    "location": "Chemical Dosing System"
+  },
+  {
+    "tag": "PP-103",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 91.9,
+      "y_percent": 18.3
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1(R1).png",
+    "location": "WW transfer-1(R1)"
+  },
+  {
+    "tag": "PP-103",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 91.9,
+      "y_percent": 18.3
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1.png",
+    "location": "WW transfer-1"
+  },
+  {
+    "tag": "PP-104",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 22.4,
+      "y_percent": 81.0
+    },
+    "drawing": "06_D-M-PI-12200-001_P&ID-CHEONG-NA-BOOSTING-PUMP-STATION_R0.png",
+    "location": "06_D-M-PI-12200-001_P&ID CHEONG-NA BOOSTING PUMP STATION_R0"
+  },
+  {
+    "tag": "PP-105",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 63.1,
+      "y_percent": 6.3
+    },
+    "drawing": "06_D-M-PI-12200-001_P&ID-CHEONG-NA-BOOSTING-PUMP-STATION_R0.png",
+    "location": "06_D-M-PI-12200-001_P&ID CHEONG-NA BOOSTING PUMP STATION_R0"
+  },
+  {
+    "tag": "PP-105",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 81.8,
+      "y_percent": 18.3
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1(R1).png",
+    "location": "WW transfer-1(R1)"
+  },
+  {
+    "tag": "PP-105",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 81.8,
+      "y_percent": 18.3
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1.png",
+    "location": "WW transfer-1"
+  },
+  {
+    "tag": "PP-106",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 34.6,
+      "y_percent": 8.3
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System-R2.png",
+    "location": "Chemical Dosing System R2"
+  },
+  {
+    "tag": "PP-106",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 34.6,
+      "y_percent": 8.3
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System.png",
+    "location": "Chemical Dosing System"
+  },
+  {
+    "tag": "PP-107",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 91.9,
+      "y_percent": 26.0
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1(R1).png",
+    "location": "WW transfer-1(R1)"
+  },
+  {
+    "tag": "PP-107",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 91.9,
+      "y_percent": 26.0
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1.png",
+    "location": "WW transfer-1"
+  },
+  {
+    "tag": "PP-108",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 71.5,
+      "y_percent": 62.8
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System-R2.png",
+    "location": "Chemical Dosing System R2"
+  },
+  {
+    "tag": "PP-108",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 71.5,
+      "y_percent": 62.8
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System.png",
+    "location": "Chemical Dosing System"
+  },
+  {
+    "tag": "PP-109",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 81.8,
+      "y_percent": 34.0
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1(R1).png",
+    "location": "WW transfer-1(R1)"
+  },
+  {
+    "tag": "PP-109",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 81.8,
+      "y_percent": 34.0
+    },
+    "drawing": "1M-PI-611-001-WW-transfer-1.png",
+    "location": "WW transfer-1"
+  },
+  {
+    "tag": "PP-113",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 50.0,
+      "y_percent": 50.6
+    },
+    "drawing": "1M-PI-611-002-WW-transfer-System-2(R1).png",
+    "location": "WW transfer System-2(R1)"
+  },
+  {
+    "tag": "PP-115",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 24.7,
+      "y_percent": 50.6
+    },
+    "drawing": "1M-PI-611-002-WW-transfer-System-2(R1).png",
+    "location": "WW transfer System-2(R1)"
+  },
+  {
+    "tag": "PP-117",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 34.3,
+      "y_percent": 89.3
+    },
+    "drawing": "1M-PI-611-002-WW-transfer-System-2(R1).png",
+    "location": "WW transfer System-2(R1)"
+  },
+  {
+    "tag": "PP-119",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 17.4,
+      "y_percent": 89.2
+    },
+    "drawing": "1M-PI-611-002-WW-transfer-System-2(R1).png",
+    "location": "WW transfer System-2(R1)"
+  },
+  {
+    "tag": "PP-121",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 55.7,
+      "y_percent": 89.2
+    },
+    "drawing": "1M-PI-611-002-WW-transfer-System-2(R1).png",
+    "location": "WW transfer System-2(R1)"
+  },
+  {
+    "tag": "PP-123",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 71.6,
+      "y_percent": 89.2
+    },
+    "drawing": "1M-PI-611-002-WW-transfer-System-2(R1).png",
+    "location": "WW transfer System-2(R1)"
+  },
+  {
+    "tag": "PP-125",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 77.5,
+      "y_percent": 7.4
+    },
+    "drawing": "1M-PI-611-002-WW-transfer-System-2(R1).png",
+    "location": "WW transfer System-2(R1)"
+  },
+  {
+    "tag": "PP-126",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 21.7,
+      "y_percent": 48.5
+    },
+    "drawing": "1M-PI-611-004-WW-transfer-System-4.png",
+    "location": "WW transfer System-4"
+  },
+  {
+    "tag": "PP-201",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 48.3,
+      "y_percent": 53.8
+    },
+    "drawing": "1M-PI-111-201-DH-Economizer-System-2.png",
+    "location": "DH Economizer System-2"
+  },
+  {
+    "tag": "PP-201",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 58.2,
+      "y_percent": 76.9
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R1).png",
+    "location": "GT Inlet Air Heating System(R1)"
+  },
+  {
+    "tag": "PP-201",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 58.2,
+      "y_percent": 76.9
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R2).png",
+    "location": "GT Inlet Air Heating System(R2)"
+  },
+  {
+    "tag": "PP-201",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 68.6,
+      "y_percent": 62.1
+    },
+    "drawing": "1M-PI-342-004-Secondary-Cooling-Water-System-3(R2).png",
+    "location": "Secondary Cooling Water System-3(R2)"
+  },
+  {
+    "tag": "PP-201",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 35.0,
+      "y_percent": 40.0
+    },
+    "drawing": "3M-PI-241-002-DH-SYSTEM-(NO-2)-2008.03.27-수정.png",
+    "location": "DH SYSTEM (NO 2) 2008.03.27 수정"
+  },
+  {
+    "tag": "PP-202",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 48.8,
+      "y_percent": 40.0
+    },
+    "drawing": "1M-PI-264-201-HRSG-Condensate-Preheater-System.png",
+    "location": "HRSG Condensate Preheater System"
+  },
+  {
+    "tag": "PP-202",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 68.5,
+      "y_percent": 81.2
+    },
+    "drawing": "1M-PI-342-004-Secondary-Cooling-Water-System-3(R2).png",
+    "location": "Secondary Cooling Water System-3(R2)"
+  },
+  {
+    "tag": "PP-221",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 59.4,
+      "y_percent": 32.9
+    },
+    "drawing": "1M-PI-263-002-Extraction-&-Exhaust(변경후).png",
+    "location": "Extraction & Exhaust(변경후)"
+  },
+  {
+    "tag": "PP-3061",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 19.5,
+      "y_percent": 27.4
+    },
+    "drawing": "1M-PI-253-003.png",
+    "location": "3"
+  },
+  {
+    "tag": "PP-3061-75",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 19.5,
+      "y_percent": 27.4
+    },
+    "drawing": "1M-PI-253-003.png",
+    "location": "3"
+  },
+  {
+    "tag": "PP-333",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 52.1,
+      "y_percent": 44.1
+    },
+    "drawing": "2-M-PI-333-102(REV1).png",
+    "location": "2-M-PI-333-102(REV1)"
+  },
+  {
+    "tag": "PP-333",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 52.1,
+      "y_percent": 44.1
+    },
+    "drawing": "2-M-PI-333-102.png",
+    "location": "2-M-PI-333-102"
+  },
+  {
+    "tag": "PP-4598",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 68.4,
+      "y_percent": 67.7
+    },
+    "drawing": "1M-PI-111-001-DH-HE-Condensate-System-1(R2).png",
+    "location": "DH HE Condensate System-1(R2)"
+  },
+  {
+    "tag": "PP-4599",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 13.7,
+      "y_percent": 28.8
+    },
+    "drawing": "1M-PI-111-001-DH-HE-Condensate-System-1(R2).png",
+    "location": "DH HE Condensate System-1(R2)"
+  },
+  {
+    "tag": "PP-6506",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 29.1,
+      "y_percent": 88.7
+    },
+    "drawing": "2-M-PI-333-103.png",
+    "location": "2-M-PI-333-103"
+  },
+  {
+    "tag": "PP-800",
+    "type": "PP",
+    "category": "Pump",
+    "position": {
+      "x_percent": 39.9,
+      "y_percent": 26.7
+    },
+    "drawing": "1M-PI-263-002-Extraction-&-Exhaust(변경후).png",
+    "location": "Extraction & Exhaust(변경후)"
+  },
+  {
+    "tag": "TK-101",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 56.3,
+      "y_percent": 30.0
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System(R1).png",
+    "location": "DH ECO II System(R1)"
+  },
+  {
+    "tag": "TK-101",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 39.8,
+      "y_percent": 50.0
+    },
+    "drawing": "1M-PI-116-003-DH-ECO-II-System.png",
+    "location": "DH ECO II System"
+  },
+  {
+    "tag": "TK-101",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 73.8,
+      "y_percent": 37.5
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R1).png",
+    "location": "GT Inlet Air Heating System(R1)"
+  },
+  {
+    "tag": "TK-101",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 73.8,
+      "y_percent": 37.5
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R2).png",
+    "location": "GT Inlet Air Heating System(R2)"
+  },
+  {
+    "tag": "TK-101",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 47.1,
+      "y_percent": 67.3
+    },
+    "drawing": "1M-PI-321-005-Instrument-Air-Distribution-System.png",
+    "location": "Instrument Air Distribution System"
+  },
+  {
+    "tag": "TK-101",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 19.6,
+      "y_percent": 41.0
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System-R2.png",
+    "location": "Chemical Dosing System R2"
+  },
+  {
+    "tag": "TK-101",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 19.6,
+      "y_percent": 41.0
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System.png",
+    "location": "Chemical Dosing System"
+  },
+  {
+    "tag": "TK-102",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 35.7,
+      "y_percent": 47.2
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System-R2.png",
+    "location": "Chemical Dosing System R2"
+  },
+  {
+    "tag": "TK-102",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 35.7,
+      "y_percent": 47.2
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System.png",
+    "location": "Chemical Dosing System"
+  },
+  {
+    "tag": "TK-103",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 51.9,
+      "y_percent": 8.3
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System-R2.png",
+    "location": "Chemical Dosing System R2"
+  },
+  {
+    "tag": "TK-103",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 51.9,
+      "y_percent": 8.3
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System.png",
+    "location": "Chemical Dosing System"
+  },
+  {
+    "tag": "TK-104",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 61.6,
+      "y_percent": 43.5
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System-R2.png",
+    "location": "Chemical Dosing System R2"
+  },
+  {
+    "tag": "TK-104",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 61.6,
+      "y_percent": 43.5
+    },
+    "drawing": "1M-PI-335-010-Chemical-Dosing-System.png",
+    "location": "Chemical Dosing System"
+  },
+  {
+    "tag": "TK-201",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 74.0,
+      "y_percent": 81.9
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R1).png",
+    "location": "GT Inlet Air Heating System(R1)"
+  },
+  {
+    "tag": "TK-201",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 74.0,
+      "y_percent": 81.9
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R2).png",
+    "location": "GT Inlet Air Heating System(R2)"
+  },
+  {
+    "tag": "TK-201",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 35.1,
+      "y_percent": 67.3
+    },
+    "drawing": "1M-PI-321-005-Instrument-Air-Distribution-System.png",
+    "location": "Instrument Air Distribution System"
+  },
+  {
+    "tag": "TK-245",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 13.7,
+      "y_percent": 23.3
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R1).png",
+    "location": "GT Inlet Air Heating System(R1)"
+  },
+  {
+    "tag": "TK-245",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 13.7,
+      "y_percent": 23.3
+    },
+    "drawing": "1M-PI-234-101-GT-Inlet-Air-Heating-System(R2).png",
+    "location": "GT Inlet Air Heating System(R2)"
+  },
+  {
+    "tag": "TK-301",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 23.1,
+      "y_percent": 67.3
+    },
+    "drawing": "1M-PI-321-005-Instrument-Air-Distribution-System.png",
+    "location": "Instrument Air Distribution System"
+  },
+  {
+    "tag": "TK-401",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 11.1,
+      "y_percent": 67.3
+    },
+    "drawing": "1M-PI-321-005-Instrument-Air-Distribution-System.png",
+    "location": "Instrument Air Distribution System"
+  },
+  {
+    "tag": "TK-5653",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 17.6,
+      "y_percent": 28.3
+    },
+    "drawing": "2-M-PI-333-102(REV1).png",
+    "location": "2-M-PI-333-102(REV1)"
+  },
+  {
+    "tag": "TK-5653",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 17.6,
+      "y_percent": 28.3
+    },
+    "drawing": "2-M-PI-333-102.png",
+    "location": "2-M-PI-333-102"
+  },
+  {
+    "tag": "TK-6719",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 9.0,
+      "y_percent": 86.6
+    },
+    "drawing": "2-M-PI-334-101(REV).png",
+    "location": "2-M-PI-334-101(REV)"
+  },
+  {
+    "tag": "TK-6719",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 9.0,
+      "y_percent": 86.6
+    },
+    "drawing": "2-M-PI-334-101(REV2).png",
+    "location": "2-M-PI-334-101(REV2)"
+  },
+  {
+    "tag": "TK-6719",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 9.0,
+      "y_percent": 86.6
+    },
+    "drawing": "2-M-PI-334-101(REV3).png",
+    "location": "2-M-PI-334-101(REV3)"
+  },
+  {
+    "tag": "TK-6719",
+    "type": "TK",
+    "category": "Tank",
+    "position": {
+      "x_percent": 9.0,
+      "y_percent": 86.6
+    },
+    "drawing": "2-M-PI-334-101(REV4).png",
+    "location": "2-M-PI-334-101(REV4)"
+  }
+]
