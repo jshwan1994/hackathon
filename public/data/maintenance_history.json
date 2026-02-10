@@ -1,0 +1,1897 @@
+{
+  "date_range": {
+    "from": "2025-11-12",
+    "to": "2026-02-10"
+  },
+  "total_records": 180,
+  "records": [
+    {
+      "permittowork": "30588",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2026-02-12 09:00",
+      "requester": "김유리",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 작성대기",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30647",
+      "description": "주제어동 지하 1층 냉각수 펌프 #203 교체작업",
+      "daterequired": "2026-02-10 09:00",
+      "requester": "유재혁",
+      "department": "기계팀",
+      "equipment": "INHA354PP203",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30603",
+      "description": "GT 위탁폐수 이송작업",
+      "daterequired": "2026-02-10 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INWT611MTR117",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-117"
+      ]
+    },
+    {
+      "permittowork": "30632",
+      "description": "주제어동 지하 1층 냉각수 펌프(#203) 전동기 분해점검",
+      "daterequired": "2026-02-09 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INHA354PP203",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30626",
+      "description": "주제어동 지하 1층 냉각수 펌프 #203 교체",
+      "daterequired": "2026-02-09 09:00",
+      "requester": "유재혁",
+      "department": "기계팀",
+      "equipment": "INHA354PP203",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30602",
+      "description": "Critical Point -4 통신 Point 이설작업",
+      "daterequired": "2026-02-06 14:00",
+      "requester": "최선구",
+      "department": "계전팀",
+      "equipment": "INCX357",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30593",
+      "description": "주제어동 지하 1층 냉각수 펌프 #203 교체 작업",
+      "daterequired": "2026-02-06 09:00",
+      "requester": "유재혁",
+      "department": "기계팀",
+      "equipment": "INHA354PP203",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30564",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2026-02-06 09:00",
+      "requester": "김유리",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30547",
+      "description": "주제어동 지하 1층 냉각수 펌프 #203 교체 작업",
+      "daterequired": "2026-02-05 09:00",
+      "requester": "유재혁",
+      "department": "기계팀",
+      "equipment": "INHA354PP203",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30530",
+      "description": "FCV-5208 Valve Position 점검 요청",
+      "daterequired": "2026-02-03 09:00",
+      "requester": "임창훈",
+      "department": "계전팀",
+      "equipment": "INDH141FCV5208",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "FCV-5208"
+      ]
+    },
+    {
+      "permittowork": "30432",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2026-02-02 09:00",
+      "requester": "김유리",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30451",
+      "description": "DH ECO Ⅱ #1 열교환기 #1~2 Damper 점검",
+      "daterequired": "2026-01-28 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH1116HE101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30442",
+      "description": "DH#1 HEATER CONDENSATE PUMP-1 축정열 작업",
+      "daterequired": "2026-01-27 09:00",
+      "requester": "김부일",
+      "department": "계전팀",
+      "equipment": "INCS111MTR001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-001"
+      ]
+    },
+    {
+      "permittowork": "30379",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2026-01-27 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30433",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2026-01-26 09:00",
+      "requester": "김유리",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "취소됨",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30427",
+      "description": "DH #1 HEATER CONDENSATE PUMP 전동기 #A 분해점검",
+      "daterequired": "2026-01-26 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INCS111MTR001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-001"
+      ]
+    },
+    {
+      "permittowork": "30414",
+      "description": "BFP #1 H/C Oil 보충",
+      "daterequired": "2026-01-23 09:00",
+      "requester": "곽태일",
+      "department": "기계팀",
+      "equipment": "INCG262PP001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30409",
+      "description": "PLB Stack 실내등 점검",
+      "daterequired": "2026-01-23 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INDH14",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30347",
+      "description": "PLB 대기오염물질 측정",
+      "daterequired": "2026-01-23 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INDH515FIT5013",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30370",
+      "description": "대기환경감시설비 정기점검",
+      "daterequired": "2026-01-21 10:00",
+      "requester": "최선구",
+      "department": "계전팀",
+      "equipment": "INH1261MSG101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30373",
+      "description": "PDIT-8015(H/C C.W PP-1 SUCTION FILTER DIFF. PRESS) 차압발생",
+      "daterequired": "2026-01-21 09:00",
+      "requester": "임창훈",
+      "department": "계전팀",
+      "equipment": "INCD343PDIT8015",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "PDIT-8015"
+      ]
+    },
+    {
+      "permittowork": "30367",
+      "description": "XV 6903 오작동",
+      "daterequired": "2026-01-21 09:00",
+      "requester": "임창훈",
+      "department": "계전팀",
+      "equipment": "INWT611XV6903",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "XV-6903"
+      ]
+    },
+    {
+      "permittowork": "30358",
+      "description": "DH ECO Ⅱ #1 열교환기 (#1~2 댐퍼점검)",
+      "daterequired": "2026-01-21 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH1116HE101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30296",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2026-01-21 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30349",
+      "description": "관리동 상수도 유량계 교체",
+      "daterequired": "2026-01-20 09:00",
+      "requester": "임창훈",
+      "department": "계전팀",
+      "equipment": "INHA354TK401",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30331",
+      "description": "DH ECO Ⅱ #1 열교환기 Damper-1,2 점검",
+      "daterequired": "2026-01-20 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH1116HE101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30323",
+      "description": "소방점검 지적사항 조치(발신기 세트 교체)",
+      "daterequired": "2026-01-19 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INCX435LC306",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "LC-306"
+      ]
+    },
+    {
+      "permittowork": "30321",
+      "description": "소방점검 지적사항 조치(발신기 세트 교체 외)",
+      "daterequired": "2026-01-19 09:00",
+      "requester": "김필규",
+      "department": "",
+      "equipment": "INCX435LC306",
+      "status": "안전작업허가서 작성대기",
+      "extracted_tags": [
+        "LC-306"
+      ]
+    },
+    {
+      "permittowork": "30320",
+      "description": "STG Space Heater 점검",
+      "daterequired": "2026-01-19 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INCG434MCC8A9",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30315",
+      "description": "DH ECO Ⅱ #1 열교환기 전후단 Blind 설치(#5)",
+      "daterequired": "2026-01-19 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH1116HE101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30294",
+      "description": "FIT 6705 오지시",
+      "daterequired": "2026-01-16 09:00",
+      "requester": "임창훈",
+      "department": "계전팀",
+      "equipment": "INWT334FIT6705",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30289",
+      "description": "LC-708 차단기 점검",
+      "daterequired": "2026-01-16 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INCX435LC708",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "LC-708"
+      ]
+    },
+    {
+      "permittowork": "30279",
+      "description": "DH ECO Ⅱ #1 열교환기 전후단 Blind 설치(#4~#9)",
+      "daterequired": "2026-01-16 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH1116HE101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30241",
+      "description": "청라 열교환기실 Inverter Pump Mechanical Seal Leakage 발생 (122-M-PP-101)",
+      "daterequired": "2026-01-15 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INE4122PP101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30222",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2026-01-15 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30231",
+      "description": "CLARIFIED WATER PUMP #8 설치작업",
+      "daterequired": "2026-01-14 09:00",
+      "requester": "유재혁",
+      "department": "기계팀",
+      "equipment": "INWT611PP007",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30206",
+      "description": "DH ECO Ⅱ #1 열교환기 전후단 Blind 설치(#4~#9)",
+      "daterequired": "2026-01-14 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH1116HE101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30209",
+      "description": "CLARIFIED WATER PUMP #8 정비 후 설치 작업",
+      "daterequired": "2026-01-13 13:30",
+      "requester": "유재혁",
+      "department": "기계팀",
+      "equipment": "INWT611PP007",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30196",
+      "description": "DH ECO Ⅱ #1 열교환기 전후단 Blind 설치(#4~#9)",
+      "daterequired": "2026-01-13 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH1116HE101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30177",
+      "description": "Clarified Water Pump-2 전동기 분해점검",
+      "daterequired": "2026-01-12 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR008",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-008"
+      ]
+    },
+    {
+      "permittowork": "30176",
+      "description": "DH ECO Ⅱ #1 열교환기 전후단 Blind 설치(#4~#9)",
+      "daterequired": "2026-01-12 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH1116HE101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30131",
+      "description": "#1 HRSG Blow Down Injection Pump 102 Leakage 발생",
+      "daterequired": "2026-01-09 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH1267MTR102",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-102"
+      ]
+    },
+    {
+      "permittowork": "30124",
+      "description": "가성소다 하역작업",
+      "daterequired": "2026-01-09 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INWT333TK006",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30113",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2026-01-09 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30102",
+      "description": "대기환경감시설비 정기점검",
+      "daterequired": "2026-01-08 10:00",
+      "requester": "최선구",
+      "department": "계전팀",
+      "equipment": "INH1261MSG101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30111",
+      "description": "PI-6127B [Hot WTR Cir' Pump #2 for DH ECO Ⅱ] 점검",
+      "daterequired": "2026-01-08 09:00",
+      "requester": "임창훈",
+      "department": "계전팀",
+      "equipment": "INH1116PI6127B",
+      "status": "안전작업허가서 작성대기",
+      "extracted_tags": [
+        "PI-6127B"
+      ]
+    },
+    {
+      "permittowork": "30110",
+      "description": "차단기(LC-708) 점검",
+      "daterequired": "2026-01-08 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INCX435LC708",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "LC-708"
+      ]
+    },
+    {
+      "permittowork": "30108",
+      "description": "HV-6115 리미트스위치 점검",
+      "daterequired": "2026-01-08 09:00",
+      "requester": "임창훈",
+      "department": "계전팀",
+      "equipment": "INH1116HV6115",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "HV-6115"
+      ]
+    },
+    {
+      "permittowork": "30105",
+      "description": "LCV-1151 (#1 HRSG Feed WTR Control) Stem Leak 발생",
+      "daterequired": "2026-01-08 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH1261LCV1151",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "LCV-1151"
+      ]
+    },
+    {
+      "permittowork": "30083",
+      "description": "Reuse Water Pump #A 차단기 점검",
+      "daterequired": "2026-01-07 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR011",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-011"
+      ]
+    },
+    {
+      "permittowork": "30082",
+      "description": "Reuse Water Pump #B 차단기 점검",
+      "daterequired": "2026-01-07 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR012",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-012"
+      ]
+    },
+    {
+      "permittowork": "30081",
+      "description": "CLARIFIED WATER PUMP #7 플랜지 분해 및 점검",
+      "daterequired": "2026-01-07 09:00",
+      "requester": "유재혁",
+      "department": "기계팀",
+      "equipment": "INWT611PP007",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30067",
+      "description": "CLARIFIED WATER PUMP #8 점검",
+      "daterequired": "2026-01-06 15:00",
+      "requester": "유재혁",
+      "department": "기계팀",
+      "equipment": "INWT611PP008",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30035",
+      "description": "HRSG #1 BD Injection PP-B Mechanical Seal 교체",
+      "daterequired": "2026-01-06 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH1267MTR102",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-102"
+      ]
+    },
+    {
+      "permittowork": "30026",
+      "description": "Reuse Water Pump #B 차단기 점검",
+      "daterequired": "2026-01-05 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR012",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-012"
+      ]
+    },
+    {
+      "permittowork": "30025",
+      "description": "FCD-5112 작동상태 점검",
+      "daterequired": "2026-01-05 09:00",
+      "requester": "유재혁",
+      "department": "공통",
+      "equipment": "INDH144FCD5112",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "30017",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2026-01-05 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29998",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2025-12-29 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29958",
+      "description": "소방점검 지적사항 조치(발신기 세트 교체 외)",
+      "daterequired": "2025-12-26 11:00",
+      "requester": "정창덕",
+      "department": "계전팀",
+      "equipment": "INCX435LC306",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "LC-306"
+      ]
+    },
+    {
+      "permittowork": "29994",
+      "description": "VG-H134A Gland부 leak 조치작업",
+      "daterequired": "2025-12-26 09:00",
+      "requester": "손윤현",
+      "department": "기계팀",
+      "equipment": "INH1263VGH134A",
+      "status": "안전작업허가서 작성대기",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29993",
+      "description": "VG-1015 전단 용접부 핀홀 발생",
+      "daterequired": "2025-12-26 09:00",
+      "requester": "손윤현",
+      "department": "기계팀",
+      "equipment": "INCS263VG1015",
+      "status": "안전작업허가서 작성대기",
+      "extracted_tags": [
+        "VG-1015"
+      ]
+    },
+    {
+      "permittowork": "29946",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2025-12-26 09:00",
+      "requester": "서규석",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29968",
+      "description": "관리동 및 주제어동 공조기, 항온항습기 필터 교체",
+      "daterequired": "2025-12-24 09:00",
+      "requester": "유재혁",
+      "department": "기계팀",
+      "equipment": "INHA354AH201",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29957",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-24 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29949",
+      "description": "약품주입실 다이어프램 밸브 교체",
+      "daterequired": "2025-12-23 09:00",
+      "requester": "유재혁",
+      "department": "기계팀",
+      "equipment": "INWT611VD5745",
+      "status": "안전작업허가서 작성대기",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29929",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-23 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29924",
+      "description": "대기환경감시설비 정기점검",
+      "daterequired": "2025-12-22 10:00",
+      "requester": "최선구",
+      "department": "계전팀",
+      "equipment": "INH1261MSG101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29921",
+      "description": "논현 열교환실 Volumetric Pump #B 정비 후 조립 작업",
+      "daterequired": "2025-12-22 09:00",
+      "requester": "김부일",
+      "department": "기계팀",
+      "equipment": "INE112",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29914",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-22 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29892",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-21 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29865",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-19 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29857",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2025-12-18 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29846",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-18 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29842",
+      "description": "청라 열교환기실 104 Boosting P/P 인버터 판넬 점검",
+      "daterequired": "2025-12-17 13:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INE41",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29808",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-17 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29825",
+      "description": "#1 SFC 에어컨 교체",
+      "daterequired": "2025-12-16 14:40",
+      "requester": "김필규",
+      "department": "기계팀",
+      "equipment": "INCX434SW107",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29801",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-16 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29781",
+      "description": "ST Space Heater 점검",
+      "daterequired": "2025-12-15 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INCG434MCC8A9",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29780",
+      "description": "Vacuum Pump 응축수 펌프 작동 불능으로인한 점검 요청",
+      "daterequired": "2025-12-15 09:00",
+      "requester": "김부일",
+      "department": "기계팀",
+      "equipment": "INCS253PP004",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29718",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-15 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29769",
+      "description": "HRSG #2 HRSG Inlet Expansion Joint 보수",
+      "daterequired": "2025-12-14 09:00",
+      "requester": "곽태일",
+      "department": "기계팀",
+      "equipment": "INH2261MSG201",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29716",
+      "description": "PLB Stack 벽면녹화 공사(수도배관 연결)",
+      "daterequired": "2025-12-14 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29770",
+      "description": "#2GT FSV-352 점검",
+      "daterequired": "2025-12-14 01:00",
+      "requester": "최선구",
+      "department": "계전팀",
+      "equipment": "ING1237XVFSV352",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "FSV-352"
+      ]
+    },
+    {
+      "permittowork": "29715",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-13 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29751",
+      "description": "#C Vacuum Pump 누수 발생",
+      "daterequired": "2025-12-12 09:30",
+      "requester": "김부일",
+      "department": "기계팀",
+      "equipment": "INCS253PP003",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29743",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2025-12-12 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29721",
+      "description": "W/W ROOM SUMP PUMP(36) 누전차단기 설치",
+      "daterequired": "2025-12-12 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR036",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-036"
+      ]
+    },
+    {
+      "permittowork": "29648",
+      "description": "W/W ROOM SUMP PUMP(35) 누전차단기 설치",
+      "daterequired": "2025-12-12 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR035",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-035"
+      ]
+    },
+    {
+      "permittowork": "29711",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-12 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29722",
+      "description": "대기환경감시설비 점검",
+      "daterequired": "2025-12-11 10:30",
+      "requester": "전성일",
+      "department": "계전팀",
+      "equipment": "INH1261MSG101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29678",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-11 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29663",
+      "description": "GT 대기오염물질 측정",
+      "daterequired": "2025-12-10 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INH2261MSG201",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29633",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-10 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29647",
+      "description": "비상발전기 캐비넷형자동소화기기 점검",
+      "daterequired": "2025-12-09 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INCX355DG003",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29639",
+      "description": "D.H PUMP ROOM SUMP PUMP(44) 누전차단기 설치",
+      "daterequired": "2025-12-09 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR044",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-044"
+      ]
+    },
+    {
+      "permittowork": "29638",
+      "description": "D.H PUMP ROOM SUMP PUMP(43) 누전차단기 설치",
+      "daterequired": "2025-12-09 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR043",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-043"
+      ]
+    },
+    {
+      "permittowork": "29606",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-09 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29604",
+      "description": "RO 멤브레인 교체",
+      "daterequired": "2025-12-08 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INWT613RO001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29601",
+      "description": "HRSG #1 상부 점검구 확장(잠재위험 조치)",
+      "daterequired": "2025-12-08 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH1261MSG101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29596",
+      "description": "D.H PUMP ROOM SUMP PUMP(42) 누전차단기 설치",
+      "daterequired": "2025-12-08 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR042",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-042"
+      ]
+    },
+    {
+      "permittowork": "29595",
+      "description": "D.H PUMP ROOM SUMP PUMP(41) 누전차단기 설치",
+      "daterequired": "2025-12-08 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR041",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-041"
+      ]
+    },
+    {
+      "permittowork": "29594",
+      "description": "Unit Heater 점검",
+      "daterequired": "2025-12-08 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INHA354HY354",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29583",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-08 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29558",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-07 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29552",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-06 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29562",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2025-12-05 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29545",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-05 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29525",
+      "description": "ST Control Oil Pump Filter 청소 및 교체 작업",
+      "daterequired": "2025-12-04 09:00",
+      "requester": "김부일",
+      "department": "기계팀",
+      "equipment": "INST224PDT2085",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29481",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-04 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29487",
+      "description": "FV-7062 기능불",
+      "daterequired": "2025-12-03 09:00",
+      "requester": "김승문",
+      "department": "공통",
+      "equipment": "INCX342FV7062",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "FV-7062"
+      ]
+    },
+    {
+      "permittowork": "29482",
+      "description": "D.H PUMP ROOM SUMP PUMP(40) 누전차단기 설치",
+      "daterequired": "2025-12-03 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR040",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-040"
+      ]
+    },
+    {
+      "permittowork": "29480",
+      "description": "D.H PUMP ROOM SUMP PUMP(39) 누전차단기 설치",
+      "daterequired": "2025-12-03 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR039",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-039"
+      ]
+    },
+    {
+      "permittowork": "29479",
+      "description": "D.H PUMP ROOM SUMP PUMP(38) 누전차단기 설치",
+      "daterequired": "2025-12-03 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR038",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-038"
+      ]
+    },
+    {
+      "permittowork": "29478",
+      "description": "D.H PUMP ROOM SUMP PUMP(37) 누전차단기 설치",
+      "daterequired": "2025-12-03 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INWT611MTR037",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "TR-037"
+      ]
+    },
+    {
+      "permittowork": "29442",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-03 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29407",
+      "description": "Pressure Filters B 여재교체작업",
+      "daterequired": "2025-12-02 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INWT611FT002",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "FT-002"
+      ]
+    },
+    {
+      "permittowork": "29391",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2025-12-02 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29405",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-02 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29404",
+      "description": "ST Control Oil Filter 청소(COP)",
+      "daterequired": "2025-12-01 09:00",
+      "requester": "김부일",
+      "department": "기계팀",
+      "equipment": "INST224PDT2085",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29402",
+      "description": "ST Lube Oil Filter 청소 작업(AOP)",
+      "daterequired": "2025-12-01 09:00",
+      "requester": "김부일",
+      "department": "기계팀",
+      "equipment": "INST224PDT2086",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29395",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-12-01 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29386",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-30 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29344",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-29 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29360",
+      "description": "위드열교환기실 전동기 분해점검",
+      "daterequired": "2025-11-28 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INE1121",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29272",
+      "description": "Pressure Filters A 여재교체작업",
+      "daterequired": "2025-11-28 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INWT611FT001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "FT-001"
+      ]
+    },
+    {
+      "permittowork": "29293",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-28 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29307",
+      "description": "대기환경감시설비 정기점검",
+      "daterequired": "2025-11-27 10:00",
+      "requester": "최선구",
+      "department": "계전팀",
+      "equipment": "INH1261MSG101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29291",
+      "description": "청라 열 교환실 DH Transfer Pump #1 분해정비",
+      "daterequired": "2025-11-27 09:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INE4",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29257",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-27 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29263",
+      "description": "소방점검 지적사항 조치(경종교체 외)",
+      "daterequired": "2025-11-26 10:00",
+      "requester": "정창덕",
+      "department": "계전팀",
+      "equipment": "INCX435LC306",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "LC-306"
+      ]
+    },
+    {
+      "permittowork": "29264",
+      "description": "ST동 전기실 에어컨 점검",
+      "daterequired": "2025-11-26 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INST4",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29253",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-26 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29216",
+      "description": "스팀터빈 윤활유 충유",
+      "daterequired": "2025-11-25 09:00",
+      "requester": "김부일",
+      "department": "기계팀",
+      "equipment": "INST224TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29180",
+      "description": "전력구 통로등 누전 점검",
+      "daterequired": "2025-11-24 13:00",
+      "requester": "정창덕",
+      "department": "계전팀",
+      "equipment": "INCX435LC305",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "LC-305"
+      ]
+    },
+    {
+      "permittowork": "29162",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-24 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29155",
+      "description": "HRSG #1 내부 SCR 촉매 점검",
+      "daterequired": "2025-11-23 09:00",
+      "requester": "곽태일",
+      "department": "기계팀",
+      "equipment": "INH1261MSG101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29161",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-23 07:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29153",
+      "description": "#1 GT FUEL GAS TEMP SENSOR 점검",
+      "daterequired": "2025-11-23 07:00",
+      "requester": "김승문",
+      "department": "기계팀",
+      "equipment": "ING2237TEFT-GI-1A",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29152",
+      "description": "#2GT Exhaust Thermocouple No.8 오지시",
+      "daterequired": "2025-11-23 07:00",
+      "requester": "김승문",
+      "department": "계전팀",
+      "equipment": "ING2238TETT-XD-9",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29084",
+      "description": "HRSG #1 Inlet Duct Expansion Joint 설치조건부 구매",
+      "daterequired": "2025-11-23 07:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH1261MSG101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29154",
+      "description": "HRSG#2 산화철 비산방지 설비 점검",
+      "daterequired": "2025-11-22 08:00",
+      "requester": "곽태일",
+      "department": "기계팀",
+      "equipment": "INH2261MSG201",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29140",
+      "description": "GasTurbine #2 Gas vent line plug 재설치",
+      "daterequired": "2025-11-22 08:00",
+      "requester": "신홍익",
+      "department": "공통",
+      "equipment": "ING2231TA201",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29114",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-22 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29133",
+      "description": "#2 HRSG Inlet Duct Expansion Joint 탈락 발생",
+      "daterequired": "2025-11-22 07:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INH2261MSG201",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29123",
+      "description": "SFC 컨테이너 내부 에어컨 교체",
+      "daterequired": "2025-11-21 10:00",
+      "requester": "정창덕",
+      "department": "기계팀",
+      "equipment": "ING1232SFC101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "FC-101"
+      ]
+    },
+    {
+      "permittowork": "29122",
+      "description": "전기 맨홀 배수 작업",
+      "daterequired": "2025-11-21 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INCD2",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29103",
+      "description": "BFP #1 H/C Oil 보충",
+      "daterequired": "2025-11-21 09:00",
+      "requester": "곽태일",
+      "department": "기계팀",
+      "equipment": "INCG262PP001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29099",
+      "description": "사업장 메탄 측정장비 TEST(2025.11.21)",
+      "daterequired": "2025-11-21 09:00",
+      "requester": "서규석",
+      "department": "공통",
+      "equipment": "IN",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29031",
+      "description": "암모니아수 하역작업",
+      "daterequired": "2025-11-21 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INCX633TK001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29079",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-21 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29078",
+      "description": "GT 동 셔터 교체(정학규 매니저 작업감독 예정) ",
+      "daterequired": "2025-11-21 08:00",
+      "requester": "신홍익",
+      "department": "공통",
+      "equipment": "INCG",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29037",
+      "description": "사업장 메탄 누출 여부 TEST(2025.11.20.)",
+      "daterequired": "2025-11-20 09:00",
+      "requester": "서규석",
+      "department": "대외협력팀",
+      "equipment": "IN",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29028",
+      "description": "사업장 메탄 누출 여부 측정(2025.11.20)",
+      "daterequired": "2025-11-20 09:00",
+      "requester": "서규석",
+      "department": "대외협력팀",
+      "equipment": "IN",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29036",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-20 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "29026",
+      "description": "UF Unit 밸브 교체",
+      "daterequired": "2025-11-19 09:00",
+      "requester": "유재혁",
+      "department": "기계팀",
+      "equipment": "INWT333MFT001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "FT-001"
+      ]
+    },
+    {
+      "permittowork": "28885",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-19 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28982",
+      "description": "자동 그리스 주입기 점검",
+      "daterequired": "2025-11-18 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INCG",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28959",
+      "description": "사업장 메탄 누출 여부 측정(2025.11.18)",
+      "daterequired": "2025-11-18 09:00",
+      "requester": "서규석",
+      "department": "공통",
+      "equipment": "IN",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28939",
+      "description": "GT 대기오염물질 측정",
+      "daterequired": "2025-11-18 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INH1261MSG101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28938",
+      "description": "GT 대기오염물질 측정",
+      "daterequired": "2025-11-18 09:00",
+      "requester": "윤재인",
+      "department": "안전환경팀",
+      "equipment": "INH2261MSG201",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28884",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-18 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28946",
+      "description": "가스누출감지경보설비 검교정(PLB2)",
+      "daterequired": "2025-11-17 14:00",
+      "requester": "김승문",
+      "department": "기계팀",
+      "equipment": "INDH141AE5245A",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "AE-5245A"
+      ]
+    },
+    {
+      "permittowork": "28945",
+      "description": "가스누출감지경보설비 검교정(PLB1)",
+      "daterequired": "2025-11-17 14:00",
+      "requester": "김승문",
+      "department": "기계팀",
+      "equipment": "INDH141AE5145A",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "AE-5145A"
+      ]
+    },
+    {
+      "permittowork": "28944",
+      "description": "가스누출감지경보설비 검교정(정압기실)",
+      "daterequired": "2025-11-17 14:00",
+      "requester": "김승문",
+      "department": "기계팀",
+      "equipment": "INDH141AE5001A",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "AE-5001A"
+      ]
+    },
+    {
+      "permittowork": "28883",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-17 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28882",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-16 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28881",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-15 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28889",
+      "description": "잠재 위험 관련 ST동 3.5층 사다리 손잡이 용접 작업",
+      "daterequired": "2025-11-14 14:30",
+      "requester": "유재혁",
+      "department": "공통",
+      "equipment": "INCS",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28886",
+      "description": "전기 맨홀 배수 작업",
+      "daterequired": "2025-11-14 13:45",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INCD2",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28877",
+      "description": "축열조 무선온도전송기 관련 DCS점검",
+      "daterequired": "2025-11-14 09:00",
+      "requester": "최선구",
+      "department": "계전팀",
+      "equipment": "INCX476UPS101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "PS-101"
+      ]
+    },
+    {
+      "permittowork": "28825",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-14 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28836",
+      "description": "#1 축열조 FCV-6081 기어박스교체",
+      "daterequired": "2025-11-13 13:00",
+      "requester": "김승문",
+      "department": "기계팀",
+      "equipment": "INDH131AM001",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28833",
+      "description": "대기환경감시설비 정기점검",
+      "daterequired": "2025-11-13 10:00",
+      "requester": "최선구",
+      "department": "계전팀",
+      "equipment": "INH1261MSG101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28858",
+      "description": "GT동 셔터 동작 불능(GT 변압기 사이 셔터)",
+      "daterequired": "2025-11-13 09:00",
+      "requester": "정학규",
+      "department": "",
+      "equipment": "INCG",
+      "status": "안전작업허가서 작성대기",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28834",
+      "description": "축열조 무선온도전송기 관련 DCS점검",
+      "daterequired": "2025-11-13 09:00",
+      "requester": "최선구",
+      "department": "계전팀",
+      "equipment": "INCX476UPS101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": [
+        "PS-101"
+      ]
+    },
+    {
+      "permittowork": "28828",
+      "description": "수처리실 온풍기용 전력케이블 포설",
+      "daterequired": "2025-11-13 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INCD33",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28795",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-13 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28787",
+      "description": "관리동 및 주제어동 공조기, 항온항습기 필터 교체",
+      "daterequired": "2025-11-12 13:00",
+      "requester": "유재혁",
+      "department": "기계팀",
+      "equipment": "INHA354AH201",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28785",
+      "description": "수처리실 온풍기용 전력케이블 포설",
+      "daterequired": "2025-11-12 09:00",
+      "requester": "김필규",
+      "department": "계전팀",
+      "equipment": "INCD33",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    },
+    {
+      "permittowork": "28766",
+      "description": "PLB Stack 벽면녹화 공사",
+      "daterequired": "2025-11-12 08:00",
+      "requester": "신홍익",
+      "department": "기계팀",
+      "equipment": "INDH141BR101",
+      "status": "안전작업허가서 승인완료",
+      "extracted_tags": []
+    }
+  ]
+}

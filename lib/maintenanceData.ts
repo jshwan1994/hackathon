@@ -9,36 +9,27 @@ export interface MaintenanceRecord {
   status: string;
 }
 
-// 정비이력 목업 데이터 (항상 표시)
-export const maintenanceRecords: MaintenanceRecord[] = [
-  {
-    permittowork: "30433",
-    description: "유량조절밸브 분해점검 및 Actuator 정비",
-    daterequired: "2026-01-26 09:00",
-    requester: "김필규",
-    department: "계전팀",
-    equipment: "FCV-7011",
-    status: "승인완료"
-  },
-  {
-    permittowork: "30432",
-    description: "레벨조절밸브 Positioner 교정",
-    daterequired: "2026-01-25 09:00",
-    requester: "김필규",
-    department: "계전팀",
-    equipment: "LCV-7011",
-    status: "승인완료"
-  },
-  {
-    permittowork: "30431",
-    description: "수동밸브 Packing 교체",
-    daterequired: "2026-01-24 13:00",
-    requester: "성상우",
-    department: "기계팀",
-    equipment: "HV-7011-A",
-    status: "작업완료"
+// API에서 정비이력 가져오기 (실제 HxGN EAM 데이터)
+export async function fetchMaintenanceHistory(equipmentCode?: string): Promise<MaintenanceRecord[]> {
+  try {
+    const url = equipmentCode
+      ? `/api/maintenance?equipmentCode=${encodeURIComponent(equipmentCode)}`
+      : '/api/maintenance';
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (data.success && data.data) {
+      return data.data;
+    }
+
+    // API 실패 시 빈 배열 반환
+    return [];
+  } catch (error) {
+    console.error('Failed to fetch maintenance history:', error);
+    return [];
   }
-];
+}
 
 // 날짜 포맷
 export function formatMaintenanceDate(dateStr: string): string {

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { ValveData, CATEGORY_CONFIG } from "@/types/valve";
 import Valve3DViewer from "./Valve3DViewer";
 import CategoryIcon from "./CategoryIcon";
@@ -8,7 +9,8 @@ import {
   formatShift,
 } from "@/lib/diaryData";
 import {
-  maintenanceRecords,
+  MaintenanceRecord,
+  fetchMaintenanceHistory,
   formatMaintenanceDate,
   getStatusColor,
 } from "@/lib/maintenanceData";
@@ -66,12 +68,27 @@ function isSafetyValve(category?: string): boolean {
 }
 
 export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelProps) {
+  const [maintenanceRecords, setMaintenanceRecords] = useState<MaintenanceRecord[]>([]);
+  const [loadingMaintenance, setLoadingMaintenance] = useState(true);
+
   const isValve = isValveCategory(valve.category);
   const isSafety = isSafetyValve(valve.category);
   const valveSpecs = mockSpecs[valve.type || 'VG'] || mockSpecs.VG;
   const instSpecs = instrumentSpecs[valve.type || 'PI'] || instrumentSpecs.PI;
   const categoryConfig = CATEGORY_CONFIG[valve.category || 'Other'] || CATEGORY_CONFIG['Other'];
   const isolationProcedure = getIsolationProcedure(valve.tag);
+
+  // 정비이력 API 호출
+  useEffect(() => {
+    const loadMaintenanceHistory = async () => {
+      setLoadingMaintenance(true);
+      const data = await fetchMaintenanceHistory(valve.tag);
+      setMaintenanceRecords(data);
+      setLoadingMaintenance(false);
+    };
+
+    loadMaintenanceHistory();
+  }, [valve.tag]);
 
   return (
     <>
@@ -216,33 +233,53 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
           <div className="space-y-3">
             <div className="flex items-center justify-between px-1">
               <h3 className="text-white text-sm font-semibold">정비이력</h3>
-              <span className="text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">
-                {maintenanceRecords.length}건
-              </span>
+              {loadingMaintenance ? (
+                <span className="text-xs text-[#9da6b9] bg-white/5 px-2 py-0.5 rounded-full">
+                  로딩중...
+                </span>
+              ) : (
+                <span className="text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">
+                  {maintenanceRecords.length}건
+                </span>
+              )}
             </div>
             <div className="bg-[#1c1f27] rounded-xl border border-white/10 overflow-hidden">
-              {maintenanceRecords.map((record, index) => (
-                <div
-                  key={record.permittowork}
-                  className={`p-3 hover:bg-[#252830] transition-colors ${index !== maintenanceRecords.length - 1 ? 'border-b border-white/10' : ''}`}
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono text-primary">#{record.permittowork}</span>
-                      <span className={`text-xs px-1.5 py-0.5 rounded ${getStatusColor(record.status)}`}>
-                        {record.status}
+              {loadingMaintenance ? (
+                <div className="p-6 text-center text-[#9da6b9] text-sm">
+                  <div className="animate-pulse">정비이력을 불러오는 중...</div>
+                </div>
+              ) : maintenanceRecords.length === 0 ? (
+                <div className="p-6 text-center">
+                  <span className="material-symbols-outlined text-[#9da6b9] !text-[32px] mb-2 block">
+                    event_available
+                  </span>
+                  <p className="text-[#9da6b9] text-sm">최근 3개월간 정비이력 없음</p>
+                </div>
+              ) : (
+                maintenanceRecords.map((record, index) => (
+                  <div
+                    key={record.permittowork}
+                    className={`p-3 hover:bg-[#252830] transition-colors ${index !== maintenanceRecords.length - 1 ? 'border-b border-white/10' : ''}`}
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-mono text-primary">#{record.permittowork}</span>
+                        <span className={`text-xs px-1.5 py-0.5 rounded ${getStatusColor(record.status)}`}>
+                          {record.status}
+                        </span>
+                      </div>
+                      <span className="text-[#9da6b9] text-xs">
+                        {formatMaintenanceDate(record.daterequired)}
                       </span>
                     </div>
-                    <span className="text-[#9da6b9] text-xs">
-                      {formatMaintenanceDate(record.daterequired)}
-                    </span>
+                    <p className="text-white text-sm leading-relaxed mb-2">{record.description}</p>
+                    <div className="flex items-center justify-between text-xs text-[#9da6b9]">
+                      <span>{record.department} {record.requester}</span>
+                      <span className="font-mono text-[10px]">{record.equipment}</span>
+                    </div>
                   </div>
-                  <p className="text-white text-sm leading-relaxed mb-2">{record.description}</p>
-                  <div className="text-xs text-[#9da6b9]">
-                    {record.department} {record.requester} 매니저
-                  </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
           </div>
 
