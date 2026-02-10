@@ -249,10 +249,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                   <div className="animate-pulse">정비이력을 불러오는 중...</div>
                 </div>
               ) : maintenanceRecords.length === 0 ? (
-                <div className="p-6 text-center">
-                  <span className="material-symbols-outlined text-[#9da6b9] !text-[32px] mb-2 block">
-                    event_available
-                  </span>
+                <div className="p-8 flex items-center justify-center">
                   <p className="text-[#9da6b9] text-sm">최근 3개월간 정비이력 없음</p>
                 </div>
               ) : (
