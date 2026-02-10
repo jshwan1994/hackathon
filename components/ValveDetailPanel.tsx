@@ -107,18 +107,18 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
           <div>
             <div className="flex items-center gap-3 mb-1">
               <div
-                className="p-1.5 rounded-lg"
+                className="px-2 py-1 rounded-lg"
                 style={{ backgroundColor: `${categoryConfig.color}20` }}
               >
                 <span
-                  className="material-symbols-outlined !text-[20px]"
+                  className="text-xs font-bold"
                   style={{ color: categoryConfig.color }}
                 >
-                  {categoryConfig.icon}
+                  {valve.type}
                 </span>
               </div>
               <span
-                className="text-xs font-bold tracking-wider uppercase"
+                className="text-xs font-bold tracking-wider"
                 style={{ color: categoryConfig.color }}
               >
                 {categoryConfig.label}
@@ -156,7 +156,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
             </div>
           )}
 
-          {/* 계기류인 경우 아이콘 표시 */}
+          {/* 계기류인 경우 타입/카테고리 표시 */}
           {!isValve && !isSafety && (
             <div className="bg-[#1c1f27] rounded-xl border border-white/10 p-6 flex flex-col items-center justify-center">
               <div
@@ -164,13 +164,13 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                 style={{ backgroundColor: `${categoryConfig.color}20` }}
               >
                 <span
-                  className="material-symbols-outlined !text-[48px]"
+                  className="text-3xl font-bold"
                   style={{ color: categoryConfig.color }}
                 >
-                  {categoryConfig.icon}
+                  {valve.type}
                 </span>
               </div>
-              <p className="text-white font-semibold">{valve.type}</p>
+              <p className="text-white font-semibold">{categoryConfig.label}</p>
               <p className="text-[#9da6b9] text-sm">{categoryConfig.label} 계기</p>
             </div>
           )}
