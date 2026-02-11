@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+
 import Link from "next/link";
 import { ValveData, CATEGORY_CONFIG } from "@/types/valve";
 import { searchValves } from "@/lib/valveData";
@@ -15,6 +16,9 @@ export default function Home() {
   const [selectedValve, setSelectedValve] = useState<ValveData | null>(null);
   const [showDetailPanel, setShowDetailPanel] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [specCount, setSpecCount] = useState(0);
+  const [maintenanceCount, setMaintenanceCount] = useState(0);
+  const [maintenanceTotal, setMaintenanceTotal] = useState(0);
 
   // 컴포넌트 데이터 로드 (밸브 + 계기류)
   useEffect(() => {
@@ -31,6 +35,35 @@ export default function Home() {
     }
 
     loadComponentData();
+  }, []);
+
+  // 밸브 사양 데이터 개수 로드
+  useEffect(() => {
+    async function loadSpecCount() {
+      try {
+        const response = await fetch("/data/valve_specs_merged.json");
+        const data = await response.json();
+        setSpecCount(data.total_valves || 0);
+      } catch (error) {
+        console.error("밸브 사양 데이터 로드 실패:", error);
+      }
+    }
+    loadSpecCount();
+  }, []);
+
+  // 정비이력 데이터 개수 로드
+  useEffect(() => {
+    async function loadMaintenanceCount() {
+      try {
+        const response = await fetch("/api/maintenance");
+        const data = await response.json();
+        setMaintenanceCount(data.matchedWithGlance || 0);  // GLANCE와 매칭된 건수
+        setMaintenanceTotal(data.total || 0);  // 전체 정비이력 건수
+      } catch (error) {
+        console.error("정비이력 데이터 로드 실패:", error);
+      }
+    }
+    loadMaintenanceCount();
   }, []);
 
   // 검색어 변경 시 검색 실행
@@ -72,11 +105,12 @@ export default function Home() {
       {/* 배경 도면 영역 */}
       <DrawingViewer selectedValve={selectedValve} isPanelOpen={showDetailPanel} />
 
-      {/* 사전 카드 - 왼쪽 상단 */}
-      <Link
-        href="/dictionary"
-        className="hidden md:flex absolute top-8 left-8 z-20 items-center gap-3 h-14 px-5 bg-[#1c1f27]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl hover:bg-[#1c1f27] hover:border-primary/30 transition-all duration-300 group pointer-events-auto"
-      >
+      {/* 사전 카드 + 사양 데이터 - 왼쪽 상단 */}
+      <div className="hidden md:flex absolute top-8 left-8 z-20 flex-col gap-3 pointer-events-auto">
+        <Link
+          href="/dictionary"
+          className="flex items-center gap-3 h-14 px-5 bg-[#1c1f27]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl hover:bg-[#1c1f27] hover:border-primary/30 transition-all duration-300 group"
+        >
         <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors relative overflow-hidden">
           <svg className="w-5 h-5 text-primary relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
@@ -84,7 +118,28 @@ export default function Home() {
           <div className="shine-effect"></div>
         </div>
         <div className="text-white font-semibold text-sm">밸브/계기 사전</div>
-      </Link>
+        </Link>
+
+        {/* 밸브 기술사양 데이터 현황 */}
+        <div className="flex items-center gap-3 h-14 px-5 bg-[#1c1f27]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
+          <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+            <svg className="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+            </svg>
+          </div>
+          <div className="text-white font-semibold text-sm">밸브 기술사양 {specCount.toLocaleString()}개</div>
+        </div>
+
+        {/* 정비이력 데이터 현황 */}
+        <div className="flex items-center gap-3 h-14 px-5 bg-[#1c1f27]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
+          <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center">
+            <svg className="w-5 h-5 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+            </svg>
+          </div>
+          <div className="text-white font-semibold text-sm">정비이력 매칭 {maintenanceCount.toLocaleString()}건</div>
+        </div>
+      </div>
 
       {/* 검색창 */}
       <div className="absolute top-0 left-0 right-0 z-20 flex justify-center pt-4 md:pt-8 px-3 md:px-4 pointer-events-none">

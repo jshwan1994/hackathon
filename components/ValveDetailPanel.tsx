@@ -25,22 +25,17 @@ interface ValveDetailPanelProps {
   onClose: () => void;
 }
 
-// 밸브 타입별 목업 기술 사양
-const mockSpecs: Record<string, { pressureRating: string; temperature: string; manufacturerId: string; fluid: string }> = {
-  VC: { pressureRating: "20 kg/cm²", temperature: "-29°C ~ 200°C", manufacturerId: "FV-2024-0581", fluid: "응축수" },
-  VL: { pressureRating: "50 kg/cm²", temperature: "-29°C ~ 250°C", manufacturerId: "FV-2024-0603", fluid: "Steam" },
-  VG: { pressureRating: "20 kg/cm²", temperature: "-29°C ~ 180°C", manufacturerId: "FV-2024-0583", fluid: "급수" },
-  VB: { pressureRating: "100 kg/cm²", temperature: "-46°C ~ 300°C", manufacturerId: "FV-2024-4301", fluid: "Steam" },
-  FV: { pressureRating: "50 kg/cm²", temperature: "-29°C ~ 220°C", manufacturerId: "FV-2024-7014", fluid: "급수" },
-  FCV: { pressureRating: "50 kg/cm²", temperature: "-29°C ~ 200°C", manufacturerId: "CV-2024-7011", fluid: "Steam" },
-  LCV: { pressureRating: "20 kg/cm²", temperature: "-29°C ~ 180°C", manufacturerId: "CV-2024-7011", fluid: "응축수" },
-  HV: { pressureRating: "50 kg/cm²", temperature: "-46°C ~ 250°C", manufacturerId: "HV-2024-7011", fluid: "급수" },
-  // 안전밸브 (PSV, PRV)
-  PSV: { pressureRating: "설정압력 10.5 kg/cm²", temperature: "-29°C ~ 350°C", manufacturerId: "SV-2024-1001", fluid: "Steam" },
-  PRV: { pressureRating: "설정압력 8.5 kg/cm²", temperature: "-29°C ~ 300°C", manufacturerId: "SV-2024-2001", fluid: "Steam/Gas" },
-};
+// PDF에서 추출한 실제 밸브 사양 타입
+interface ValveSpec {
+  tag: string;
+  valve_type: string;
+  class: string | null;
+  size: string | null;
+  material: string | null;
+  vendor: string;
+}
 
-// 계기류 타입별 목업 사양
+// 계기류 타입별 사양 (계기류는 PDF에 없으므로 유지)
 const instrumentSpecs: Record<string, { range: string; unit: string; signal: string; manufacturer: string }> = {
   PI: { range: "0 ~ 50", unit: "kg/cm²", signal: "4-20mA", manufacturer: "Rosemount" },
   TI: { range: "0 ~ 500", unit: "°C", signal: "4-20mA", manufacturer: "Rosemount" },
@@ -70,13 +65,37 @@ function isSafetyValve(category?: string): boolean {
 export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelProps) {
   const [maintenanceRecords, setMaintenanceRecords] = useState<MaintenanceRecord[]>([]);
   const [loadingMaintenance, setLoadingMaintenance] = useState(true);
+  const [valveSpec, setValveSpec] = useState<ValveSpec | null>(null);
+  const [loadingSpec, setLoadingSpec] = useState(true);
 
   const isValve = isValveCategory(valve.category);
   const isSafety = isSafetyValve(valve.category);
-  const valveSpecs = mockSpecs[valve.type || 'VG'] || mockSpecs.VG;
   const instSpecs = instrumentSpecs[valve.type || 'PI'] || instrumentSpecs.PI;
   const categoryConfig = CATEGORY_CONFIG[valve.category || 'Other'] || CATEGORY_CONFIG['Other'];
   const isolationProcedure = getIsolationProcedure(valve.tag);
+
+  // PDF에서 추출한 밸브 사양 로드
+  useEffect(() => {
+    const loadValveSpec = async () => {
+      setLoadingSpec(true);
+      try {
+        const res = await fetch('/data/valve_specs_merged.json');
+        const data = await res.json();
+        const spec = data.valves.find((v: ValveSpec) => v.tag === valve.tag);
+        setValveSpec(spec || null);
+      } catch (error) {
+        console.error('Failed to load valve specs:', error);
+        setValveSpec(null);
+      }
+      setLoadingSpec(false);
+    };
+
+    if (isValve || isSafety) {
+      loadValveSpec();
+    } else {
+      setLoadingSpec(false);
+    }
+  }, [valve.tag, isValve, isSafety]);
 
   // 정비이력 API 호출
   useEffect(() => {
@@ -139,7 +158,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
         <div className="flex-1 overflow-y-auto custom-scrollbar p-4 md:p-6 pt-2 space-y-4 md:space-y-6">
           {/* 밸브인 경우 3D 뷰어 표시 (안전밸브 제외) */}
           {isValve && !isSafety && (
-            <Valve3DViewer valveType={valve.type || 'VG'} fluidType={valveSpecs.fluid} />
+            <Valve3DViewer valveType={valve.type || 'VG'} fluidType={valveSpec?.valve_type || 'Steam'} />
           )}
 
           {/* 안전밸브인 경우 아이콘 표시 */}
@@ -178,26 +197,49 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
           {/* 기술 사양 - 밸브 (안전밸브 포함) */}
           {(isValve || isSafety) && (
             <div className="space-y-3 md:space-y-4">
-              <h3 className="text-white text-sm font-semibold px-1">기술 사양</h3>
+              <div className="flex items-center justify-between px-1">
+                <h3 className="text-white text-sm font-semibold">기술 사양</h3>
+                {loadingSpec ? (
+                  <span className="text-xs text-[#9da6b9] bg-white/5 px-2 py-0.5 rounded-full">로딩중...</span>
+                ) : valveSpec ? (
+                  <span className="text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full">PDF 데이터</span>
+                ) : (
+                  <span className="text-xs text-[#9da6b9] bg-white/5 px-2 py-0.5 rounded-full">데이터 없음</span>
+                )}
+              </div>
               <div className="bg-[#1c1f27] rounded-xl border border-white/10 overflow-hidden">
-                <div className="grid grid-cols-2 gap-[1px] bg-white/20">
-                  <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
-                    <p className="text-[#9da6b9] text-xs mb-0.5">{isSafety ? '설정 압력' : '압력 등급'}</p>
-                    <p className="text-white text-sm font-medium">{valveSpecs.pressureRating}</p>
+                {loadingSpec ? (
+                  <div className="p-6 text-center text-[#9da6b9] text-sm">
+                    <div className="animate-pulse">사양 정보를 불러오는 중...</div>
                   </div>
-                  <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
-                    <p className="text-[#9da6b9] text-xs mb-0.5">온도 범위</p>
-                    <p className="text-white text-sm font-medium">{valveSpecs.temperature}</p>
+                ) : valveSpec ? (
+                  <div className="grid grid-cols-2 gap-[1px] bg-white/20">
+                    <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                      <p className="text-[#9da6b9] text-xs mb-0.5">압력 등급 (Class)</p>
+                      <p className="text-white text-sm font-medium">{valveSpec.class || '-'}</p>
+                    </div>
+                    <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                      <p className="text-[#9da6b9] text-xs mb-0.5">사이즈 (Size)</p>
+                      <p className="text-white text-sm font-medium">{valveSpec.size ? `${valveSpec.size}A` : '-'}</p>
+                    </div>
+                    <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                      <p className="text-[#9da6b9] text-xs mb-0.5">재질 (Material)</p>
+                      <p className="text-white text-sm font-medium">{valveSpec.material || '-'}</p>
+                    </div>
+                    <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
+                      <p className="text-[#9da6b9] text-xs mb-0.5">제조사 (Vendor)</p>
+                      <p className="text-white text-sm font-medium">{valveSpec.vendor || '-'}</p>
+                    </div>
+                    <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors col-span-2">
+                      <p className="text-[#9da6b9] text-xs mb-0.5">밸브 종류 (Type)</p>
+                      <p className="text-white text-sm font-medium">{valveSpec.valve_type || '-'}</p>
+                    </div>
                   </div>
-                  <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
-                    <p className="text-[#9da6b9] text-xs mb-0.5">유체</p>
-                    <p className="text-white text-sm font-medium">{valveSpecs.fluid}</p>
+                ) : (
+                  <div className="p-6 text-center text-[#9da6b9] text-sm">
+                    이 밸브의 사양 정보가 없습니다
                   </div>
-                  <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
-                    <p className="text-[#9da6b9] text-xs mb-0.5">제조사 ID</p>
-                    <p className="text-white text-sm font-medium">{valveSpecs.manufacturerId}</p>
-                  </div>
-                </div>
+                )}
               </div>
             </div>
           )}

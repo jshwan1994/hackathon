@@ -1,0 +1,2089 @@
+{
+  "extraction_date": "2026-02-11T11:19:38.853537",
+  "extraction_method": "Merged (Camelot + OCR)",
+  "total_valves": 246,
+  "data_completeness": {
+    "class": "151/246 (61.4%)",
+    "size": "134/246 (54.5%)",
+    "material": "145/246 (58.9%)",
+    "vendor": "246/246 (100.0%)",
+    "complete": "111/246 (45.1%)"
+  },
+  "valves": [
+    {
+      "tag": "VG-5253",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5315",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5251",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5327",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5321",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5210",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5001",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5011",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5301",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5253",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5206",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5205",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5221",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5218",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5220",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5401",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A182  F316",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5363",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5362",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5458",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5401",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A182  F316",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-6254",
+      "valve_type": "Forged Steel Valve",
+      "vendor": "화성",
+      "class": "140 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "SV-389",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "5 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5000",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5201",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VG-5202",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VG-5203",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VG-5204",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VG-5205",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VG-5206",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VG-5207",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VG-5222",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VG-5223",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VG-5224",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VG-5225",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VG-5221",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VG-5226",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VG-5227",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VL-5204",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VC-5202",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "VC-5203",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "CF8"
+    },
+    {
+      "tag": "ST-299",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "ST-109",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "90 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "ST-10800",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": "9",
+      "material": null
+    },
+    {
+      "tag": "ST-80080",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "ST-1399",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "ST-199",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5021",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5022",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5024",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5030",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5008",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5002",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5252",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5016",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5026",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5301",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5302",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5303",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5034",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5305",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5308",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5313",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5010",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": "4",
+      "material": null
+    },
+    {
+      "tag": "VG-5011",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": "4",
+      "material": null
+    },
+    {
+      "tag": "VG-5012",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": "4",
+      "material": null
+    },
+    {
+      "tag": "VG-5014",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5015",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5027",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5028",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5003",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5031",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5307",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5309",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5311",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5312",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5035",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5029",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5004",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5005",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5208",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": "7 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5007",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VL-6044",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VL-5036",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": "7",
+      "material": null
+    },
+    {
+      "tag": "VL-5037",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VL-5038",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": "7",
+      "material": null
+    },
+    {
+      "tag": "VL-5039",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VL-5040",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": "7",
+      "material": null
+    },
+    {
+      "tag": "VL-5041",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": "7",
+      "material": null
+    },
+    {
+      "tag": "VL-5042",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VL-5043",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VL-5201",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": "297",
+      "material": null
+    },
+    {
+      "tag": "VL-5202",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": "297",
+      "material": null
+    },
+    {
+      "tag": "VL-5203",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": "297",
+      "material": null
+    },
+    {
+      "tag": "VC-5014",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VC-5015",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VC-5016",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VC-5017",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VC-5201",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5018",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5019",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5017",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5025",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5032",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5033",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5306",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5209",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5013",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5310",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5044",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": "7",
+      "material": null
+    },
+    {
+      "tag": "VG-5045",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": "7",
+      "material": null
+    },
+    {
+      "tag": "VL-5208",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5012",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-6020",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "WCB"
+    },
+    {
+      "tag": "VG-5023",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "WCB"
+    },
+    {
+      "tag": "VG-5009",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "WCB"
+    },
+    {
+      "tag": "VG-6017",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "WCB"
+    },
+    {
+      "tag": "VG-6082",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "WCB"
+    },
+    {
+      "tag": "VG-6033",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "WCB"
+    },
+    {
+      "tag": "VG-6308",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "WCB"
+    },
+    {
+      "tag": "VG-6084",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "WCB"
+    },
+    {
+      "tag": "VG-6805",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "WCB"
+    },
+    {
+      "tag": "VG-6012",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "WCB"
+    },
+    {
+      "tag": "VG-6003",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "WCB"
+    },
+    {
+      "tag": "VG-5001",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5006",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-6204",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VL-5044",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VL-5045",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VC-5013",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5324",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "A351 CF8"
+    },
+    {
+      "tag": "VG-5329",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "A351 CF8"
+    },
+    {
+      "tag": "VG-5325",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "A351 CF8"
+    },
+    {
+      "tag": "VG-5326",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "A351 CF8"
+    },
+    {
+      "tag": "VG-5228",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": "A351 CF8"
+    },
+    {
+      "tag": "VG-6016",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-6026",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-6032",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-6088",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-6301",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-5905",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-6808",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VG-6318",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VL-6036",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VC-5011",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "VC-6202",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "class": null,
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "ST-412",
+      "valve_type": "Butterfly Valve",
+      "vendor": "제로엔텍",
+      "class": null,
+      "size": "8",
+      "material": "SS400"
+    },
+    {
+      "tag": "VC-5001",
+      "valve_type": "Non-Slam Check Valve",
+      "vendor": "에이치아이테크",
+      "class": "32 bar",
+      "size": "2",
+      "material": "WCB"
+    },
+    {
+      "tag": "VC-5005",
+      "valve_type": "Non-Slam Check Valve",
+      "vendor": "에이치아이테크",
+      "class": "140 bar",
+      "size": "450",
+      "material": "WCB"
+    },
+    {
+      "tag": "VC-5004",
+      "valve_type": "Non-Slam Check Valve",
+      "vendor": "에이치아이테크",
+      "class": "21 bar",
+      "size": "450",
+      "material": null
+    },
+    {
+      "tag": "VC-50066",
+      "valve_type": "Non-Slam Check Valve",
+      "vendor": "에이치아이테크",
+      "class": null,
+      "size": "450",
+      "material": null
+    },
+    {
+      "tag": "VC-5007",
+      "valve_type": "Non-Slam Check Valve",
+      "vendor": "에이치아이테크",
+      "class": null,
+      "size": "450",
+      "material": null
+    },
+    {
+      "tag": "VC-5002",
+      "valve_type": "Non-Slam Check Valve",
+      "vendor": "에이치아이테크",
+      "class": "16 bar",
+      "size": "600",
+      "material": null
+    },
+    {
+      "tag": "VC-5003",
+      "valve_type": "Non-Slam Check Valve",
+      "vendor": "에이치아이테크",
+      "class": null,
+      "size": "600",
+      "material": null
+    },
+    {
+      "tag": "VC-5008",
+      "valve_type": "Non-Slam Check Valve",
+      "vendor": "에이치아이테크",
+      "class": null,
+      "size": "600",
+      "material": null
+    },
+    {
+      "tag": "VC-5009",
+      "valve_type": "Non-Slam Check Valve",
+      "vendor": "에이치아이테크",
+      "class": null,
+      "size": "600",
+      "material": null
+    },
+    {
+      "tag": "VC-5010",
+      "valve_type": "Non-Slam Check Valve",
+      "vendor": "에이치아이테크",
+      "class": null,
+      "size": "600",
+      "material": null
+    },
+    {
+      "tag": "VC-5006",
+      "valve_type": "Non-Slam Check Valve",
+      "vendor": "에이치아이테크",
+      "class": null,
+      "size": "450",
+      "material": null
+    },
+    {
+      "tag": "ST-674",
+      "valve_type": "Strainer",
+      "vendor": "신우공업",
+      "class": "6 bar",
+      "size": null,
+      "material": null
+    },
+    {
+      "tag": "ST-5251",
+      "valve_type": "Strainer",
+      "vendor": "신우공업",
+      "class": "50 bar",
+      "size": "15",
+      "material": "A105"
+    },
+    {
+      "tag": "ST-5252",
+      "valve_type": "Steam Trap",
+      "vendor": "신우공업",
+      "class": "20 bar",
+      "size": "15",
+      "material": "A105"
+    },
+    {
+      "tag": "VG-5254",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5255",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5256",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5257",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5258",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5314",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5451",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5452",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5453",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5454",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5455",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5456",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5457",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5458",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5322",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5211",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5212",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5213",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5214",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5215",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5216",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5217",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5218",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5219",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5220",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "140 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5002",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5003",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5004",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5005",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5006",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5007",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5008",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5009",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5010",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-254",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5307",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5308",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5012",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5013",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5251",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5252",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5302",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5303",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5304",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5305",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5306",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5207",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5209",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5210",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5211",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5212",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5213",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5214",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5215",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5216",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5217",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5231",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5222",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5223",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5224",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5225",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5226",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5227",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5228",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5229",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5230",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5219",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10 bar",
+      "size": "15",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5402",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A182  F316",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5403",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A182  F316",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5364",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5365",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5366",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5367",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-6368",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5369",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5370",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5371",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "140 bar",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5457",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5456",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5455",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5453",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5452",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5451",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5251",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "140 bar",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5402",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "140 bar",
+      "size": "15",
+      "material": "A182  F316",
+      "vendor": "화성"
+    }
+  ]
+}

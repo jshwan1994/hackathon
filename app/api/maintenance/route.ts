@@ -57,16 +57,214 @@ interface EAMResponse {
   }
 }
 
-// Load cached maintenance data
-async function loadCachedData(): Promise<CachedRecord[]> {
+// Get cache file path
+function getCacheFilePath(): string {
+  return path.join(process.cwd(), 'public', 'data', 'maintenance_history.json')
+}
+
+// Load GLANCE components (all_components.json)
+async function loadGlanceComponents(): Promise<Set<string>> {
   try {
-    const filePath = path.join(process.cwd(), 'public', 'data', 'maintenance_history.json')
+    const filePath = path.join(process.cwd(), 'public', 'data', 'all_components.json')
     const fileContent = await fs.readFile(filePath, 'utf-8')
-    const data: CachedData = JSON.parse(fileContent)
-    return data.records || []
+    const components = JSON.parse(fileContent)
+
+    // Extract all tags and normalize them
+    const tagSet = new Set<string>()
+    for (const comp of components) {
+      if (comp.tag) {
+        // Add original tag
+        tagSet.add(comp.tag.toUpperCase())
+        // Add normalized version (without dash)
+        tagSet.add(comp.tag.replace(/-/g, '').toUpperCase())
+      }
+    }
+    return tagSet
+  } catch (error) {
+    console.log('[Maintenance API] Failed to load GLANCE components')
+    return new Set()
+  }
+}
+
+// Count matched records with GLANCE components
+function countMatchedRecords(records: any[], glanceTags: Set<string>): { matchedCount: number, matchedComponents: Set<string> } {
+  let matchedCount = 0
+  const matchedComponents = new Set<string>()
+
+  for (const record of records) {
+    const extractedTags = record.extracted_tags || []
+    let matched = false
+
+    for (const tag of extractedTags) {
+      const normalizedTag = tag.replace(/-/g, '').toUpperCase()
+      const tagWithDash = tag.toUpperCase()
+
+      if (glanceTags.has(normalizedTag) || glanceTags.has(tagWithDash)) {
+        matched = true
+        matchedComponents.add(tag)
+      }
+    }
+
+    if (matched) matchedCount++
+  }
+
+  return { matchedCount, matchedComponents }
+}
+
+// Load cached maintenance data with metadata
+async function loadCachedDataWithMeta(): Promise<CachedData | null> {
+  try {
+    const filePath = getCacheFilePath()
+    const fileContent = await fs.readFile(filePath, 'utf-8')
+    return JSON.parse(fileContent)
   } catch (error) {
     console.log('[Maintenance API] No cached data found')
-    return []
+    return null
+  }
+}
+
+// Check if cache needs refresh (older than 14 days)
+function isCacheStale(cachedData: CachedData | null): boolean {
+  if (!cachedData || !cachedData.date_range?.to) return true
+
+  const lastUpdate = new Date(cachedData.date_range.to)
+  const now = new Date()
+  const daysDiff = (now.getTime() - lastUpdate.getTime()) / (1000 * 60 * 60 * 24)
+
+  console.log(`[Cache Check] Last update: ${cachedData.date_range.to}, Days ago: ${daysDiff.toFixed(1)}`)
+  return daysDiff >= 14
+}
+
+// Fetch 6 months of data from EAM API (for cache refresh)
+async function fetch6MonthsFromEAM(): Promise<PermitToWork[]> {
+  const allRecords: PermitToWork[] = []
+  let cursorPosition = 0
+  const maxCalls = 20  // ~1000 records (enough for 6 months)
+
+  console.log('[Cache Refresh] Fetching 6 months data from EAM...')
+
+  for (let i = 0; i < maxCalls; i++) {
+    try {
+      const response = await fetch(
+        'https://se1.eam.hxgnsmartcloud.com:443/axis/restservices/permittowork',
+        {
+          method: 'GET',
+          headers: {
+            'accept': 'application/json',
+            'tenant': 'RJZUW7ZJDTGNQN6S_PRD',
+            'organization': 'P3',
+            'Authorization': 'Basic MjExMDAwNDM6UG1zMTEwODEwIQ==',
+            'cursorposition': String(cursorPosition)
+          },
+          cache: 'no-store'
+        }
+      )
+
+      if (!response.ok) break
+
+      const data = await response.json()
+      const result = data.Result?.ResultData
+      const records = result?.DATARECORD || []
+      const nextPos = result?.NEXTCURSORPOSITION
+
+      if (records.length === 0) break
+
+      allRecords.push(...records)
+      console.log(`[Cache Refresh] Page ${i + 1}: ${records.length} records, total: ${allRecords.length}`)
+
+      if (!nextPos || nextPos === 0 || nextPos <= cursorPosition) break
+      cursorPosition = nextPos
+    } catch (error) {
+      console.error('[Cache Refresh] Error:', error)
+      break
+    }
+  }
+
+  return allRecords
+}
+
+// Save refreshed cache file
+async function saveCacheFile(records: CachedRecord[]): Promise<void> {
+  const now = new Date()
+  const sixMonthsAgo = new Date(now.getTime() - 180 * 24 * 60 * 60 * 1000)
+
+  const cacheData: CachedData = {
+    date_range: {
+      from: sixMonthsAgo.toISOString().split('T')[0],
+      to: now.toISOString().split('T')[0]
+    },
+    total_records: records.length,
+    records: records
+  }
+
+  const filePath = getCacheFilePath()
+  await fs.writeFile(filePath, JSON.stringify(cacheData, null, 2), 'utf-8')
+  console.log(`[Cache Refresh] Saved ${records.length} records to cache`)
+}
+
+// Refresh cache if stale (called automatically)
+async function refreshCacheIfNeeded(): Promise<CachedRecord[]> {
+  const cachedData = await loadCachedDataWithMeta()
+
+  if (!isCacheStale(cachedData)) {
+    console.log('[Cache] Cache is fresh, no refresh needed')
+    return cachedData?.records || []
+  }
+
+  console.log('[Cache] Cache is stale (14+ days old), refreshing...')
+
+  try {
+    // Fetch 6 months data from EAM
+    const permits = await fetch6MonthsFromEAM()
+
+    if (permits.length === 0) {
+      console.log('[Cache Refresh] No data from EAM, keeping old cache')
+      return cachedData?.records || []
+    }
+
+    // Transform and filter to 6 months
+    const now = new Date()
+    const sixMonthsAgo = new Date(now.getTime() - 180 * 24 * 60 * 60 * 1000)
+
+    const transformedRecords: CachedRecord[] = permits
+      .map((permit: PermitToWork) => {
+        let dateStr = ''
+        if (permit.DATEREQUIRED) {
+          const year = permit.DATEREQUIRED.YEAR ? new Date(permit.DATEREQUIRED.YEAR).getFullYear() : 2026
+          const month = String(permit.DATEREQUIRED.MONTH || 1).padStart(2, '0')
+          const day = String(permit.DATEREQUIRED.DAY || 1).padStart(2, '0')
+          const hour = String(permit.DATEREQUIRED.HOUR || 9).padStart(2, '0')
+          const minute = String(permit.DATEREQUIRED.MINUTE || 0).padStart(2, '0')
+          dateStr = `${year}-${month}-${day} ${hour}:${minute}`
+        }
+
+        const udf = permit.StandardUserDefinedFields
+        return {
+          permittowork: permit.PERMITTOWORKID?.PERMITTOWORKCODE || '',
+          description: permit.PERMITTOWORKID?.DESCRIPTION || permit.EQUIPMENTID?.DESCRIPTION || '',
+          daterequired: dateStr,
+          requester: udf?.UDFCHAR07 || udf?.UDFCHAR03 || '',
+          department: udf?.UDFCHAR06 || '',
+          equipment: permit.EQUIPMENTID?.EQUIPMENTCODE || '',
+          status: permit.STATUS?.STATUSCODE || '',
+          extracted_tags: extractTags(permit.EQUIPMENTID?.EQUIPMENTCODE || '')
+        }
+      })
+      .filter(record => {
+        if (!record.daterequired) return false
+        const recordDate = new Date(record.daterequired.replace(' ', 'T'))
+        return recordDate >= sixMonthsAgo
+      })
+
+    console.log(`[Cache Refresh] Filtered to 6 months: ${transformedRecords.length} records`)
+
+    // Save to cache file
+    await saveCacheFile(transformedRecords)
+
+    return transformedRecords
+  } catch (error) {
+    console.error('[Cache Refresh] Failed:', error)
+    return cachedData?.records || []
   }
 }
 
@@ -203,8 +401,8 @@ export async function GET(request: NextRequest) {
       console.log('[Maintenance API] Real-time API failed, using cache only')
     }
 
-    // 2. Load cached data (3 months history)
-    const cachedRecords = await loadCachedData()
+    // 2. Load cached data (6 months history) - auto-refresh if stale (14+ days)
+    const cachedRecords = await refreshCacheIfNeeded()
     console.log(`[Maintenance API] Cached data: ${cachedRecords.length} records`)
 
     // 3. Merge and deduplicate (realtime first, then cache)
@@ -224,6 +422,11 @@ export async function GET(request: NextRequest) {
 
     let allRecords = Array.from(allRecordsMap.values())
     console.log(`[Maintenance API] Total merged: ${allRecords.length} records`)
+
+    // 3.5. Calculate GLANCE matched records
+    const glanceTags = await loadGlanceComponents()
+    const { matchedCount, matchedComponents } = countMatchedRecords(allRecords, glanceTags)
+    console.log(`[Maintenance API] GLANCE matched: ${matchedCount} records (${matchedComponents.size} unique components)`)
 
     // 4. Filter by equipment code if provided
     if (equipmentCode) {
@@ -263,6 +466,8 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       success: true,
       total: allRecordsMap.size,
+      matchedWithGlance: matchedCount,
+      matchedComponentsCount: matchedComponents.size,
       filtered: maintenanceHistory.length,
       realtimeCount: realtimeRecords.length,
       cachedCount: cachedRecords.length,

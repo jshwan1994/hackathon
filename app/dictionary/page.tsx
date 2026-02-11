@@ -73,7 +73,9 @@ export default function DictionaryPage() {
                 href="/"
                 className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-[#9da6b9] hover:text-white transition-colors"
               >
-                <span className="material-symbols-outlined !text-[20px]">arrow_back</span>
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
               </Link>
               <div>
                 <h1 className="text-white text-xl font-bold">밸브/계기 사전</h1>
@@ -90,7 +92,9 @@ export default function DictionaryPage() {
           {/* 검색창 */}
           <div className="relative mb-3">
             <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9da6b9]">
-              <span className="material-symbols-outlined !text-[20px]">search</span>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
             </div>
             <input
               type="text"
@@ -102,9 +106,12 @@ export default function DictionaryPage() {
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
+                title="검색어 지우기"
                 className="absolute right-4 top-1/2 -translate-y-1/2 text-[#9da6b9] hover:text-white transition-colors"
               >
-                <span className="material-symbols-outlined !text-[20px]">close</span>
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </button>
             )}
           </div>
@@ -174,9 +181,9 @@ export default function DictionaryPage() {
 
         {filteredEntries.length === 0 && (
           <div className="text-center py-12">
-            <span className="material-symbols-outlined !text-[48px] text-[#9da6b9] mb-4 block">
-              search_off
-            </span>
+            <svg className="w-12 h-12 text-[#9da6b9] mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM13.5 10.5h-6" />
+            </svg>
             <p className="text-[#9da6b9]">검색 결과가 없습니다</p>
           </div>
         )}
@@ -201,10 +208,10 @@ function DictionaryCard({ entry }: { entry: DictionaryEntry }) {
           <div className="flex items-center gap-2 mb-1">
             <h3 className="text-white font-semibold">{entry.name}</h3>
             <span
-              className="text-[10px] px-1.5 py-0.5 rounded font-medium"
+              className="text-[13px] px-2 py-0.5 rounded font-medium"
               style={{ backgroundColor: `${color}20`, color }}
             >
-              {entry.code}
+              {entry.nameEn}
             </span>
           </div>
           <p className="text-[#9da6b9] text-sm leading-relaxed">{entry.description}</p>
