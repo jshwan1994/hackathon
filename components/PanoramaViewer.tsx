@@ -47,6 +47,8 @@ export default function PanoramaViewer({
   const lastMouseRef = useRef({ x: 0, y: 0 });
   const dragDistRef = useRef(0);
   const rotationRef = useRef({ lon: initialYaw, lat: initialPitch });
+  const initialYawRef = useRef(initialYaw);
+  const initialPitchRef = useRef(initialPitch);
   const fovRef = useRef(75);
   const rafRef = useRef(0);
 
@@ -116,7 +118,14 @@ export default function PanoramaViewer({
     };
   }, []);
 
+  // Keep refs in sync so texture-load callback reads latest values
+  useEffect(() => {
+    initialYawRef.current = initialYaw;
+    initialPitchRef.current = initialPitch;
+  }, [initialYaw, initialPitch]);
+
   // Load texture when imageUrl changes — reset camera AFTER texture loads
+  // NOTE: Only depends on imageUrl so that setting heading doesn't re-trigger texture load
   useEffect(() => {
     setLoading(true);
 
@@ -132,13 +141,13 @@ export default function PanoramaViewer({
           oldMaterial.needsUpdate = true;
         }
         // Set rotation only after new texture is applied — no jarring twist
-        rotationRef.current = { lon: initialYaw, lat: initialPitch };
+        rotationRef.current = { lon: initialYawRef.current, lat: initialPitchRef.current };
         setLoading(false);
       },
       undefined,
       () => setLoading(false)
     );
-  }, [imageUrl, initialYaw, initialPitch]);
+  }, [imageUrl]);
 
   // Convert screen click to yaw/pitch
   const screenToYawPitch = useCallback((clientX: number, clientY: number) => {

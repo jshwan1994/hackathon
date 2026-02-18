@@ -35,17 +35,30 @@ function saveHotspots(data: Record<string, Hotspot[]>) {
   localStorage.setItem(HOTSPOT_STORAGE_KEY, JSON.stringify(data));
 }
 
-function loadSavedHeadings(): Record<string, number> {
+type HeadingData = { yaw: number; pitch: number };
+
+function loadSavedHeadings(): Record<string, HeadingData> {
   if (typeof window === "undefined") return {};
   try {
     const raw = localStorage.getItem(HEADING_STORAGE_KEY);
-    return raw ? JSON.parse(raw) : {};
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    // Backward compatibility: convert old number format to {yaw, pitch}
+    const result: Record<string, HeadingData> = {};
+    for (const [k, v] of Object.entries(parsed)) {
+      if (typeof v === "number") {
+        result[k] = { yaw: v, pitch: 0 };
+      } else {
+        result[k] = v as HeadingData;
+      }
+    }
+    return result;
   } catch {
     return {};
   }
 }
 
-function saveHeadings(data: Record<string, number>) {
+function saveHeadings(data: Record<string, HeadingData>) {
   localStorage.setItem(HEADING_STORAGE_KEY, JSON.stringify(data));
 }
 
@@ -84,8 +97,9 @@ export default function RoadviewPage() {
   const [showThumbnails, setShowThumbnails] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [allHotspots, setAllHotspots] = useState<Record<string, Hotspot[]>>({});
-  const [headings, setHeadings] = useState<Record<string, number>>({});
+  const [headings, setHeadings] = useState<Record<string, HeadingData>>({});
   const [currentYaw, setCurrentYaw] = useState(0);
+  const [currentPitch, setCurrentPitch] = useState(0);
   const [pendingCoords, setPendingCoords] = useState<{ yaw: number; pitch: number } | null>(null);
   const [hotspotLabel, setHotspotLabel] = useState("");
   const [hotspotType, setHotspotType] = useState<"valve" | "info" | "nav">("valve");
@@ -397,15 +411,15 @@ export default function RoadviewPage() {
                 type="button"
                 onClick={() => {
                   setHeadings((prev) => {
-                    const updated = { ...prev, [currentScene.id]: currentYaw };
+                    const updated = { ...prev, [currentScene.id]: { yaw: currentYaw, pitch: currentPitch } };
                     saveHeadings(updated);
                     return updated;
                   });
-                  alert(`방향 저장 완료! (yaw: ${currentYaw}°)`);
+                  alert(`방향 저장 완료! (yaw: ${Math.round(currentYaw)}°, pitch: ${Math.round(currentPitch)}°)`);
                 }}
                 className="h-9 rounded-lg px-3 flex items-center gap-1.5 text-xs font-medium bg-amber-500/80 text-white hover:bg-amber-500 transition-colors"
               >
-                방향 설정 ({Math.round(currentYaw)}°)
+                방향 설정 ({Math.round(currentYaw)}°, {Math.round(currentPitch)}°)
               </button>
             )}
             {/* Scene counter */}
@@ -441,10 +455,11 @@ export default function RoadviewPage() {
           hotspots={hotspots}
           onHotspotClick={handleHotspotClick}
           onPanoramaClick={handlePanoramaClick}
-          onViewChange={(yaw) => setCurrentYaw(yaw)}
+          onViewChange={(yaw, pitch) => { setCurrentYaw(yaw); setCurrentPitch(pitch); }}
           editMode={editMode}
           className="w-full h-full"
-          initialYaw={headings[currentScene.id] ?? 0}
+          initialYaw={headings[currentScene.id]?.yaw ?? 0}
+          initialPitch={headings[currentScene.id]?.pitch ?? 0}
         />
 
         {/* Hotspot creation popup */}
