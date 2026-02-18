@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { ValveData, CATEGORY_CONFIG } from "@/types/valve";
 import Valve3DViewer from "./Valve3DViewer";
 import CategoryIcon from "./CategoryIcon";
+import Link from "next/link";
 import {
   diaryRecords,
   formatShift,
@@ -292,7 +293,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                 </div>
               ) : maintenanceRecords.length === 0 ? (
                 <div className="p-8 flex items-center justify-center">
-                  <p className="text-[#9da6b9] text-sm">최근 3개월간 정비이력 없음</p>
+                  <p className="text-[#9da6b9] text-sm">최근 6개월간 정비이력 없음</p>
                 </div>
               ) : (
                 maintenanceRecords.map((record, index) => (
@@ -393,11 +394,19 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
             </div>
           </div>
 
-          {/* 위치 정보 */}
+          {/* 위치 정보 + 로드뷰 */}
           <div className="space-y-3">
             <h3 className="text-white text-sm font-semibold px-1">위치 정보</h3>
             <div className="bg-[#1c1f27] rounded-xl border border-white/10 p-4">
-              <p className="text-white text-sm">{valve.location}</p>
+              <p className="text-white text-sm mb-3">{valve.location}</p>
+              <Link
+                href="/roadview"
+                target="_blank"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/10 border border-primary/30 hover:bg-primary/20 transition-colors"
+              >
+                <span className="text-primary text-sm">360°</span>
+                <span className="text-primary text-sm font-medium">ST동 로드뷰 보기</span>
+              </Link>
             </div>
           </div>
 

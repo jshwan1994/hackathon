@@ -121,14 +121,18 @@ export default function Home() {
         </Link>
 
         {/* 밸브 기술사양 데이터 현황 */}
-        <div className="flex items-center gap-3 h-14 px-5 bg-[#1c1f27]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
-          <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center">
-            <svg className="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <Link
+          href="/specs"
+          className="flex items-center gap-3 h-14 px-5 bg-[#1c1f27]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl hover:bg-[#1c1f27] hover:border-emerald-500/30 transition-all duration-300 group"
+        >
+          <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors relative overflow-hidden">
+            <svg className="w-5 h-5 text-emerald-400 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
             </svg>
+            <div className="shine-effect"></div>
           </div>
           <div className="text-white font-semibold text-sm">밸브 기술사양 {specCount.toLocaleString()}개</div>
-        </div>
+        </Link>
 
         {/* 정비이력 데이터 현황 */}
         <div className="flex items-center gap-3 h-14 px-5 bg-[#1c1f27]/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
