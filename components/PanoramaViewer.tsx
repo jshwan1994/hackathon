@@ -7,6 +7,7 @@ interface PanoramaViewerProps {
   imageUrl: string;
   hotspots?: Hotspot[];
   onHotspotClick?: (hotspot: Hotspot) => void;
+  onHotspotDelete?: (hotspot: Hotspot) => void;
   onPanoramaClick?: (coords: { yaw: number; pitch: number }) => void;
   onViewChange?: (yaw: number, pitch: number) => void;
   editMode?: boolean;
@@ -29,6 +30,7 @@ export default function PanoramaViewer({
   imageUrl,
   hotspots = [],
   onHotspotClick,
+  onHotspotDelete,
   onPanoramaClick,
   onViewChange,
   editMode = false,
@@ -67,6 +69,7 @@ export default function PanoramaViewer({
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.domElement.style.display = "block";
     container.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
@@ -149,7 +152,7 @@ export default function PanoramaViewer({
     );
   }, [imageUrl]);
 
-  // Convert screen click to yaw/pitch
+  // Convert screen click to yaw/pitch (컨테이너 rect 기준)
   const screenToYawPitch = useCallback((clientX: number, clientY: number) => {
     const camera = cameraRef.current;
     const container = mountRef.current;
@@ -238,6 +241,88 @@ export default function PanoramaViewer({
     return { x, y };
   }, []);
 
+  // Get edge indicator position for off-screen hotspots
+  const getHotspotEdgePos = useCallback((hs: Hotspot) => {
+    const camera = cameraRef.current;
+    const container = mountRef.current;
+    if (!camera || !container) return null;
+
+    const phi = THREE.MathUtils.degToRad(90 - hs.pitch);
+    const theta = THREE.MathUtils.degToRad(hs.yaw);
+
+    const worldPos = new THREE.Vector3(
+      500 * Math.sin(phi) * Math.cos(theta),
+      500 * Math.cos(phi),
+      500 * Math.sin(phi) * Math.sin(theta)
+    );
+
+    const projected = worldPos.clone().project(camera);
+
+    const rect = container.getBoundingClientRect();
+    let x = (projected.x + 1) / 2 * rect.width;
+    let y = (-projected.y + 1) / 2 * rect.height;
+
+    // Check if already on screen
+    const margin = 20;
+    const isOnScreen = projected.z <= 1 &&
+      x >= -margin && x <= rect.width + margin &&
+      y >= -margin && y <= rect.height + margin;
+
+    if (isOnScreen) return null;
+
+    // If behind camera, flip direction
+    if (projected.z > 1) {
+      x = rect.width - x;
+      y = rect.height - y;
+    }
+
+    // Clamp to viewport edge
+    const pad = 36;
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+
+    const dx = x - cx;
+    const dy = y - cy;
+    const angle = Math.atan2(dy, dx);
+
+    const maxX = rect.width / 2 - pad;
+    const maxY = rect.height / 2 - pad;
+
+    const scaleX = Math.abs(dx) > 0.001 ? maxX / Math.abs(dx) : 1000;
+    const scaleY = Math.abs(dy) > 0.001 ? maxY / Math.abs(dy) : 1000;
+    const scale = Math.min(scaleX, scaleY, 1);
+
+    const edgeX = cx + dx * scale;
+    const edgeY = cy + dy * scale;
+
+    return { x: edgeX, y: edgeY, angle: angle * 180 / Math.PI };
+  }, []);
+
+  // Smooth rotate camera to face a hotspot
+  const rotateToHotspot = useCallback((hs: Hotspot) => {
+    const startLon = rotationRef.current.lon;
+    const startLat = rotationRef.current.lat;
+    const targetLon = hs.yaw;
+    const targetLat = hs.pitch;
+
+    // Shortest path for longitude
+    let dLon = targetLon - startLon;
+    while (dLon > 180) dLon -= 360;
+    while (dLon < -180) dLon += 360;
+
+    const startTime = performance.now();
+    const duration = 400;
+
+    const animateRotation = (now: number) => {
+      const t = Math.min((now - startTime) / duration, 1);
+      const ease = 1 - Math.pow(1 - t, 3); // ease-out cubic
+      rotationRef.current.lon = startLon + dLon * ease;
+      rotationRef.current.lat = startLat + (targetLat - startLat) * ease;
+      if (t < 1) requestAnimationFrame(animateRotation);
+    };
+    requestAnimationFrame(animateRotation);
+  }, []);
+
   // Hotspot positions update
   const [, forceUpdate] = useState(0);
   useEffect(() => {
@@ -285,45 +370,120 @@ export default function PanoramaViewer({
         // Nav type: floor circle marker (Street View style)
         if (hs.type === "nav") {
           return (
-            <button
-              type="button"
+            <div
               key={hs.id}
-              title={hs.label}
               className="absolute transform -translate-x-1/2 -translate-y-1/2 z-10 group"
               style={{ left: pos.x, top: pos.y, pointerEvents: "auto" }}
-              onClick={(e) => { e.stopPropagation(); onHotspotClick?.(hs); }}
             >
-              {/* Pulse ring */}
-              <span className="absolute inset-0 rounded-full bg-white/20 animate-ping" />
-              {/* Outer ring */}
-              <span className="relative block w-8 h-8 rounded-full border-2 border-white/70 bg-white/15 group-hover:bg-white/35 group-hover:border-white transition-all shadow-[0_0_12px_rgba(255,255,255,0.3)]">
-                {/* Inner dot */}
-                <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-white/90 group-hover:bg-white" />
-              </span>
-              {/* Label below */}
-              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 text-white/80 text-[10px] font-medium whitespace-nowrap bg-black/40 rounded px-1.5 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                {hs.label}
-              </span>
-            </button>
+              <button
+                type="button"
+                title={hs.label}
+                className="relative"
+                onClick={(e) => { e.stopPropagation(); onHotspotClick?.(hs); }}
+              >
+                {/* Pulse ring */}
+                <span className="absolute inset-0 rounded-full bg-white/20 animate-ping" />
+                {/* Outer ring */}
+                <span className="relative block w-8 h-8 rounded-full border-2 border-white/70 bg-white/15 group-hover:bg-white/35 group-hover:border-white transition-all shadow-[0_0_12px_rgba(255,255,255,0.3)]">
+                  {/* Inner dot */}
+                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-white/90 group-hover:bg-white" />
+                </span>
+                {/* Label below */}
+                <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 text-white/80 text-[10px] font-medium whitespace-nowrap bg-black/40 rounded px-1.5 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                  {hs.label}
+                </span>
+              </button>
+              {/* 편집모드 삭제 버튼 */}
+              {editMode && (
+                <button
+                  type="button"
+                  title="삭제"
+                  className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-red-500 hover:bg-red-400 text-white text-[10px] font-bold flex items-center justify-center shadow-lg z-20 opacity-0 group-hover:opacity-100 transition-opacity"
+                  onClick={(e) => { e.stopPropagation(); onHotspotDelete?.(hs); }}
+                >
+                  X
+                </button>
+              )}
+            </div>
           );
         }
 
         return (
-          <button
-            type="button"
+          <div
             key={hs.id}
-            className={`absolute transform -translate-x-1/2 -translate-y-1/2 z-10 transition-all ${
-              hs.type === "valve"
-                ? "px-2.5 py-1.5 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 border border-emerald-400/50"
-                : "px-2.5 py-1.5 rounded-lg bg-primary/80 hover:bg-primary border border-primary/50"
-            } backdrop-blur-sm`}
+            className="absolute transform -translate-x-1/2 -translate-y-1/2 z-10 group"
             style={{ left: pos.x, top: pos.y, pointerEvents: "auto" }}
+          >
+            <button
+              type="button"
+              className={`transition-all ${
+                hs.type === "valve"
+                  ? "px-2.5 py-1.5 rounded-lg bg-emerald-500/80 hover:bg-emerald-500 border border-emerald-400/50"
+                  : "px-2.5 py-1.5 rounded-lg bg-primary/80 hover:bg-primary border border-primary/50"
+              } backdrop-blur-sm`}
+              onClick={(e) => {
+                e.stopPropagation();
+                onHotspotClick?.(hs);
+              }}
+            >
+              <span className="text-white text-xs font-bold whitespace-nowrap">{hs.label}</span>
+            </button>
+            {/* 편집모드 삭제 버튼 */}
+            {editMode && (
+              <button
+                type="button"
+                title="삭제"
+                className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-red-500 hover:bg-red-400 text-white text-[10px] font-bold flex items-center justify-center shadow-lg z-20 opacity-0 group-hover:opacity-100 transition-opacity"
+                onClick={(e) => { e.stopPropagation(); onHotspotDelete?.(hs); }}
+              >
+                X
+              </button>
+            )}
+          </div>
+        );
+      })}
+
+      {/* Off-screen hotspot edge indicators */}
+      {!loading && hotspots.map((hs) => {
+        const edgePos = getHotspotEdgePos(hs);
+        if (!edgePos) return null;
+
+        const isValve = hs.type === "valve";
+        const isNav = hs.type === "nav";
+        const color = isValve ? "#10b981" : isNav ? "#ffffff" : "#3b82f6";
+        const bgClass = isValve
+          ? "bg-emerald-500/20 border-emerald-500/50"
+          : isNav
+            ? "bg-white/15 border-white/40"
+            : "bg-blue-500/20 border-blue-500/50";
+
+        return (
+          <button
+            key={`edge-${hs.id}`}
+            type="button"
+            className={`absolute z-10 group/edge flex items-center gap-1 rounded-full border backdrop-blur-sm px-1.5 py-1 hover:scale-110 transition-transform ${bgClass}`}
+            style={{
+              left: edgePos.x,
+              top: edgePos.y,
+              transform: "translate(-50%, -50%)",
+              pointerEvents: "auto",
+            }}
             onClick={(e) => {
               e.stopPropagation();
-              onHotspotClick?.(hs);
+              rotateToHotspot(hs);
             }}
           >
-            <span className="text-white text-xs font-bold whitespace-nowrap">{hs.label}</span>
+            {/* Arrow icon */}
+            <svg
+              width="14" height="14" viewBox="0 0 14 14"
+              style={{ transform: `rotate(${edgePos.angle}deg)`, flexShrink: 0 }}
+            >
+              <polygon points="12,7 3,2 5,7 3,12" fill={color} opacity="0.9" />
+            </svg>
+            {/* Label */}
+            <span className="text-[9px] text-white/80 font-medium whitespace-nowrap max-w-[60px] truncate">
+              {hs.label}
+            </span>
           </button>
         );
       })}

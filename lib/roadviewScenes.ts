@@ -1,8 +1,21 @@
+export interface PanoramaHotspot {
+  id: string;
+  label: string;
+  yaw: number;
+  pitch: number;
+  type: "valve" | "info" | "nav";
+  targetSceneId?: string;
+}
+
 export interface PanoramaScene {
   id: string;
   file: string;
   label: string;
   area: string;
+  defaultYaw?: number;
+  defaultPitch?: number;
+  excludeFromPath?: boolean;
+  hotspots?: PanoramaHotspot[];
 }
 
 // Panorama scene data - 226 photos (36 ST동 + 190 발전소)
@@ -236,3 +249,6 @@ export const PANORAMA_SCENES: PanoramaScene[] = [
   { id: "998", file: "IMG_20260215_115540_00_998.compressed.jpg", label: "촬영 998", area: "미지정" },
   { id: "999", file: "IMG_20260215_115620_00_999.compressed.jpg", label: "촬영 999", area: "미지정" },
 ];
+
+// 기본 씬 순서 (null이면 PANORAMA_SCENES 배열 순서 사용)
+export const DEFAULT_SCENE_ORDER: string[] | null = null;
