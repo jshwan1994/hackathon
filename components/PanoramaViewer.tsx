@@ -130,19 +130,12 @@ export default function PanoramaViewer({
     initialPitchRef.current = initialPitch;
   }, [initialYaw, initialPitch]);
 
-  // Keep sphere correction ref in sync (applied in texture load callback + slider interaction)
-  useEffect(() => {
-    sphereCorrectionRef.current = sphereCorrection;
-    // Only apply live updates when NOT loading (slider interaction on current scene)
-    if (!loading && meshRef.current) {
-      meshRef.current.rotation.x = THREE.MathUtils.degToRad(sphereCorrection?.pitch ?? 0);
-      meshRef.current.rotation.z = THREE.MathUtils.degToRad(sphereCorrection?.roll ?? 0);
-    }
-  }, [sphereCorrection?.pitch, sphereCorrection?.roll, loading]);
+  // Track whether a scene transition is in progress (ref avoids effect timing issues)
+  const transitioningRef = useRef(false);
 
-  // Load texture when imageUrl changes — reset camera AFTER texture loads
-  // NOTE: Only depends on imageUrl so that setting heading doesn't re-trigger texture load
+  // Load texture when imageUrl changes — runs FIRST to set transitioningRef before correction effect
   useEffect(() => {
+    transitioningRef.current = true;
     setLoading(true);
 
     const loader = new THREE.TextureLoader();
@@ -151,24 +144,36 @@ export default function PanoramaViewer({
       (texture) => {
         texture.colorSpace = THREE.SRGBColorSpace;
         if (meshRef.current) {
+          // Apply sphere correction BEFORE showing new texture — all in one frame
+          const corr = sphereCorrectionRef.current;
+          meshRef.current.rotation.x = THREE.MathUtils.degToRad(corr?.pitch ?? 0);
+          meshRef.current.rotation.z = THREE.MathUtils.degToRad(corr?.roll ?? 0);
+
           const oldMaterial = meshRef.current.material as THREE.MeshBasicMaterial;
           oldMaterial.map = texture;
           oldMaterial.color.set(0xffffff);
           oldMaterial.needsUpdate = true;
-
-          // Apply sphere correction atomically with new texture
-          const corr = sphereCorrectionRef.current;
-          meshRef.current.rotation.x = THREE.MathUtils.degToRad(corr?.pitch ?? 0);
-          meshRef.current.rotation.z = THREE.MathUtils.degToRad(corr?.roll ?? 0);
         }
         // Set rotation only after new texture is applied — no jarring twist
         rotationRef.current = { lon: initialYawRef.current, lat: initialPitchRef.current };
+        transitioningRef.current = false;
         setLoading(false);
       },
       undefined,
-      () => setLoading(false)
+      () => { transitioningRef.current = false; setLoading(false); }
     );
   }, [imageUrl]);
+
+  // Keep sphere correction ref in sync (applied in texture load callback + slider interaction)
+  // Runs AFTER imageUrl effect so transitioningRef is already true during scene switches
+  useEffect(() => {
+    sphereCorrectionRef.current = sphereCorrection;
+    // Only apply live updates for slider interaction on current scene
+    if (!loading && !transitioningRef.current && meshRef.current) {
+      meshRef.current.rotation.x = THREE.MathUtils.degToRad(sphereCorrection?.pitch ?? 0);
+      meshRef.current.rotation.z = THREE.MathUtils.degToRad(sphereCorrection?.roll ?? 0);
+    }
+  }, [sphereCorrection?.pitch, sphereCorrection?.roll, loading]);
 
   // Convert screen click to yaw/pitch (컨테이너 rect 기준)
   const screenToYawPitch = useCallback((clientX: number, clientY: number) => {
@@ -400,14 +405,16 @@ export default function PanoramaViewer({
                 onClick={(e) => { e.stopPropagation(); onHotspotClick?.(hs); }}
               >
                 {/* Pulse ring */}
-                <span className="absolute inset-0 rounded-full bg-white/20 animate-ping" />
+                <span className="absolute inset-[-4px] rounded-full bg-cyan-400/20 animate-ping" />
+                {/* Soft shadow for contrast against light backgrounds */}
+                <span className="absolute inset-[-2px] rounded-full bg-black/15 blur-[4px]" />
                 {/* Outer ring */}
-                <span className="relative block w-8 h-8 rounded-full border-2 border-white/70 bg-white/15 group-hover:bg-white/35 group-hover:border-white transition-all shadow-[0_0_12px_rgba(255,255,255,0.3)]">
+                <span className="relative block w-8 h-8 rounded-full border-[2.5px] border-cyan-300/90 bg-transparent group-hover:bg-cyan-500/20 group-hover:border-cyan-200 transition-all shadow-[0_0_14px_rgba(0,0,0,0.5),0_0_8px_rgba(34,211,238,0.4)]">
                   {/* Inner dot */}
-                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-white/90 group-hover:bg-white" />
+                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-cyan-300 group-hover:bg-cyan-100 shadow-[0_0_6px_rgba(34,211,238,0.6)]" />
                 </span>
                 {/* Label below */}
-                <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 text-white/80 text-[10px] font-medium whitespace-nowrap bg-black/40 rounded px-1.5 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 text-cyan-100 text-[10px] font-bold whitespace-nowrap bg-black/60 border border-cyan-400/30 rounded px-1.5 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
                   {hs.label}
                 </span>
               </button>
@@ -468,11 +475,11 @@ export default function PanoramaViewer({
 
         const isValve = hs.type === "valve";
         const isNav = hs.type === "nav";
-        const color = isValve ? "#10b981" : isNav ? "#ffffff" : "#3b82f6";
+        const color = isValve ? "#10b981" : isNav ? "#22d3ee" : "#3b82f6";
         const bgClass = isValve
           ? "bg-emerald-500/20 border-emerald-500/50"
           : isNav
-            ? "bg-white/15 border-white/40"
+            ? "bg-cyan-950/50 border-cyan-400/60"
             : "bg-blue-500/20 border-blue-500/50";
 
         return (

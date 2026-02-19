@@ -142,30 +142,16 @@ export function parseValveData(rawData: Record<string, string[]>): ValveData[] {
   return valves;
 }
 
-// 밸브 검색 함수 (태그 우선 검색)
+// 밸브 검색 함수
 export function searchValves(valves: ValveData[], query: string): ValveData[] {
   if (!query.trim()) return [];
 
   const lowerQuery = query.toLowerCase().trim();
 
-  // 1. 태그가 검색어로 시작하는 항목 (최우선)
-  const startsWithTag = valves.filter(valve =>
-    valve.tag.toLowerCase().startsWith(lowerQuery)
-  );
-
-  // 2. 태그에 검색어가 포함된 항목 (시작 제외)
-  const containsInTag = valves.filter(valve =>
-    !valve.tag.toLowerCase().startsWith(lowerQuery) &&
-    valve.tag.toLowerCase().includes(lowerQuery)
-  );
-
-  // 3. 위치에 검색어가 포함된 항목 (태그 매칭 제외)
-  const containsInLocation = valves.filter(valve =>
-    !valve.tag.toLowerCase().includes(lowerQuery) &&
+  return valves.filter(valve =>
+    valve.tag.toLowerCase().includes(lowerQuery) ||
     valve.location.toLowerCase().includes(lowerQuery)
   );
-
-  return [...startsWithTag, ...containsInTag, ...containsInLocation];
 }
 
 // 도면 데이터 파싱
