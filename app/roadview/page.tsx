@@ -51,7 +51,7 @@ function saveHotspots(data: Record<string, Hotspot[]>) {
   localStorage.setItem(HOTSPOT_STORAGE_KEY, JSON.stringify(data));
 }
 
-type HeadingData = { yaw: number; pitch: number };
+type HeadingData = { yaw: number; pitch: number; spherePitch?: number; sphereRoll?: number };
 
 function loadSavedHeadings(): Record<string, HeadingData> {
   if (typeof window === "undefined") return {};
@@ -78,7 +78,7 @@ function saveHeadings(data: Record<string, HeadingData>) {
   localStorage.setItem(HEADING_STORAGE_KEY, JSON.stringify(data));
 }
 
-type SceneOverride = { label?: string; area?: string; excludeFromPath?: boolean };
+type SceneOverride = { label?: string; area?: string; excludeFromPath?: boolean; hidden?: boolean };
 
 function loadSceneOverrides(): Record<string, SceneOverride> {
   if (typeof window === "undefined") return {};
@@ -136,6 +136,9 @@ export default function RoadviewPage() {
   const lastClickedIdxRef = useRef<number | null>(null);
   const [batchLabel, setBatchLabel] = useState("");
   const [batchArea, setBatchArea] = useState("");
+  const thumbStripRef = useRef<HTMLDivElement>(null);
+  const [navSearch, setNavSearch] = useState("");
+  const [showLevelPanel, setShowLevelPanel] = useState(false);
 
   // Load settings on mount: JSON 파일(배포용) → localStorage(로컬 오버라이드) 순서로 병합
   useEffect(() => {
@@ -158,18 +161,23 @@ export default function RoadviewPage() {
     load();
   }, []);
 
-  // Build ordered scenes list from custom order
+  // Build ordered scenes list from custom order (hidden scenes filtered out)
   const orderedScenes = useMemo(() => {
-    if (!sceneOrder) return PANORAMA_SCENES;
-    const sceneMap = new Map(PANORAMA_SCENES.map((s) => [s.id, s]));
-    const ordered = sceneOrder.map((id) => sceneMap.get(id)).filter(Boolean) as typeof PANORAMA_SCENES;
-    // Append any new scenes not in the saved order
-    const orderedIds = new Set(sceneOrder);
-    for (const s of PANORAMA_SCENES) {
-      if (!orderedIds.has(s.id)) ordered.push(s);
+    let scenes: typeof PANORAMA_SCENES;
+    if (!sceneOrder) {
+      scenes = PANORAMA_SCENES;
+    } else {
+      const sceneMap = new Map(PANORAMA_SCENES.map((s) => [s.id, s]));
+      const ordered = sceneOrder.map((id) => sceneMap.get(id)).filter(Boolean) as typeof PANORAMA_SCENES;
+      // Append any new scenes not in the saved order
+      const orderedIds = new Set(sceneOrder);
+      for (const s of PANORAMA_SCENES) {
+        if (!orderedIds.has(s.id)) ordered.push(s);
+      }
+      scenes = ordered;
     }
-    return ordered;
-  }, [sceneOrder]);
+    return scenes.filter((s) => !sceneOverrides[s.id]?.hidden);
+  }, [sceneOrder, sceneOverrides]);
 
   // Main path: indices of scenes not excluded from arrow navigation
   const mainPathIndices = useMemo(() => {
@@ -371,6 +379,18 @@ export default function RoadviewPage() {
   const totalHotspots = Object.values(allHotspots).reduce((sum, arr) => sum + arr.length, 0);
   const currentSceneHotspots = allHotspots[currentScene.id] || [];
 
+  // Auto-scroll thumbnail strip to current scene
+  useEffect(() => {
+    if (!showThumbnails || !thumbStripRef.current) return;
+    const container = thumbStripRef.current;
+    const card = container.children[currentIndex] as HTMLElement | undefined;
+    if (!card) return;
+    // 약간의 딜레이로 DOM 렌더링 후 스크롤
+    requestAnimationFrame(() => {
+      card.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    });
+  }, [currentIndex, showThumbnails]);
+
   // Preload adjacent images
   useEffect(() => {
     for (let offset = -2; offset <= 2; offset++) {
@@ -515,6 +535,20 @@ export default function RoadviewPage() {
                 방향 설정 ({Math.round(currentYaw)}°, {Math.round(currentPitch)}°)
               </button>
             )}
+            {/* Level correction toggle (edit mode only) */}
+            {editMode && (
+              <button
+                type="button"
+                onClick={() => setShowLevelPanel(!showLevelPanel)}
+                className={`h-9 rounded-lg px-3 flex items-center gap-1.5 text-xs font-medium transition-colors ${
+                  showLevelPanel
+                    ? "bg-blue-500/80 text-white hover:bg-blue-500"
+                    : "bg-white/10 text-white/70 hover:bg-white/20 hover:text-white"
+                }`}
+              >
+                수평 보정
+              </button>
+            )}
             {/* Main/branch toggle (edit mode only) */}
             {editMode && (
               <button
@@ -577,6 +611,10 @@ export default function RoadviewPage() {
           className="w-full h-full"
           initialYaw={headings[currentScene.id]?.yaw ?? 0}
           initialPitch={headings[currentScene.id]?.pitch ?? 0}
+          sphereCorrection={{
+            pitch: headings[currentScene.id]?.spherePitch ?? 0,
+            roll: headings[currentScene.id]?.sphereRoll ?? 0,
+          }}
         />
 
         {/* Hotspot creation popup */}
@@ -635,26 +673,56 @@ export default function RoadviewPage() {
               {hotspotType === "nav" && (
                 <div>
                   <p className="text-[#9da6b9] text-xs mb-1.5">이동할 장면</p>
-                  <select
-                    title="이동할 장면 선택"
-                    value={navTargetId}
-                    onChange={(e) => {
-                      setNavTargetId(e.target.value);
-                      const target = PANORAMA_SCENES.find((s) => s.id === e.target.value);
-                      if (target && !hotspotLabel) setHotspotLabel(target.label);
-                    }}
-                    className="w-full bg-[#111318] border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-primary/50"
-                  >
-                    <option value="">장면을 선택하세요</option>
-                    {PANORAMA_SCENES.filter((s) => s.id !== currentScene.id).map((scene, idx) => {
-                      const d = getSceneDisplay(scene);
-                      return (
-                        <option key={scene.id} value={scene.id}>
-                          #{idx + 1} {d.label} ({d.area})
-                        </option>
-                      );
-                    })}
-                  </select>
+                  {navTargetId ? (
+                    <div className="flex items-center gap-2 bg-[#111318] border border-primary/50 rounded-lg px-3 py-2">
+                      <span className="text-white text-sm flex-1 truncate">
+                        #{orderedScenes.findIndex((s) => s.id === navTargetId) + 1} {getSceneDisplay(orderedScenes.find((s) => s.id === navTargetId)!).label}
+                      </span>
+                      <button type="button" onClick={() => { setNavTargetId(""); setNavSearch(""); }} className="text-white/40 hover:text-white text-xs">X</button>
+                    </div>
+                  ) : (
+                    <>
+                      <input
+                        type="text"
+                        placeholder="번호 또는 이름 검색..."
+                        value={navSearch}
+                        onChange={(e) => setNavSearch(e.target.value)}
+                        onKeyDown={(e) => e.stopPropagation()}
+                        className="w-full bg-[#111318] border border-white/10 rounded-lg px-3 py-2 text-white text-sm placeholder-white/30 focus:outline-none focus:border-primary/50 mb-1"
+                      />
+                      <div className="max-h-40 overflow-y-auto bg-[#111318] border border-white/10 rounded-lg">
+                        {orderedScenes
+                          .filter((s) => s.id !== currentScene.id)
+                          .filter((s) => {
+                            if (!navSearch.trim()) return true;
+                            const q = navSearch.trim().toLowerCase();
+                            const d = getSceneDisplay(s);
+                            const idx = orderedScenes.indexOf(s) + 1;
+                            return d.label.toLowerCase().includes(q) || d.area.toLowerCase().includes(q) || String(idx).includes(q) || s.id.includes(q);
+                          })
+                          .map((scene) => {
+                            const d = getSceneDisplay(scene);
+                            const idx = orderedScenes.indexOf(scene) + 1;
+                            return (
+                              <button
+                                key={scene.id}
+                                type="button"
+                                onClick={() => {
+                                  setNavTargetId(scene.id);
+                                  if (!hotspotLabel) setHotspotLabel(d.label);
+                                  setNavSearch("");
+                                }}
+                                className="w-full text-left px-3 py-1.5 hover:bg-white/10 text-xs transition-colors flex items-center gap-2"
+                              >
+                                <span className="text-primary font-mono w-8 text-right flex-shrink-0">#{idx}</span>
+                                <span className="text-white truncate">{d.label}</span>
+                                <span className="text-white/30 flex-shrink-0">({d.area})</span>
+                              </button>
+                            );
+                          })}
+                      </div>
+                    </>
+                  )}
                 </div>
               )}
 
@@ -689,6 +757,99 @@ export default function RoadviewPage() {
                 >
                   추가
                 </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Level correction panel */}
+        {editMode && showLevelPanel && (
+          <div
+            className="absolute top-16 left-4 z-40 bg-[#1c1f27]/95 border border-white/20 rounded-xl p-4 shadow-2xl w-72 backdrop-blur-md"
+            onPointerDown={(e) => e.stopPropagation()}
+            onPointerUp={(e) => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-white font-bold text-sm">수평 보정</h3>
+              <button
+                type="button"
+                onClick={() => {
+                  setHeadings((prev) => {
+                    const updated = { ...prev, [currentScene.id]: { ...prev[currentScene.id], yaw: prev[currentScene.id]?.yaw ?? 0, pitch: prev[currentScene.id]?.pitch ?? 0, spherePitch: 0, sphereRoll: 0 } };
+                    saveHeadings(updated);
+                    return updated;
+                  });
+                }}
+                className="text-red-400/60 hover:text-red-400 text-xs transition-colors"
+              >
+                초기화
+              </button>
+            </div>
+
+            {/* Pitch (앞뒤 기울기) */}
+            <div className="mb-3">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-[#9da6b9] text-xs">피치 (앞뒤)</span>
+                <span className="text-white text-xs font-mono">{(headings[currentScene.id]?.spherePitch ?? 0).toFixed(1)}°</span>
+              </div>
+              <input
+                type="range"
+                min={-30}
+                max={30}
+                step={0.5}
+                value={headings[currentScene.id]?.spherePitch ?? 0}
+                onChange={(e) => {
+                  const val = parseFloat(e.target.value);
+                  setHeadings((prev) => {
+                    const updated = { ...prev, [currentScene.id]: { ...prev[currentScene.id], yaw: prev[currentScene.id]?.yaw ?? 0, pitch: prev[currentScene.id]?.pitch ?? 0, spherePitch: val } };
+                    saveHeadings(updated);
+                    return updated;
+                  });
+                }}
+                className="w-full h-1.5 bg-white/10 rounded-full appearance-none cursor-pointer accent-blue-500 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-blue-500 [&::-webkit-slider-thumb]:cursor-pointer"
+              />
+            </div>
+
+            {/* Roll (좌우 기울기) */}
+            <div className="mb-3">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-[#9da6b9] text-xs">롤 (좌우)</span>
+                <span className="text-white text-xs font-mono">{(headings[currentScene.id]?.sphereRoll ?? 0).toFixed(1)}°</span>
+              </div>
+              <input
+                type="range"
+                min={-30}
+                max={30}
+                step={0.5}
+                value={headings[currentScene.id]?.sphereRoll ?? 0}
+                onChange={(e) => {
+                  const val = parseFloat(e.target.value);
+                  setHeadings((prev) => {
+                    const updated = { ...prev, [currentScene.id]: { ...prev[currentScene.id], yaw: prev[currentScene.id]?.yaw ?? 0, pitch: prev[currentScene.id]?.pitch ?? 0, sphereRoll: val } };
+                    saveHeadings(updated);
+                    return updated;
+                  });
+                }}
+                className="w-full h-1.5 bg-white/10 rounded-full appearance-none cursor-pointer accent-blue-500 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-blue-500 [&::-webkit-slider-thumb]:cursor-pointer"
+              />
+            </div>
+
+            {/* Fine-tune buttons */}
+            <div className="flex gap-2">
+              <div className="flex-1">
+                <p className="text-white/30 text-[10px] mb-1 text-center">피치 미세조정</p>
+                <div className="flex gap-1">
+                  <button type="button" onClick={() => { setHeadings((prev) => { const cur = prev[currentScene.id]; const updated = { ...prev, [currentScene.id]: { ...cur, yaw: cur?.yaw ?? 0, pitch: cur?.pitch ?? 0, spherePitch: Math.max(-30, (cur?.spherePitch ?? 0) - 0.5) } }; saveHeadings(updated); return updated; }); }} className="flex-1 py-1 rounded bg-white/10 hover:bg-white/20 text-white text-xs transition-colors">-0.5</button>
+                  <button type="button" onClick={() => { setHeadings((prev) => { const cur = prev[currentScene.id]; const updated = { ...prev, [currentScene.id]: { ...cur, yaw: cur?.yaw ?? 0, pitch: cur?.pitch ?? 0, spherePitch: Math.min(30, (cur?.spherePitch ?? 0) + 0.5) } }; saveHeadings(updated); return updated; }); }} className="flex-1 py-1 rounded bg-white/10 hover:bg-white/20 text-white text-xs transition-colors">+0.5</button>
+                </div>
+              </div>
+              <div className="flex-1">
+                <p className="text-white/30 text-[10px] mb-1 text-center">롤 미세조정</p>
+                <div className="flex gap-1">
+                  <button type="button" onClick={() => { setHeadings((prev) => { const cur = prev[currentScene.id]; const updated = { ...prev, [currentScene.id]: { ...cur, yaw: cur?.yaw ?? 0, pitch: cur?.pitch ?? 0, sphereRoll: Math.max(-30, (cur?.sphereRoll ?? 0) - 0.5) } }; saveHeadings(updated); return updated; }); }} className="flex-1 py-1 rounded bg-white/10 hover:bg-white/20 text-white text-xs transition-colors">-0.5</button>
+                  <button type="button" onClick={() => { setHeadings((prev) => { const cur = prev[currentScene.id]; const updated = { ...prev, [currentScene.id]: { ...cur, yaw: cur?.yaw ?? 0, pitch: cur?.pitch ?? 0, sphereRoll: Math.min(30, (cur?.sphereRoll ?? 0) + 0.5) } }; saveHeadings(updated); return updated; }); }} className="flex-1 py-1 rounded bg-white/10 hover:bg-white/20 text-white text-xs transition-colors">+0.5</button>
+                </div>
               </div>
             </div>
           </div>
@@ -818,6 +979,40 @@ export default function RoadviewPage() {
             )}
           </div>
 
+          {/* Hidden scenes recovery */}
+          {(() => {
+            const hiddenScenes = PANORAMA_SCENES.filter((s) => sceneOverrides[s.id]?.hidden);
+            if (hiddenScenes.length === 0) return null;
+            return (
+              <div className="p-3 border-t border-white/10">
+                <p className="text-white/40 text-[10px] mb-1">숨긴 장면 ({hiddenScenes.length})</p>
+                <div className="max-h-24 overflow-y-auto space-y-0.5">
+                  {hiddenScenes.map((s) => {
+                    const ov = sceneOverrides[s.id];
+                    return (
+                      <div key={s.id} className="flex items-center justify-between text-[10px]">
+                        <span className="text-white/30 truncate">{ov?.label || s.label}</span>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setSceneOverrides((prev) => {
+                              const updated = { ...prev, [s.id]: { ...prev[s.id], hidden: undefined } };
+                              saveSceneOverrides(updated);
+                              return updated;
+                            });
+                          }}
+                          className="text-emerald-400/60 hover:text-emerald-400 ml-2 flex-shrink-0"
+                        >
+                          복구
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })()}
+
           {/* All scenes summary */}
           <div className="p-3 border-t border-white/10">
             <p className="text-white/30 text-[10px]">
@@ -913,7 +1108,7 @@ export default function RoadviewPage() {
               </button>
             </div>
           )}
-          <div className="flex gap-2 p-3 overflow-x-auto custom-scrollbar">
+          <div ref={thumbStripRef} className="flex gap-2 p-3 overflow-x-auto custom-scrollbar">
             {orderedScenes.map((scene, index) => {
               const sceneHs = allHotspots[scene.id] || [];
               const display = getSceneDisplay(scene);
@@ -1107,30 +1302,53 @@ export default function RoadviewPage() {
                       </>
                     )}
                     {editMode && editingThumbnailId !== scene.id && (
-                      <button
-                        type="button"
-                        title="이름/구역 변경"
-                        className="absolute top-0.5 right-0.5 w-4 h-4 rounded bg-white/20 hover:bg-primary/80 text-white/60 hover:text-white text-[8px] flex items-center justify-center opacity-0 group-hover/thumb:opacity-100 transition-opacity z-10"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          // 기본 이름(촬영 XXX)이면 이전 씬의 접두사 자동 적용
-                          const isDefault = display.label.startsWith("촬영 ");
-                          if (isDefault && index > 0) {
-                            const prevDisplay = getSceneDisplay(orderedScenes[index - 1]);
-                            const spaceIdx = prevDisplay.label.indexOf(" ");
-                            const prefix = spaceIdx > 0 ? prevDisplay.label.slice(0, spaceIdx + 1) : "";
-                            setThumbEditLabel(prefix);
-                            setThumbEditArea(prevDisplay.area);
-                          } else {
-                            setThumbEditLabel(display.label);
-                            setThumbEditArea(display.area);
-                          }
-                          setEditingThumbnailId(scene.id);
-                        }}
-                        onPointerDown={(e) => e.stopPropagation()}
-                      >
-                        ✎
-                      </button>
+                      <>
+                        <button
+                          type="button"
+                          title="이름/구역 변경"
+                          className="absolute top-0.5 right-0.5 w-4 h-4 rounded bg-white/20 hover:bg-primary/80 text-white/60 hover:text-white text-[8px] flex items-center justify-center opacity-0 group-hover/thumb:opacity-100 transition-opacity z-10"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const isDefault = display.label.startsWith("촬영 ");
+                            if (isDefault && index > 0) {
+                              const prevDisplay = getSceneDisplay(orderedScenes[index - 1]);
+                              const spaceIdx = prevDisplay.label.indexOf(" ");
+                              const prefix = spaceIdx > 0 ? prevDisplay.label.slice(0, spaceIdx + 1) : "";
+                              setThumbEditLabel(prefix);
+                              setThumbEditArea(prevDisplay.area);
+                            } else {
+                              setThumbEditLabel(display.label);
+                              setThumbEditArea(display.area);
+                            }
+                            setEditingThumbnailId(scene.id);
+                          }}
+                          onPointerDown={(e) => e.stopPropagation()}
+                        >
+                          ✎
+                        </button>
+                        <button
+                          type="button"
+                          title="카드 삭제"
+                          className="absolute bottom-0.5 right-0.5 w-4 h-4 rounded bg-red-500/60 hover:bg-red-500 text-white text-[8px] flex items-center justify-center opacity-0 group-hover/thumb:opacity-100 transition-opacity z-10"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            if (!confirm(`"${display.label}" 카드를 삭제하시겠습니까?`)) return;
+                            setSceneOverrides((prev) => {
+                              const updated = { ...prev, [scene.id]: { ...prev[scene.id], hidden: true } };
+                              saveSceneOverrides(updated);
+                              return updated;
+                            });
+                            if (index === currentIndex) {
+                              setCurrentIndex(Math.min(index, orderedScenes.length - 2));
+                            } else if (index < currentIndex) {
+                              setCurrentIndex(currentIndex - 1);
+                            }
+                          }}
+                          onPointerDown={(e) => e.stopPropagation()}
+                        >
+                          ✕
+                        </button>
+                      </>
                     )}
                     {selectedSceneIds.has(scene.id) && (
                       <span className="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-cyan-400 text-black text-[9px] flex items-center justify-center font-bold z-10">✓</span>

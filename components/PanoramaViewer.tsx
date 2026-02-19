@@ -14,6 +14,7 @@ interface PanoramaViewerProps {
   className?: string;
   initialYaw?: number;
   initialPitch?: number;
+  sphereCorrection?: { pitch: number; roll: number };
 }
 
 export interface Hotspot {
@@ -37,6 +38,7 @@ export default function PanoramaViewer({
   className = "",
   initialYaw = 0,
   initialPitch = 0,
+  sphereCorrection,
 }: PanoramaViewerProps) {
   const mountRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
@@ -53,6 +55,7 @@ export default function PanoramaViewer({
   const initialPitchRef = useRef(initialPitch);
   const fovRef = useRef(75);
   const rafRef = useRef(0);
+  const sphereCorrectionRef = useRef(sphereCorrection);
 
   // Initialize Three.js scene
   useEffect(() => {
@@ -127,6 +130,16 @@ export default function PanoramaViewer({
     initialPitchRef.current = initialPitch;
   }, [initialYaw, initialPitch]);
 
+  // Keep sphere correction ref in sync (applied in texture load callback + slider interaction)
+  useEffect(() => {
+    sphereCorrectionRef.current = sphereCorrection;
+    // Only apply live updates when NOT loading (slider interaction on current scene)
+    if (!loading && meshRef.current) {
+      meshRef.current.rotation.x = THREE.MathUtils.degToRad(sphereCorrection?.pitch ?? 0);
+      meshRef.current.rotation.z = THREE.MathUtils.degToRad(sphereCorrection?.roll ?? 0);
+    }
+  }, [sphereCorrection?.pitch, sphereCorrection?.roll, loading]);
+
   // Load texture when imageUrl changes — reset camera AFTER texture loads
   // NOTE: Only depends on imageUrl so that setting heading doesn't re-trigger texture load
   useEffect(() => {
@@ -142,6 +155,11 @@ export default function PanoramaViewer({
           oldMaterial.map = texture;
           oldMaterial.color.set(0xffffff);
           oldMaterial.needsUpdate = true;
+
+          // Apply sphere correction atomically with new texture
+          const corr = sphereCorrectionRef.current;
+          meshRef.current.rotation.x = THREE.MathUtils.degToRad(corr?.pitch ?? 0);
+          meshRef.current.rotation.z = THREE.MathUtils.degToRad(corr?.roll ?? 0);
         }
         // Set rotation only after new texture is applied — no jarring twist
         rotationRef.current = { lon: initialYawRef.current, lat: initialPitchRef.current };
