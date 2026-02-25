@@ -68,6 +68,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
   const [loadingMaintenance, setLoadingMaintenance] = useState(true);
   const [valveSpec, setValveSpec] = useState<ValveSpec | null>(null);
   const [loadingSpec, setLoadingSpec] = useState(true);
+  const [roadviewSceneId, setRoadviewSceneId] = useState<string | null>(null);
 
   const isValve = isValveCategory(valve.category);
   const isSafety = isSafetyValve(valve.category);
@@ -97,6 +98,25 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
       setLoadingSpec(false);
     }
   }, [valve.tag, isValve, isSafety]);
+
+  // 로드뷰 씬 매핑 조회
+  useEffect(() => {
+    const loadRoadviewMapping = async () => {
+      try {
+        const res = await fetch('/data/roadview-settings.json');
+        const data = await res.json();
+        const hotspots: Record<string, { label: string; type?: string }[]> = data.hotspots || {};
+        for (const [sceneId, hsList] of Object.entries(hotspots)) {
+          const found = hsList.find((h) => h.type === 'valve' && h.label === valve.tag);
+          if (found) { setRoadviewSceneId(sceneId); return; }
+        }
+        setRoadviewSceneId(null);
+      } catch {
+        setRoadviewSceneId(null);
+      }
+    };
+    loadRoadviewMapping();
+  }, [valve.tag]);
 
   // 정비이력 API 호출
   useEffect(() => {
@@ -399,14 +419,25 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
             <h3 className="text-white text-sm font-semibold px-1">위치 정보</h3>
             <div className="bg-[#1c1f27] rounded-xl border border-white/10 p-4">
               <p className="text-white text-sm mb-3">{valve.location}</p>
-              <Link
-                href="/roadview"
-                target="_blank"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/10 border border-primary/30 hover:bg-primary/20 transition-colors"
-              >
-                <span className="text-primary text-sm">360°</span>
-                <span className="text-primary text-sm font-medium">ST동 로드뷰 보기</span>
-              </Link>
+              {roadviewSceneId ? (
+                <Link
+                  href={`/roadview?scene=${roadviewSceneId}&valve=${encodeURIComponent(valve.tag)}`}
+                  target="_blank"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-cyan-500/10 border border-cyan-400/30 hover:bg-cyan-500/20 transition-colors"
+                >
+                  <span className="text-cyan-400 text-sm">360°</span>
+                  <span className="text-cyan-400 text-sm font-medium">밸브 로드뷰 보기</span>
+                </Link>
+              ) : (
+                <Link
+                  href="/roadview"
+                  target="_blank"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/10 border border-primary/30 hover:bg-primary/20 transition-colors"
+                >
+                  <span className="text-primary text-sm">360°</span>
+                  <span className="text-primary text-sm font-medium">ST동 로드뷰 보기</span>
+                </Link>
+              )}
             </div>
           </div>
 

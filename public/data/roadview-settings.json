@@ -124,6 +124,14 @@
         "type": "nav",
         "sceneId": "781",
         "targetSceneId": "783"
+      },
+      {
+        "id": "hs_1771936265096",
+        "label": "FCV-5208",
+        "yaw": -113.3,
+        "pitch": -10.9,
+        "type": "valve",
+        "sceneId": "781"
       }
     ],
     "782": [

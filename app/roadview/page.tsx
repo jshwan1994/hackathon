@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import type { Hotspot } from "@/components/PanoramaViewer";
 import { PANORAMA_SCENES, DEFAULT_SCENE_ORDER } from "@/lib/roadviewScenes";
 
@@ -109,7 +110,9 @@ function saveSceneOrder(order: string[]) {
 }
 
 export default function RoadviewPage() {
+  const searchParams = useSearchParams();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const initialNavDone = useRef(false);
   const [showThumbnails, setShowThumbnails] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [allHotspots, setAllHotspots] = useState<Record<string, Hotspot[]>>({});
@@ -160,6 +163,43 @@ export default function RoadviewPage() {
     }
     load();
   }, []);
+
+  // Navigate to scene from URL query params (?scene=781 or ?valve=FCV-5208)
+  useEffect(() => {
+    if (initialNavDone.current || !sceneOrder) return;
+    const sceneParam = searchParams.get("scene");
+    const valveParam = searchParams.get("valve");
+    if (!sceneParam && !valveParam) return;
+
+    // Build scene list to find index
+    const sceneMap = new Map(PANORAMA_SCENES.map((s) => [s.id, s]));
+    const ordered = sceneOrder
+      .map((id) => sceneMap.get(id))
+      .filter(Boolean) as typeof PANORAMA_SCENES;
+    const orderedIds = new Set(sceneOrder);
+    for (const s of PANORAMA_SCENES) {
+      if (!orderedIds.has(s.id)) ordered.push(s);
+    }
+    const visible = ordered.filter((s) => !sceneOverrides[s.id]?.hidden);
+
+    let targetSceneId = sceneParam;
+
+    // If valve param is given, find the scene containing that valve hotspot
+    if (valveParam && !targetSceneId) {
+      for (const [sid, hsList] of Object.entries(allHotspots)) {
+        const found = hsList.find((h) => h.type === "valve" && h.label === valveParam);
+        if (found) { targetSceneId = sid; break; }
+      }
+    }
+
+    if (targetSceneId) {
+      const idx = visible.findIndex((s) => s.id === targetSceneId);
+      if (idx >= 0) {
+        setCurrentIndex(idx);
+        initialNavDone.current = true;
+      }
+    }
+  }, [searchParams, sceneOrder, sceneOverrides, allHotspots]);
 
   // Build ordered scenes list from custom order (hidden scenes filtered out)
   const orderedScenes = useMemo(() => {
