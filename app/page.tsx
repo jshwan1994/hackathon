@@ -20,6 +20,7 @@ export default function Home() {
   const [maintenanceCount, setMaintenanceCount] = useState(0);
   const [maintenanceTotal, setMaintenanceTotal] = useState(0);
 
+
   // 컴포넌트 데이터 로드 (밸브 + 계기류)
   useEffect(() => {
     async function loadComponentData() {

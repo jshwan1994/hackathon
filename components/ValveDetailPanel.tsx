@@ -145,27 +145,26 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
         {/* 헤더 */}
         <div className="flex items-start justify-between p-4 md:p-6 pb-2">
           <div>
-            <div className="flex items-center gap-3 mb-1">
-              <div
-                className="px-2 py-1 rounded-lg"
-                style={{ backgroundColor: `${categoryConfig.color}20` }}
-              >
-                <span
-                  className="text-xs font-bold"
-                  style={{ color: categoryConfig.color }}
-                >
-                  {valve.type}
-                </span>
-              </div>
-              <span
-                className="text-xs font-bold tracking-wider"
-                style={{ color: categoryConfig.color }}
-              >
-                {categoryConfig.label}
-              </span>
-            </div>
             <h1 className="text-white text-2xl font-bold leading-tight">{valve.tag}</h1>
-            <p className="text-[#9da6b9] text-sm">{valve.location}</p>
+            {roadviewSceneId ? (
+              <Link
+                href={`/roadview?scene=${roadviewSceneId}&valve=${encodeURIComponent(valve.tag)}`}
+                target="_blank"
+                className="inline-flex items-center gap-2 mt-2 px-3 py-2 rounded-lg bg-cyan-500/10 border border-cyan-400/30 hover:bg-cyan-500/20 text-cyan-400 text-sm transition-colors"
+              >
+                <span>360°</span>
+                <span className="font-medium">밸브 로드뷰 보기</span>
+              </Link>
+            ) : (
+              <Link
+                href="/roadview"
+                target="_blank"
+                className="inline-flex items-center gap-1.5 mt-1 text-primary text-sm hover:text-primary/80 transition-colors"
+              >
+                <span>360°</span>
+                <span className="font-medium">ST동 로드뷰 보기</span>
+              </Link>
+            )}
           </div>
           <button
             onClick={onClose}
@@ -414,32 +413,6 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
             </div>
           </div>
 
-          {/* 위치 정보 + 로드뷰 */}
-          <div className="space-y-3">
-            <h3 className="text-white text-sm font-semibold px-1">위치 정보</h3>
-            <div className="bg-[#1c1f27] rounded-xl border border-white/10 p-4">
-              <p className="text-white text-sm mb-3">{valve.location}</p>
-              {roadviewSceneId ? (
-                <Link
-                  href={`/roadview?scene=${roadviewSceneId}&valve=${encodeURIComponent(valve.tag)}`}
-                  target="_blank"
-                  className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-cyan-500/10 border border-cyan-400/30 hover:bg-cyan-500/20 transition-colors"
-                >
-                  <span className="text-cyan-400 text-sm">360°</span>
-                  <span className="text-cyan-400 text-sm font-medium">밸브 로드뷰 보기</span>
-                </Link>
-              ) : (
-                <Link
-                  href="/roadview"
-                  target="_blank"
-                  className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/10 border border-primary/30 hover:bg-primary/20 transition-colors"
-                >
-                  <span className="text-primary text-sm">360°</span>
-                  <span className="text-primary text-sm font-medium">ST동 로드뷰 보기</span>
-                </Link>
-              )}
-            </div>
-          </div>
 
         </div>
       </div>
