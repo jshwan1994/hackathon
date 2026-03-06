@@ -142,6 +142,9 @@ export default function RoadviewPage() {
   const thumbStripRef = useRef<HTMLDivElement>(null);
   const [navSearch, setNavSearch] = useState("");
   const [showLevelPanel, setShowLevelPanel] = useState(false);
+  const [showLocationMenu, setShowLocationMenu] = useState(false);
+  const [expandedBuilding, setExpandedBuilding] = useState<string | null>(null);
+  const locationMenuRef = useRef<HTMLDivElement>(null);
 
   // Load settings on mount: JSON 파일(배포용) → localStorage(로컬 오버라이드) 순서로 병합
   useEffect(() => {
@@ -247,6 +250,49 @@ export default function RoadviewPage() {
     };
   }, [sceneOverrides]);
   const imageUrl = `/panorama/${currentScene.file}`;
+
+  // Location menu: group scenes by building (동) and area (층)
+  const locationGroups = useMemo(() => {
+    const groups: { building: string; areas: { area: string; scenes: { scene: typeof baseScene; index: number }[] }[] }[] = [];
+    const buildingMap = new Map<string, Map<string, { scene: typeof baseScene; index: number }[]>>();
+
+    orderedScenes.forEach((scene, idx) => {
+      const display = getSceneDisplay(scene);
+      // Determine building from base scene (original data, not overrides)
+      const id = parseInt(scene.id, 10);
+      const building = id <= 808 ? "ST동" : "발전소";
+      const area = display.area || "미지정";
+
+      if (!buildingMap.has(building)) buildingMap.set(building, new Map());
+      const areaMap = buildingMap.get(building)!;
+      if (!areaMap.has(area)) areaMap.set(area, []);
+      areaMap.get(area)!.push({ scene: display, index: idx });
+    });
+
+    for (const [building, areaMap] of buildingMap) {
+      const areas: { area: string; scenes: { scene: typeof baseScene; index: number }[] }[] = [];
+      for (const [area, scenes] of areaMap) {
+        areas.push({ area, scenes });
+      }
+      groups.push({ building, areas });
+    }
+    return groups;
+  }, [orderedScenes, getSceneDisplay]);
+
+  // Current building/area for display
+  const currentBuilding = parseInt(baseScene.id, 10) <= 808 ? "ST동" : "발전소";
+
+  // Close location menu on click outside
+  useEffect(() => {
+    if (!showLocationMenu) return;
+    const handleClick = (e: MouseEvent) => {
+      if (locationMenuRef.current && !locationMenuRef.current.contains(e.target as Node)) {
+        setShowLocationMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [showLocationMenu]);
 
   // User-placed hotspots for current scene (nav handled by SVG buttons)
   const hotspots = useMemo<Hotspot[]>(() => {
@@ -473,7 +519,7 @@ export default function RoadviewPage() {
               <span className="text-white text-sm">&larr;</span>
             </Link>
             <div>
-              <h1 className="text-white font-bold text-sm">발전소 로드뷰</h1>
+              <h1 className="text-white font-bold text-sm">GLANCE Roadview</h1>
               {editMode && editingScene ? (
                 <div className="flex items-center gap-1.5 mt-0.5">
                   <input
@@ -529,18 +575,63 @@ export default function RoadviewPage() {
                   </button>
                 </div>
               ) : (
-                <p
-                  className={`text-white/50 text-xs ${editMode ? "cursor-pointer hover:text-white/80 underline decoration-dashed underline-offset-2" : ""}`}
-                  onClick={() => {
-                    if (!editMode) return;
-                    setEditLabel(currentScene.label);
-                    setEditArea(currentScene.area);
-                    setEditingScene(true);
-                  }}
-                >
-                  {currentScene.label} ({currentScene.area})
-                  {editMode && <span className="ml-1 text-white/30">클릭하여 수정</span>}
-                </p>
+                <div className="relative" ref={locationMenuRef}>
+                  {editMode ? (
+                    <p
+                      className="text-white/50 text-xs cursor-pointer hover:text-white/80 underline decoration-dashed underline-offset-2"
+                      onClick={() => {
+                        setEditLabel(currentScene.label);
+                        setEditArea(currentScene.area);
+                        setEditingScene(true);
+                      }}
+                    >
+                      {currentScene.label} ({currentScene.area})
+                      <span className="ml-1 text-white/30">클릭하여 수정</span>
+                    </p>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setShowLocationMenu((v) => !v)}
+                      className="flex items-center gap-1 text-white/50 text-xs hover:text-white/80 transition-colors"
+                    >
+                      <span>{currentScene.label} ({currentScene.area})</span>
+                      <span className="text-[10px]">▼</span>
+                    </button>
+                  )}
+                  {showLocationMenu && !editMode && (
+                    <div className="absolute top-full left-0 mt-1.5 min-w-[200px] bg-[#1a1d24] border border-white/10 rounded-xl shadow-2xl z-50 py-1 overflow-hidden">
+                      {locationGroups.map((group) => (
+                        <div key={group.building}>
+                          <div className="px-3 pt-2.5 pb-1.5 text-[10px] font-bold text-white/30 uppercase tracking-wider flex items-center gap-1.5">
+                            <span className="material-symbols-outlined" style={{ fontSize: 14 }}>apartment</span>
+                            {group.building}
+                          </div>
+                          {group.areas.map((areaGroup) => {
+                            const isActive = currentBuilding === group.building && currentScene.area === areaGroup.area;
+                            return (
+                              <button
+                                key={areaGroup.area}
+                                type="button"
+                                onClick={() => {
+                                  setCurrentIndex(areaGroup.scenes[0].index);
+                                  setShowLocationMenu(false);
+                                }}
+                                className={`w-full flex items-center justify-between px-3 pl-8 py-2 text-xs transition-colors ${
+                                  isActive
+                                    ? "bg-blue-500/20 text-blue-400 font-medium"
+                                    : "text-white/60 hover:bg-white/8 hover:text-white"
+                                }`}
+                              >
+                                <span>{areaGroup.area}</span>
+                                <span className="text-[10px] text-white/25 ml-4">{areaGroup.scenes.length}</span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               )}
             </div>
           </div>

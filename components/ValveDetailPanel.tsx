@@ -160,7 +160,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                 className="roadview-btn relative inline-flex items-center gap-2 mt-2 px-3 py-2 rounded-lg text-blue-400 text-sm overflow-hidden"
               >
                 <span>360°</span>
-                <span className="font-medium">밸브 로드뷰 보기</span>
+                <span className="font-medium">GLANCE Roadview</span>
                 <span className="roadview-arrow">›</span>
                 <div className="roadview-shine"></div>
               </Link>
@@ -171,7 +171,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                 className="roadview-btn relative inline-flex items-center gap-2 mt-2 px-3 py-2 rounded-lg text-blue-400 text-sm overflow-hidden"
               >
                 <span>360°</span>
-                <span className="font-medium">ST동 로드뷰 보기</span>
+                <span className="font-medium">GLANCE Roadview</span>
                 <span className="roadview-arrow">›</span>
                 <div className="roadview-shine"></div>
               </Link>
@@ -282,10 +282,6 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                     <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
                       <p className="text-[#9da6b9] text-xs mb-0.5">제조사 (Vendor)</p>
                       <p className="text-white text-sm font-medium">{valveSpec.vendor || '-'}</p>
-                    </div>
-                    <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors col-span-2">
-                      <p className="text-[#9da6b9] text-xs mb-0.5">밸브 종류 (Type)</p>
-                      <p className="text-white text-sm font-medium">{valveSpec.valve_type || '-'}</p>
                     </div>
                   </div>
                 ) : (
