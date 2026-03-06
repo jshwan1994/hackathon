@@ -53,6 +53,13 @@ const instrumentSpecs: Record<string, { range: string; unit: string; signal: str
   LCV: { range: "0 ~ 100", unit: "%", signal: "4-20mA", manufacturer: "Fisher" },
 };
 
+// 밸브 실사진 매핑 (태그 → 이미지 경로)
+const valvePhotoMap: Record<string, string> = {
+  'LCV-7021': '/valve-photos/LCV-7021.png',
+  // 추가 밸브 사진이 있으면 여기에 추가
+  // 'HV-1234': '/valve-photos/HV-1234.jpg',
+};
+
 // 밸브 카테고리인지 확인 (3D 모델 표시용 - 안전밸브 제외)
 function isValveCategory(category?: string): boolean {
   return category === 'Valve' || category === 'Control Valve';
@@ -150,19 +157,23 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
               <Link
                 href={`/roadview?scene=${roadviewSceneId}&valve=${encodeURIComponent(valve.tag)}`}
                 target="_blank"
-                className="inline-flex items-center gap-2 mt-2 px-3 py-2 rounded-lg bg-cyan-500/10 border border-cyan-400/30 hover:bg-cyan-500/20 text-cyan-400 text-sm transition-colors"
+                className="roadview-btn relative inline-flex items-center gap-2 mt-2 px-3 py-2 rounded-lg text-blue-400 text-sm overflow-hidden"
               >
                 <span>360°</span>
                 <span className="font-medium">밸브 로드뷰 보기</span>
+                <span className="roadview-arrow">›</span>
+                <div className="roadview-shine"></div>
               </Link>
             ) : (
               <Link
                 href="/roadview"
                 target="_blank"
-                className="inline-flex items-center gap-1.5 mt-1 text-primary text-sm hover:text-primary/80 transition-colors"
+                className="roadview-btn relative inline-flex items-center gap-2 mt-2 px-3 py-2 rounded-lg text-blue-400 text-sm overflow-hidden"
               >
                 <span>360°</span>
                 <span className="font-medium">ST동 로드뷰 보기</span>
+                <span className="roadview-arrow">›</span>
+                <div className="roadview-shine"></div>
               </Link>
             )}
           </div>
@@ -176,9 +187,31 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
 
         {/* 스크롤 가능한 컨텐츠 */}
         <div className="flex-1 overflow-y-auto custom-scrollbar p-4 md:p-6 pt-2 space-y-4 md:space-y-6">
-          {/* 밸브인 경우 3D 뷰어 표시 (안전밸브 제외) */}
+          {/* 밸브인 경우: 실사진이 있으면 사진, 없으면 3D 모델 */}
           {isValve && !isSafety && (
-            <Valve3DViewer valveType={valve.type || 'VG'} fluidType={valveSpec?.valve_type || 'Steam'} />
+            valvePhotoMap[valve.tag] ? (
+              <div className="bg-[#1c1f27] rounded-xl border border-white/10 overflow-hidden">
+                <div className="flex items-center justify-between px-4 pt-3">
+                  <h3 className="text-white text-sm font-semibold">현장 실사진</h3>
+                  <span className="text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
+                    REAL
+                  </span>
+                </div>
+                <div className="p-3">
+                  <img
+                    src={valvePhotoMap[valve.tag]}
+                    alt={`${valve.tag} 현장 사진`}
+                    className="w-full rounded-lg object-contain max-h-[250px]"
+                  />
+                </div>
+                <div className="px-4 pb-3 text-center">
+                  <p className="text-[#9da6b9] text-xs">Level Control Valve</p>
+                </div>
+              </div>
+            ) : (
+              <Valve3DViewer valveType={valve.type || 'VG'} fluidType={valveSpec?.valve_type || 'Steam'} />
+            )
           )}
 
           {/* 안전밸브인 경우 아이콘 표시 */}

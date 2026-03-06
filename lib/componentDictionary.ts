@@ -13,7 +13,7 @@ export const valveDictionary: DictionaryEntry[] = [
   // 일반 밸브
   { code: 'VG', name: '게이트 밸브', nameEn: 'Gate Valve', description: '유체의 흐름을 완전히 차단하거나 개방하는 용도. 완전 개폐용으로 사용', category: 'valve' },
   { code: 'VB', name: '볼 밸브', nameEn: 'Ball Valve', description: '빠른 개폐가 필요한 곳에 사용. 90도 회전으로 개폐', category: 'valve' },
-  { code: 'VL', name: '라인 밸브', nameEn: 'Line Valve', description: '배관 라인에 설치되는 일반 차단 밸브', category: 'valve' },
+  { code: 'VL', name: '글로브 밸브', nameEn: 'Globe Valve', description: '유체 흐름을 조절하거나 차단하는 밸브. 디스크가 밸브 시트에 수직으로 이동', category: 'valve' },
   { code: 'VC', name: '체크 밸브', nameEn: 'Check Valve', description: '유체의 역류를 방지. 한 방향으로만 흐름 허용', category: 'valve' },
   { code: 'VF', name: '플랜지 밸브', nameEn: 'Flange Valve', description: '플랜지 연결 방식의 밸브. 대구경 배관에 주로 사용', category: 'valve' },
   { code: 'XV', name: '개폐 밸브', nameEn: 'On/Off Valve', description: 'On/Off 제어용 밸브. 자동 차단 시스템에 사용', category: 'valve' },

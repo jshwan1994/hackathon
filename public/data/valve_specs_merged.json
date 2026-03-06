@@ -11,6 +11,15 @@
   },
   "valves": [
     {
+      "tag": "LCV-7021",
+      "valve_type": "Level Control Valve",
+      "type": "CONTROL",
+      "class": "300#",
+      "size": "80",
+      "material": "A216 WCB",
+      "vendor": "Fisher"
+    },
+    {
       "tag": "VG-5253",
       "valve_type": "Forged Steel Valve",
       "type": "GATE",

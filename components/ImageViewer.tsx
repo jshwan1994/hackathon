@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { ValveData } from "@/types/valve";
 
@@ -18,11 +18,47 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve, is
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [startPos, setStartPos] = useState({ x: 0, y: 0 });
+  const [imageRect, setImageRect] = useState({ offsetX: 0, offsetY: 0, width: 0, height: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+
+  // object-contain 이미지의 실제 렌더링 영역 계산
+  const calcImageRect = useCallback(() => {
+    const container = imageContainerRef.current;
+    if (!container) return;
+    const cw = container.clientWidth;
+    const ch = container.clientHeight;
+    // P&ID 도면 원본 비율 (A3 가로: 약 1.414)
+    const imgAspect = 1.414;
+    const containerAspect = cw / ch;
+    let iw: number, ih: number, ox: number, oy: number;
+    if (containerAspect > imgAspect) {
+      // 컨테이너가 더 넓음 → 좌우 여백
+      ih = ch;
+      iw = ch * imgAspect;
+      ox = (cw - iw) / 2;
+      oy = 0;
+    } else {
+      // 컨테이너가 더 좁음 → 상하 여백
+      iw = cw;
+      ih = cw / imgAspect;
+      ox = 0;
+      oy = (ch - ih) / 2;
+    }
+    setImageRect({ offsetX: ox, offsetY: oy, width: iw, height: ih });
+  }, []);
+
+  useEffect(() => {
+    calcImageRect();
+    window.addEventListener('resize', calcImageRect);
+    return () => window.removeEventListener('resize', calcImageRect);
+  }, [calcImageRect, isPanelOpen]);
 
   const handleLoad = () => {
     setLoading(false);
     onLoadSuccess?.();
+    // 이미지 로드 후 영역 재계산
+    setTimeout(calcImageRect, 100);
   };
 
   const zoomIn = () => {
@@ -97,6 +133,7 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve, is
         }}
       >
         <div
+          ref={imageContainerRef}
           className="relative w-full h-full"
           style={{
             transform: `translate(${position.x}px, ${position.y}px) scale(${scale / 100})`,
@@ -112,13 +149,13 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve, is
             onLoad={handleLoad}
             priority
           />
-          {/* 밸브 마커 */}
-          {selectedValve && selectedValve.position && (
+          {/* 밸브 마커 - 이미지 실제 영역 기준 좌표 */}
+          {selectedValve && selectedValve.position && imageRect.width > 0 && (
             <div
               className="absolute z-10 pointer-events-none"
               style={{
-                left: `${selectedValve.position.x_percent}%`,
-                top: `${selectedValve.position.y_percent}%`,
+                left: `${imageRect.offsetX + (selectedValve.position.x_percent / 100) * imageRect.width}px`,
+                top: `${imageRect.offsetY + (selectedValve.position.y_percent / 100) * imageRect.height}px`,
                 transform: 'translate(-50%, -50%)'
               }}
             >

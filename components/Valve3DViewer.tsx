@@ -635,21 +635,6 @@ export default function Valve3DViewer({ valveType, fluidType }: Valve3DViewerPro
           <p className="text-sm text-white/80 font-medium">{info.name}</p>
         </div>
 
-        {/* 유체 타입 표시 */}
-        {fluidLabel && (
-          <div className={`absolute top-3 right-3 px-2 py-1 rounded-lg border backdrop-blur-sm ${
-            fluidType === "Steam"
-              ? "bg-orange-500/20 border-orange-500/30 text-orange-300"
-              : fluidType === "급수"
-                ? "bg-blue-500/20 border-blue-500/30 text-blue-300"
-                : "bg-cyan-500/20 border-cyan-500/30 text-cyan-300"
-          }`}>
-            <p className="text-[10px] font-medium flex items-center gap-1">
-              <span className="material-symbols-outlined !text-[12px]">water_drop</span>
-              {fluidLabel}
-            </p>
-          </div>
-        )}
 
         {/* 회전 힌트 */}
         <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded-lg border border-white/10">

@@ -11,10 +11,17 @@ export interface DiaryEntry {
 export const diaryRecords: DiaryEntry[] = [
   {
     diary_id: "d001",
-    date: "2026-01-26",
+    date: "2026-03-03",
     shift: "DAY",
     writer_name: "김운전",
     content: "밸브 유량 변동 발생, 조절밸브 상태 확인 필요"
+  },
+  {
+    diary_id: "d002",
+    date: "2026-03-02",
+    shift: "NIGHT",
+    writer_name: "박정비",
+    content: "보일러 순환펌프 진동 이상 감지, 베어링 점검 예정"
   }
 ];
 

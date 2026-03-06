@@ -1418,6 +1418,15 @@
         "type": "nav",
         "sceneId": "892",
         "targetSceneId": "893"
+      },
+      {
+        "id": "hs_1772589631096",
+        "label": "GT동 3층 계단",
+        "yaw": 145.7,
+        "pitch": 12.5,
+        "type": "nav",
+        "sceneId": "892",
+        "targetSceneId": "908"
       }
     ],
     "893": [
@@ -1449,6 +1458,22 @@
         "type": "nav",
         "sceneId": "894",
         "targetSceneId": "893"
+      },
+      {
+        "id": "hs_1772084981344",
+        "label": "LCV-7021",
+        "yaw": 31.7,
+        "pitch": -1.3,
+        "type": "valve",
+        "sceneId": "894"
+      },
+      {
+        "id": "hs_1772675033035",
+        "label": "HV-6110",
+        "yaw": 59,
+        "pitch": -17.8,
+        "type": "valve",
+        "sceneId": "894"
       }
     ],
     "895": [
@@ -1535,17 +1560,154 @@
         "type": "nav",
         "sceneId": "902",
         "targetSceneId": "903"
+      },
+      {
+        "id": "hs_1772589226317",
+        "label": "GT동 3- 16",
+        "yaw": -5.2,
+        "pitch": 1.6,
+        "type": "nav",
+        "sceneId": "902",
+        "targetSceneId": "905"
+      },
+      {
+        "id": "hs_1772589326176",
+        "label": "GT동 3-12",
+        "yaw": -42.7,
+        "pitch": 3.9,
+        "type": "nav",
+        "sceneId": "902",
+        "targetSceneId": "901"
       }
     ],
     "903": [
       {
-        "id": "hs_1771489276850",
-        "label": "GT동 3-12",
-        "yaw": -34.9,
-        "pitch": 2.2,
+        "id": "hs_1772589194676",
+        "label": "GT동 3- 13",
+        "yaw": -34.8,
+        "pitch": 1.4,
         "type": "nav",
         "sceneId": "903",
-        "targetSceneId": "901"
+        "targetSceneId": "902"
+      }
+    ],
+    "905": [
+      {
+        "id": "hs_1772589262860",
+        "label": "GT동 3-17",
+        "yaw": -164.1,
+        "pitch": -5,
+        "type": "nav",
+        "sceneId": "905",
+        "targetSceneId": "906"
+      }
+    ],
+    "906": [
+      {
+        "id": "hs_1772589361142",
+        "label": "GT동 3-18",
+        "yaw": 171.9,
+        "pitch": -4.2,
+        "type": "nav",
+        "sceneId": "906",
+        "targetSceneId": "907"
+      }
+    ],
+    "907": [
+      {
+        "id": "hs_1772589468802",
+        "label": "GT동 3-3",
+        "yaw": -160.3,
+        "pitch": -4.7,
+        "type": "nav",
+        "sceneId": "907",
+        "targetSceneId": "892"
+      }
+    ],
+    "908": [
+      {
+        "id": "hs_1772589730844",
+        "label": "#1 DRUM 1",
+        "yaw": -100.7,
+        "pitch": 15.3,
+        "type": "nav",
+        "sceneId": "908",
+        "targetSceneId": "909"
+      }
+    ],
+    "909": [
+      {
+        "id": "hs_1772589739061",
+        "label": "#1 DRUM 2",
+        "yaw": 95.4,
+        "pitch": -3.3,
+        "type": "nav",
+        "sceneId": "909",
+        "targetSceneId": "910"
+      }
+    ],
+    "910": [
+      {
+        "id": "hs_1772589764173",
+        "label": "#1 DRUM 3",
+        "yaw": -178.6,
+        "pitch": -6.7,
+        "type": "nav",
+        "sceneId": "910",
+        "targetSceneId": "911"
+      }
+    ],
+    "911": [
+      {
+        "id": "hs_1772589784492",
+        "label": "#1 DRUM 4",
+        "yaw": -125.6,
+        "pitch": -4.7,
+        "type": "nav",
+        "sceneId": "911",
+        "targetSceneId": "912"
+      }
+    ],
+    "912": [
+      {
+        "id": "hs_1772589811112",
+        "label": "#1 DRUM 5",
+        "yaw": -125.8,
+        "pitch": -7.3,
+        "type": "nav",
+        "sceneId": "912",
+        "targetSceneId": "913"
+      }
+    ],
+    "913": [
+      {
+        "id": "hs_1772589861939",
+        "label": "#1 DRUM 6",
+        "yaw": -116,
+        "pitch": -13.8,
+        "type": "nav",
+        "sceneId": "913",
+        "targetSceneId": "914"
+      },
+      {
+        "id": "hs_1772589891374",
+        "label": "#1 DRUM 7",
+        "yaw": -166.1,
+        "pitch": 8,
+        "type": "nav",
+        "sceneId": "913",
+        "targetSceneId": "915"
+      }
+    ],
+    "915": [
+      {
+        "id": "hs_1772589910544",
+        "label": "#1 DRUM 8",
+        "yaw": -170,
+        "pitch": -40.9,
+        "type": "nav",
+        "sceneId": "915",
+        "targetSceneId": "916"
       }
     ]
   },
@@ -2039,10 +2201,9 @@
       "sphereRoll": -5.5
     },
     "893": {
-      "yaw": 0,
-      "pitch": 0,
-      "sphereRoll": 0,
-      "spherePitch": 3
+      "yaw": 141.8,
+      "pitch": 0.2,
+      "spherePitch": 2.5
     },
     "894": {
       "yaw": 25.6,
@@ -2086,6 +2247,66 @@
       "pitch": -5.6,
       "sphereRoll": 0,
       "spherePitch": 5
+    },
+    "905": {
+      "yaw": 195.6,
+      "pitch": -1.2,
+      "sphereRoll": 0,
+      "spherePitch": 1.5
+    },
+    "906": {
+      "yaw": 171.6,
+      "pitch": 0.2,
+      "spherePitch": 2
+    },
+    "907": {
+      "yaw": 204.4,
+      "pitch": -0.6,
+      "spherePitch": 1
+    },
+    "908": {
+      "yaw": -106.4,
+      "pitch": 0.6,
+      "sphereRoll": -2.5
+    },
+    "909": {
+      "yaw": 95.4,
+      "pitch": 2.2,
+      "spherePitch": 0,
+      "sphereRoll": -1
+    },
+    "910": {
+      "yaw": 173.6,
+      "pitch": -1,
+      "spherePitch": 3.5
+    },
+    "911": {
+      "yaw": 239.2,
+      "pitch": 0,
+      "spherePitch": 0,
+      "sphereRoll": -2
+    },
+    "912": {
+      "yaw": 234.4,
+      "pitch": -1.6
+    },
+    "913": {
+      "yaw": 233.2,
+      "pitch": -2.2
+    },
+    "914": {
+      "yaw": 200.6,
+      "pitch": -1.8
+    },
+    "915": {
+      "yaw": 104.8,
+      "pitch": -15.2
+    },
+    "916": {
+      "yaw": 122,
+      "pitch": -1.6,
+      "spherePitch": 5,
+      "sphereRoll": 1
     }
   },
   "sceneOverrides": {
@@ -2095,7 +2316,8 @@
     },
     "774": {
       "label": "도로2",
-      "area": "외부"
+      "area": "외부",
+      "excludeFromPath": false
     },
     "775": {
       "label": "도로3",
@@ -2633,6 +2855,98 @@
     "907": {
       "label": "GT동 3- 18",
       "area": "GT동 3층"
+    },
+    "908": {
+      "label": "GT동 3층 계단",
+      "area": "GT동 3층"
+    },
+    "909": {
+      "label": "#1 DRUM 1",
+      "area": "GT동 4층"
+    },
+    "910": {
+      "label": "#1 DRUM 2",
+      "area": "GT동 4층"
+    },
+    "911": {
+      "label": "#1 DRUM 3",
+      "area": "GT동 4층"
+    },
+    "912": {
+      "label": "#1 DRUM 4",
+      "area": "GT동 4층"
+    },
+    "913": {
+      "label": "#1 DRUM 5",
+      "area": "GT동 4층"
+    },
+    "914": {
+      "label": "#1 DRUM 6",
+      "area": "GT동 4층"
+    },
+    "915": {
+      "label": "#1 DRUM 7",
+      "area": "GT동 4층"
+    },
+    "916": {
+      "label": "#1 DRUM 8",
+      "area": "GT동 4층"
+    },
+    "917": {
+      "label": "#1 DRUM 9",
+      "area": "GT동 4층"
+    },
+    "918": {
+      "label": "#1 DRUM 10",
+      "area": "GT동 4층"
+    },
+    "919": {
+      "label": "#1 DRUM 11",
+      "area": "GT동 4층"
+    },
+    "920": {
+      "label": "#1 DRUM 12",
+      "area": "GT동 4층"
+    },
+    "921": {
+      "label": "#1 DRUM 13",
+      "area": "GT동 4층"
+    },
+    "922": {
+      "label": "#1 DRUM 14",
+      "area": "GT동 4층"
+    },
+    "923": {
+      "label": "#1 DRUM 15",
+      "area": "GT동 4층"
+    },
+    "924": {
+      "label": "#1 DRUM 16",
+      "area": "GT동 4층"
+    },
+    "925": {
+      "label": "#1 DRUM 17",
+      "area": "GT동 4층"
+    },
+    "926": {
+      "label": "#1 DRUM 18",
+      "area": "GT동 4층"
+    },
+    "927": {
+      "label": "#1 DRUM 19",
+      "area": "GT동 4층"
+    },
+    "928": {
+      "label": "#1 DRUM 20",
+      "area": "GT동 4층"
+    },
+    "929": {
+      "label": "#1 DRUM 21",
+      "area": "GT동 4층"
+    },
+    "930": {
+      "label": "#1 DRUM 22",
+      "area": "GT동 4층"
     }
   },
   "sceneOrder": [
