@@ -159,8 +159,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                 target="_blank"
                 className="roadview-btn relative inline-flex items-center gap-2 mt-2 px-3 py-2 rounded-lg text-blue-400 text-sm overflow-hidden"
               >
-                <span>360°</span>
-                <span className="font-medium">GLANCE Roadview</span>
+                <span className="font-medium">360˚GLANCE Roadview</span>
                 <span className="roadview-arrow">›</span>
                 <div className="roadview-shine"></div>
               </Link>
@@ -170,8 +169,7 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                 target="_blank"
                 className="roadview-btn relative inline-flex items-center gap-2 mt-2 px-3 py-2 rounded-lg text-blue-400 text-sm overflow-hidden"
               >
-                <span>360°</span>
-                <span className="font-medium">GLANCE Roadview</span>
+                <span className="font-medium">360˚GLANCE Roadview</span>
                 <span className="roadview-arrow">›</span>
                 <div className="roadview-shine"></div>
               </Link>

@@ -107,6 +107,11 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve, is
     setIsDragging(false);
   };
 
+  const handleWheel = useCallback((e: React.WheelEvent) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -15 : 15;
+    setScale((prev) => Math.max(50, Math.min(300, prev + delta)));
+  }, []);
 
   return (
     <div className={`relative w-full h-full flex flex-col bg-[#0f1115] transition-all duration-300 ${isPanelOpen ? 'md:pr-[400px]' : ''}`}>
@@ -128,6 +133,7 @@ export default function ImageViewer({ imageUrl, onLoadSuccess, selectedValve, is
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseLeave}
+        onWheel={handleWheel}
         style={{
           userSelect: isPanning ? 'none' : 'auto'
         }}

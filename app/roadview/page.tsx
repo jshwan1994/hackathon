@@ -551,7 +551,7 @@ export default function RoadviewPage() {
               <span className="text-white text-sm">&larr;</span>
             </Link>
             <div>
-              <h1 className="text-white font-bold text-sm">GLANCE Roadview</h1>
+              <h1 className="text-white font-bold text-sm">360˚GLANCE Roadview</h1>
               {editMode && editingScene ? (
                 <div className="flex items-center gap-1.5 mt-0.5">
                   <input
