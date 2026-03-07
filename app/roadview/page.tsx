@@ -251,36 +251,68 @@ export default function RoadviewPage() {
   }, [sceneOverrides]);
   const imageUrl = `/panorama/${currentScene.file}`;
 
-  // Location menu: group scenes by building (동) and area (층)
+  // Location menu: group scenes by 동 (building) → 층 (floor)
   const locationGroups = useMemo(() => {
-    const groups: { building: string; areas: { area: string; scenes: { scene: typeof baseScene; index: number }[] }[] }[] = [];
     const buildingMap = new Map<string, Map<string, { scene: typeof baseScene; index: number }[]>>();
 
     orderedScenes.forEach((scene, idx) => {
       const display = getSceneDisplay(scene);
-      // Determine building from base scene (original data, not overrides)
       const id = parseInt(scene.id, 10);
-      const building = id <= 808 ? "ST동" : "발전소";
+      // 동 판별: id 기반 또는 area에 "동"이 포함된 경우
       const area = display.area || "미지정";
+      let building: string;
+      if (area.includes("ST")) {
+        building = "ST동";
+      } else if (area.includes("GT")) {
+        building = "GT동";
+      } else if (area === "외부" || area.includes("연결다리")) {
+        building = "외부";
+      } else {
+        building = "미지정";
+      }
+      const floor = area;
 
       if (!buildingMap.has(building)) buildingMap.set(building, new Map());
-      const areaMap = buildingMap.get(building)!;
-      if (!areaMap.has(area)) areaMap.set(area, []);
-      areaMap.get(area)!.push({ scene: display, index: idx });
+      const floorMap = buildingMap.get(building)!;
+      if (!floorMap.has(floor)) floorMap.set(floor, []);
+      floorMap.get(floor)!.push({ scene: display, index: idx });
     });
 
-    for (const [building, areaMap] of buildingMap) {
-      const areas: { area: string; scenes: { scene: typeof baseScene; index: number }[] }[] = [];
-      for (const [area, scenes] of areaMap) {
-        areas.push({ area, scenes });
+    const groups: { building: string; floors: { floor: string; scenes: { scene: typeof baseScene; index: number }[] }[] }[] = [];
+    for (const [building, floorMap] of buildingMap) {
+      const floors: { floor: string; scenes: { scene: typeof baseScene; index: number }[] }[] = [];
+      for (const [floor, scenes] of floorMap) {
+        floors.push({ floor, scenes });
       }
-      groups.push({ building, areas });
+      // 층 정렬: B1 → 1 → 2 → 3 → 3.5 ...
+      floors.sort((a, b) => {
+        const parseFloor = (f: string) => {
+          const m = f.match(/(B?)(\d+\.?\d*)/);
+          if (!m) return 999;
+          const num = parseFloat(m[2]);
+          return m[1] === "B" ? -num : num;
+        };
+        return parseFloor(a.floor) - parseFloor(b.floor);
+      });
+      groups.push({ building, floors });
     }
     return groups;
   }, [orderedScenes, getSceneDisplay]);
 
-  // Current building/area for display
-  const currentBuilding = parseInt(baseScene.id, 10) <= 808 ? "ST동" : "발전소";
+  // Current building/floor for display
+  const currentBuilding = (() => {
+    const area = currentScene.area || "미지정";
+    if (area.includes("ST")) return "ST동";
+    if (area.includes("GT")) return "GT동";
+    if (area === "외부" || area.includes("연결다리")) return "외부";
+    return "미지정";
+  })();
+  const currentFloor = currentScene.area || "미지정";
+
+  // 메뉴 열릴 때 현재 건물 자동 확장
+  useEffect(() => {
+    if (showLocationMenu) setExpandedBuilding(currentBuilding);
+  }, [showLocationMenu, currentBuilding]);
 
   // Close location menu on click outside
   useEffect(() => {
@@ -600,35 +632,53 @@ export default function RoadviewPage() {
                   )}
                   {showLocationMenu && !editMode && (
                     <div className="absolute top-full left-0 mt-1.5 min-w-[200px] bg-[#1a1d24] border border-white/10 rounded-xl shadow-2xl z-50 py-1 overflow-hidden">
-                      {locationGroups.map((group) => (
-                        <div key={group.building}>
-                          <div className="px-3 pt-2.5 pb-1.5 text-[10px] font-bold text-white/30 uppercase tracking-wider flex items-center gap-1.5">
-                            <span className="material-symbols-outlined" style={{ fontSize: 14 }}>apartment</span>
-                            {group.building}
+                      {locationGroups.map((group) => {
+                        const isExpanded = expandedBuilding === group.building;
+                        const isBuildingActive = currentBuilding === group.building;
+                        const totalScenes = group.floors.reduce((sum, f) => sum + f.scenes.length, 0);
+                        return (
+                          <div key={group.building}>
+                            <button
+                              type="button"
+                              onClick={() => setExpandedBuilding(isExpanded ? null : group.building)}
+                              className={`w-full flex items-center justify-between px-3 py-2 text-xs font-bold transition-colors hover:bg-white/5 ${
+                                isBuildingActive ? "text-blue-400" : "text-white/50"
+                              }`}
+                            >
+                              <span className="flex items-center gap-1.5">
+                                <span className="text-[8px]">{isExpanded ? "▼" : "▶"}</span>
+                                {group.building}
+                              </span>
+                              <span className="text-white/20 font-normal text-[10px]">{totalScenes}</span>
+                            </button>
+                            {isExpanded && (
+                              <div className="max-h-48 overflow-y-auto">
+                                {group.floors.map((floorGroup) => {
+                                  const isFloorActive = isBuildingActive && currentFloor === floorGroup.floor;
+                                  return (
+                                    <button
+                                      key={floorGroup.floor}
+                                      type="button"
+                                      onClick={() => {
+                                        setCurrentIndex(floorGroup.scenes[0].index);
+                                        setShowLocationMenu(false);
+                                      }}
+                                      className={`w-full flex items-center justify-between px-3 pl-8 py-1.5 text-xs transition-colors ${
+                                        isFloorActive
+                                          ? "bg-blue-500/20 text-blue-400 font-medium"
+                                          : "text-white/50 hover:bg-white/8 hover:text-white"
+                                      }`}
+                                    >
+                                      <span className="truncate">{floorGroup.floor}</span>
+                                      <span className="text-white/20 text-[10px]">{floorGroup.scenes.length}</span>
+                                    </button>
+                                  );
+                                })}
+                              </div>
+                            )}
                           </div>
-                          {group.areas.map((areaGroup) => {
-                            const isActive = currentBuilding === group.building && currentScene.area === areaGroup.area;
-                            return (
-                              <button
-                                key={areaGroup.area}
-                                type="button"
-                                onClick={() => {
-                                  setCurrentIndex(areaGroup.scenes[0].index);
-                                  setShowLocationMenu(false);
-                                }}
-                                className={`w-full flex items-center justify-between px-3 pl-8 py-2 text-xs transition-colors ${
-                                  isActive
-                                    ? "bg-blue-500/20 text-blue-400 font-medium"
-                                    : "text-white/60 hover:bg-white/8 hover:text-white"
-                                }`}
-                              >
-                                <span>{areaGroup.area}</span>
-                                <span className="text-[10px] text-white/25 ml-4">{areaGroup.scenes.length}</span>
-                              </button>
-                            );
-                          })}
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   )}
                 </div>
