@@ -289,23 +289,23 @@ body {
 
 /* 총 컴포넌트 수 - orange (정비이력과 동일) */
 .info-card-total {
-  background: rgba(249, 115, 22, 0.06);
+  background: rgba(6, 182, 212, 0.06);
   animation: glow-maintenance 2.5s ease-in-out infinite;
 }
 
 .info-card-total::before {
-  background: linear-gradient(135deg, #fb923c, #f59e0b, #fb923c);
+  background: linear-gradient(135deg, #06b6d4, #22d3ee, #06b6d4);
   background-size: 200% 200%;
   animation: roadview-gradient 3s ease infinite;
 }
 
 .info-card-total:hover {
-  background: rgba(249, 115, 22, 0.12);
-  box-shadow: 0 0 20px rgba(251, 146, 60, 0.3);
+  background: rgba(6, 182, 212, 0.12);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
 }
 
 .info-card-total .info-card-shine {
-  background: linear-gradient(90deg, transparent 0%, rgba(251, 146, 60, 0.2) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.2) 50%, transparent 100%);
   animation: roadview-shine 2.5s ease-in-out infinite;
 }
 

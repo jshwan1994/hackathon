@@ -154,11 +154,11 @@ export default function Home() {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/50 to-purple-600/50 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-200"></div>
               <label className="relative flex items-center w-full h-12 md:h-14 bg-[#1c1f27]/90 md:bg-[#1c1f27]/80 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl transition-all duration-300 focus-within:ring-2 focus-within:ring-primary/50 focus-within:bg-[#1c1f27]/95">
               <div className="pl-4 md:pl-6 pr-2 md:pr-3 text-[#9da6b9]">
-                <span className="material-symbols-outlined !text-[20px] md:!text-[24px]">search</span>
+                <span className="text-base md:text-lg font-bold">Glance</span>
               </div>
               <input
                 className="w-full bg-transparent border-none text-white placeholder-[#9da6b9] focus:ring-0 text-sm md:text-base font-normal h-full rounded-r-full outline-none"
-                placeholder="밸브/계기 태그 검색... (예: TI, PI, FCV, VG)"
+                placeholder="밸브/계기 태그 검색... (예: HV, LCV, VG, TI, PI, 4301, 4302)"
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}

@@ -266,8 +266,11 @@ export default function ValveDetailPanel({ valve, onClose }: ValveDetailPanelPro
                 ) : valveSpec ? (
                   <div className="grid grid-cols-2 gap-[1px] bg-white/20">
                     <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
-                      <p className="text-[#9da6b9] text-xs mb-0.5">압력 등급 (Class)</p>
-                      <p className="text-white text-sm font-medium">{valveSpec.class || '-'}</p>
+                      <p className="text-[#9da6b9] text-xs mb-0.5">압력 등급</p>
+                      <p className="text-white text-sm font-medium">{valveSpec.class ? (({
+                        '150': '20 bar', '300': '51 bar', '600': '102 bar',
+                        '900': '153 bar', '1500': '255 bar', '2500': '426 bar',
+                      } as Record<string, string>)[valveSpec.class.replace('#', '')] || valveSpec.class) : '-'}</p>
                     </div>
                     <div className="bg-[#1c1f27] p-3 hover:bg-[#252830] transition-colors">
                       <p className="text-[#9da6b9] text-xs mb-0.5">사이즈 (Size)</p>

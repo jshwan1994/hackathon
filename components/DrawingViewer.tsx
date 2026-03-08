@@ -38,23 +38,34 @@ export default function DrawingViewer({ selectedValve, isPanelOpen = false }: Dr
           {/* 밸브 마커 제거 - 도면만 표시 */}
         </div>
       ) : (
-        // 기본 배경 (밸브 선택 전) - 3D 밸브 이미지 표시
-        <div className="schematic-bg flex flex-col items-center justify-center w-full h-full">
-          {/* 3D 밸브 이미지 - 부드러운 floating 애니메이션 */}
-          <div className="relative w-[900px] h-[900px] animate-float">
-            <Image
-              src="/valve-3d.png"
-              alt="3D Valve"
-              fill
-              className="object-contain"
-              priority
-            />
+        // 기본 배경 (밸브 선택 전) - 3D 이미지 표시
+        <div className="schematic-bg relative w-full h-full">
+          {/* 3D 밸브 이미지 - 가운데 */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <div className="relative w-[900px] h-[900px] animate-float">
+              <Image
+                src="/valve-3d.png"
+                alt="3D Valve"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            {/* 안내 메시지 */}
+            <div className="text-center -mt-40">
+              <h2 className="text-2xl font-bold text-white mb-2">GLANCE</h2>
+              <p className="text-[#9da6b9] text-lg">P&ID 도면에서 밸브 위치를 빠르게 찾아보세요</p>
+            </div>
           </div>
 
-          {/* 안내 메시지 - 밸브 아래에 위치 */}
-          <div className="text-center -mt-40">
-            <h2 className="text-2xl font-bold text-white mb-2">GLANCE</h2>
-            <p className="text-[#9da6b9] text-lg">P&ID 도면에서 밸브 위치를 빠르게 찾아보세요</p>
+          {/* 3D 발전소 이미지 - 오른쪽 가운데 */}
+          <div className="absolute top-[25%] right-8 -translate-y-1/2 w-[550px] h-[550px] animate-float">
+            <Image
+              src="/power-plant-3d.png"
+              alt="3D Power Plant"
+              fill
+              className="object-contain"
+            />
           </div>
         </div>
       )}
