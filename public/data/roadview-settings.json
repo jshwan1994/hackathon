@@ -1418,15 +1418,6 @@
         "type": "nav",
         "sceneId": "892",
         "targetSceneId": "893"
-      },
-      {
-        "id": "hs_1772589631096",
-        "label": "GT동 3층 계단",
-        "yaw": 145.7,
-        "pitch": 12.5,
-        "type": "nav",
-        "sceneId": "892",
-        "targetSceneId": "908"
       }
     ],
     "893": [
@@ -1460,18 +1451,10 @@
         "targetSceneId": "893"
       },
       {
-        "id": "hs_1772084981344",
+        "id": "hs_1773060058205",
         "label": "LCV-7021",
-        "yaw": 31.7,
-        "pitch": -1.3,
-        "type": "valve",
-        "sceneId": "894"
-      },
-      {
-        "id": "hs_1772675033035",
-        "label": "HV-6110",
-        "yaw": 59,
-        "pitch": -17.8,
+        "yaw": 31,
+        "pitch": 1.2,
         "type": "valve",
         "sceneId": "894"
       }
@@ -1485,6 +1468,14 @@
         "type": "nav",
         "sceneId": "895",
         "targetSceneId": "896"
+      },
+      {
+        "id": "hs_1771937317075",
+        "label": "6306",
+        "yaw": 18.9,
+        "pitch": -42.4,
+        "type": "valve",
+        "sceneId": "895"
       }
     ],
     "896": [
@@ -1560,35 +1551,17 @@
         "type": "nav",
         "sceneId": "902",
         "targetSceneId": "903"
-      },
-      {
-        "id": "hs_1772589226317",
-        "label": "GT동 3- 16",
-        "yaw": -5.2,
-        "pitch": 1.6,
-        "type": "nav",
-        "sceneId": "902",
-        "targetSceneId": "905"
-      },
-      {
-        "id": "hs_1772589326176",
-        "label": "GT동 3-12",
-        "yaw": -42.7,
-        "pitch": 3.9,
-        "type": "nav",
-        "sceneId": "902",
-        "targetSceneId": "901"
       }
     ],
     "903": [
       {
-        "id": "hs_1772589194676",
-        "label": "GT동 3- 13",
-        "yaw": -34.8,
-        "pitch": 1.4,
+        "id": "hs_1771489276850",
+        "label": "GT동 3-12",
+        "yaw": -34.9,
+        "pitch": 2.2,
         "type": "nav",
         "sceneId": "903",
-        "targetSceneId": "902"
+        "targetSceneId": "901"
       }
     ],
     "905": [
@@ -2201,9 +2174,10 @@
       "sphereRoll": -5.5
     },
     "893": {
-      "yaw": 141.8,
-      "pitch": 0.2,
-      "spherePitch": 2.5
+      "yaw": 0,
+      "pitch": 0,
+      "sphereRoll": 0,
+      "spherePitch": 3
     },
     "894": {
       "yaw": 25.6,
@@ -2220,6 +2194,10 @@
     "896": {
       "yaw": 59.6,
       "pitch": 7.6
+    },
+    "897": {
+      "yaw": 41.1,
+      "pitch": 3.9
     },
     "898": {
       "yaw": 91.6,
@@ -2316,8 +2294,7 @@
     },
     "774": {
       "label": "도로2",
-      "area": "외부",
-      "excludeFromPath": false
+      "area": "외부"
     },
     "775": {
       "label": "도로3",

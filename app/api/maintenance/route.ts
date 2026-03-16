@@ -151,9 +151,9 @@ async function fetch6MonthsFromEAM(): Promise<PermitToWork[]> {
           method: 'GET',
           headers: {
             'accept': 'application/json',
-            'tenant': 'RJZUW7ZJDTGNQN6S_PRD',
-            'organization': 'P3',
-            'Authorization': 'Basic MjExMDAwNDM6UG1zMTEwODEwIQ==',
+            'tenant': process.env.EAM_TENANT || '',
+            'organization': process.env.EAM_ORGANIZATION || '',
+            'Authorization': `Basic ${process.env.EAM_AUTH_TOKEN}`,
             'cursorposition': String(cursorPosition)
           },
           cache: 'no-store'
@@ -297,9 +297,9 @@ async function fetchFirstPage(): Promise<PermitToWork[]> {
       method: 'GET',
       headers: {
         'accept': 'application/json',
-        'tenant': 'RJZUW7ZJDTGNQN6S_PRD',
-        'organization': 'P3',
-        'Authorization': 'Basic MjExMDAwNDM6UG1zMTEwODEwIQ=='
+        'tenant': process.env.EAM_TENANT || '',
+        'organization': process.env.EAM_ORGANIZATION || '',
+        'Authorization': `Basic ${process.env.EAM_AUTH_TOKEN}`
       },
       cache: 'no-store'
     }
@@ -325,9 +325,9 @@ async function fetchAllFromEAM(): Promise<PermitToWork[]> {
           method: 'GET',
           headers: {
             'accept': 'application/json',
-            'tenant': 'RJZUW7ZJDTGNQN6S_PRD',
-            'organization': 'P3',
-            'Authorization': 'Basic MjExMDAwNDM6UG1zMTEwODEwIQ==',
+            'tenant': process.env.EAM_TENANT || '',
+            'organization': process.env.EAM_ORGANIZATION || '',
+            'Authorization': `Basic ${process.env.EAM_AUTH_TOKEN}`,
             'cursorposition': String(cursorPosition)
           },
           cache: 'no-store'

@@ -1,0 +1,113 @@
+{
+  "VG-5210": {
+    "type": "VG",
+    "valve_type": "Gate",
+    "class": "10K",
+    "material": "A105",
+    "vendor": "HS Valve"
+  },
+  "VG-5253": {
+    "type": "VG",
+    "valve_type": "Gate",
+    "class": "800#",
+    "size": "15A",
+    "material": "A105",
+    "vendor": "HS Valve"
+  },
+  "VG-5315": {
+    "type": "VG",
+    "valve_type": "Gate",
+    "class": "800#",
+    "size": "25A",
+    "material": "A105",
+    "vendor": "HS Valve"
+  },
+  "VG-5321": {
+    "type": "VG",
+    "valve_type": "Gate",
+    "class": "800#",
+    "size": "50A",
+    "material": "A182 F304",
+    "vendor": "HS Valve"
+  },
+  "VG-5327": {
+    "type": "VG",
+    "valve_type": "Gate",
+    "class": "800#",
+    "size": "40A",
+    "material": "A182 F304",
+    "vendor": "HS Valve"
+  },
+  "VG-5000": {
+    "type": "VG",
+    "valve_type": "Gate",
+    "material": "WCB",
+    "vendor": "SC Corp"
+  },
+  "VG-5201": {
+    "type": "VG",
+    "valve_type": "Gate",
+    "material": "WCB",
+    "vendor": "SC Corp"
+  },
+  "VG-5222": {
+    "type": "VG",
+    "valve_type": "Gate",
+    "class": "150",
+    "material": "CF8",
+    "vendor": "SC Corp"
+  },
+  "VL-5001": {
+    "type": "VL",
+    "valve_type": "Globe",
+    "class": "800#",
+    "size": "15A",
+    "material": "A105",
+    "vendor": "HS Valve"
+  },
+  "VL-5201": {
+    "type": "VL",
+    "valve_type": "Globe",
+    "material": "WCB",
+    "vendor": "SC Corp"
+  },
+  "VL-5253": {
+    "type": "VL",
+    "valve_type": "Globe",
+    "class": "800#",
+    "size": "50A",
+    "material": "A105",
+    "vendor": "HS Valve"
+  },
+  "VL-5401": {
+    "type": "VL",
+    "valve_type": "Globe",
+    "class": "800#",
+    "size": "15A",
+    "material": "A182 F316",
+    "vendor": "HS Valve"
+  },
+  "VC-5001": {
+    "type": "VC",
+    "valve_type": "Non-Slam Check",
+    "size": "200A-450A",
+    "material": "WCB",
+    "vendor": "HI Tech"
+  },
+  "VC-5251": {
+    "type": "VC",
+    "valve_type": "Lift Check",
+    "class": "800#",
+    "size": "50A",
+    "material": "A105",
+    "vendor": "HS Valve"
+  },
+  "VC-5401": {
+    "type": "VC",
+    "valve_type": "Lift Check",
+    "class": "800#",
+    "size": "15A",
+    "material": "A182 F316",
+    "vendor": "HS Valve"
+  }
+}

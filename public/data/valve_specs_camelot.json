@@ -1,0 +1,1008 @@
+{
+  "extraction_date": "2026-02-11T11:18:43.506362",
+  "extraction_method": "Camelot (Table Extraction)",
+  "total_valves": 107,
+  "pdf_summary": [
+    {
+      "file": "16) 4200-C11_Forged Steel Valve_화성.pdf",
+      "valve_type": "Forged Steel Valve",
+      "vendor": "화성",
+      "count": 107
+    },
+    {
+      "file": "17) 4200-C12_Cast Steel Valve_SC Corp.pdf",
+      "valve_type": "Cast Steel Valve",
+      "vendor": "SC Corp",
+      "count": 0
+    },
+    {
+      "file": "18) 4200-C15_Manual Butterfly Valve_제로엔텍.pdf",
+      "valve_type": "Butterfly Valve",
+      "vendor": "제로엔텍",
+      "count": 0
+    },
+    {
+      "file": "19) 4200-C20_Non Slam Check Valve_에이치아이테크.pdf",
+      "valve_type": "Non-Slam Check Valve",
+      "vendor": "에이치아이테크",
+      "count": 0
+    },
+    {
+      "file": "20) 4200-C21_Strainer_신우공업.pdf",
+      "valve_type": "Strainer",
+      "vendor": "신우공업",
+      "count": 0
+    },
+    {
+      "file": "21) 4200-C24_Steam Trap_신우공업.pdf",
+      "valve_type": "Steam Trap",
+      "vendor": "신우공업",
+      "count": 0
+    }
+  ],
+  "valves": [
+    {
+      "tag": "VG-5253",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5254",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5255",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5256",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5257",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5258",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5315",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5251",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5314",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5451",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5452",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5453",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5454",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5455",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5456",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5457",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5458",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5327",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5321",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5322",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5210",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5211",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5212",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5213",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5214",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5215",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5216",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5217",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5218",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5219",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VG-5220",
+      "valve_type": "Forged Steel Valve",
+      "type": "GATE",
+      "class": "800#",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5001",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5002",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5003",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5004",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5005",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5006",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5007",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5008",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5009",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5010",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-254",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5307",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5308",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5011",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5012",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5013",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5251",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5252",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5301",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5302",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5303",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5304",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5305",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5306",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "25",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5253",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5206",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5207",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5208",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5209",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5210",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5211",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5212",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5213",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5214",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5215",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5216",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5217",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5231",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5205",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5221",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5222",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5223",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5224",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5225",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5226",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5227",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5228",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5229",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5230",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "40",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5218",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5219",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5220",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "10K",
+      "size": "15",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5401",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A182  F316",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5402",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A182  F316",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5403",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A182  F316",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5363",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5364",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5365",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "15",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5362",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5366",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5367",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-6368",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5369",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5370",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VL-5371",
+      "valve_type": "Forged Steel Valve",
+      "type": "GLOBE",
+      "class": "800#",
+      "size": "25",
+      "material": "A182  F304",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5458",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5457",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5456",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5455",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5453",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5452",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5451",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5251",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "800#",
+      "size": "50",
+      "material": "A105",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5401",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "800#",
+      "size": "15",
+      "material": "A182  F316",
+      "vendor": "화성"
+    },
+    {
+      "tag": "VC-5402",
+      "valve_type": "Forged Steel Valve",
+      "type": "CHECK",
+      "class": "800#",
+      "size": "15",
+      "material": "A182  F316",
+      "vendor": "화성"
+    }
+  ]
+}

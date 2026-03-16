@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for port in 3000 3001 3003 3006)",
+      "Bash(do echo \"=== Port $port ===\")",
+      "Bash(curl -s --max-time 3 \"http://localhost:$port\")",
+      "Bash(done)"
+    ]
+  }
+}
