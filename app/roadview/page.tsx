@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import { useState, useMemo, useEffect, useCallback, useRef, Suspense } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -109,7 +109,15 @@ function saveSceneOrder(order: string[]) {
   localStorage.setItem(SCENE_ORDER_KEY, JSON.stringify(order));
 }
 
-export default function RoadviewPage() {
+export default function RoadviewPageWrapper() {
+  return (
+    <Suspense fallback={<div className="w-full h-full flex items-center justify-center bg-[#111318]"><div className="w-10 h-10 border-2 border-primary border-t-transparent rounded-full animate-spin" /></div>}>
+      <RoadviewPage />
+    </Suspense>
+  );
+}
+
+function RoadviewPage() {
   const searchParams = useSearchParams();
   const [currentIndex, setCurrentIndex] = useState(0);
   const initialNavDone = useRef(false);
